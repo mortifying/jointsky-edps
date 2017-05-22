@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.RegionGDPFlowMapper">
+    <resultMap type="com.jointsky.edps.model.RegionGDPFlow" id="RegionGDPFlowResultMap">
+        <result column="RegionCode" property="regionCode" />
+        <result column="region" property="region" />
+        <result column="quarter" property="quarter" />
+        <result column="gdp" property="gdp" />
+        <result column="agri" property="agri" />
+        <result column="forestry" property="forestry" />
+        <result column="animal" property="animal" />
+        <result column="fishery" property="fishery" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+    </resultMap>
+
+    <resultMap type="com.jointsky.edps.model.IndustryGDPFlow" id="IndustryGDPFlowResultMap">
+        <result column="year" property="year" />
+        <result column="gdp" property="gdp" />
+        <result column="priindustry" property="priindustry" />
+        <result column="secindustry" property="secindustry" />
+        <result column="thiindustry" property="thiindustry" />
+        <result column="nlmy" property="nlmy" />
+        <result column="industry" property="industry" />
+        <result column="construction" property="construction" />
+        <result column="sale" property="sale" />
+        <result column="trans" property="trans" />
+        <result column="hotel" property="hotel" />
+        <result column="finance" property="finance" />
+        <result column="estate" property="estate" />
+        <result column="pcgdp" property="pcgdp" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+    </resultMap>
+
+
+    <select id="getGDPFlowByRegionQuarter" resultMap="RegionGDPFlowResultMap">
+        select * from regiongdpflow where region=#{0} AND quarter=#{1};
+    </select>
+
+    <select id="getGDPFlowByRegionStartEndQuarter" resultMap="RegionGDPFlowResultMap">
+        select * from regiongdpflow where region=#{0} AND quarter BETWEEN #{1} AND #{2};
+    </select>
+
+    <select id="getIndustryGDPFlowByYear" resultMap="IndustryGDPFlowResultMap">
+        select * FROM industrygdpflow WHERE year=#{year};
+    </select>
+
+    <select id="getIndustryGDPFlowStartEndYear" resultMap="IndustryGDPFlowResultMap">
+        select * from industrygdpflow where year BETWEEN #{0} AND #{1};
+    </select>
+
+</mapper>

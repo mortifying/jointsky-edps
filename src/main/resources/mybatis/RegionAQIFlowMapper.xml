@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.RegionAQIFlowMapper">
+    <resultMap type="com.jointsky.edps.model.RegionAQIFlow" id="RegionAQIFlowResultMap">
+        <result column="RegionCode" property="regionCode" />
+        <result column="RegionName" property="regionName" />
+        <result column="date" property="date" />
+        <result column="aqiLevel" property="aqiLevel" />
+        <result column="aqi" property="aqi" />
+        <result column="aqiOrder" property="aqiOrder" />
+        <result column="pm25" property="pm25" />
+        <result column="pm10" property="pm10" />
+        <result column="so2" property="so2" />
+        <result column="no2" property="no2" />
+        <result column="co" property="co" />
+        <result column="o3" property="o3" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+    </resultMap>
+
+    <select id="getAQIFlowByRegionNameDate" resultMap="RegionAQIFlowResultMap">
+        select * from regionaqiflow where regionname=#{0} AND date=#{1};
+    </select>
+
+    <select id="getAQIFlowByRegionStartEndDate" resultMap="RegionAQIFlowResultMap">
+        select * from regionaqiflow where regionname=#{0} AND date BETWEEN #{1} AND #{2};
+    </select>
+
+</mapper>
