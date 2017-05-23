@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.EnergyYieldFlowMapper">
+    <resultMap type="com.jointsky.edps.model.EnergyYieldFlow" id="EnergyYieldFlowResultMap">
+        <result column="month" property="date" />
+        <result column="ymchl" property="ymchl" />
+        <result column="yychl" property="yychl" />
+        <result column="trqchl" property="trqchl" />
+        <result column="mcqchl" property="mcqchl" />
+        <result column="yhtrqchl" property="yhtrqchl" />
+        <result column="yyjglchl" property="yyjglchl" />
+        <result column="qychl" property="qychl" />
+        <result column="mychl" property="mychl" />
+        <result column="chychl" property="chychl" />
+        <result column="rlychl" property="rlychl" />
+        <result column="shnychl" property="shnychl" />
+        <result column="yhshyqchl" property="yhshyqchl" />
+        <result column="shjychl" property="shjychl" />
+        <result column="shylqchl" property="shylqchl" />
+        <result column="mtchl" property="mtchl" />
+        <result column="hlfdchl" property="hlfdchl" />
+        <result column="shlfdchl" property="shlfdchl" />
+        <result column="hnfdchl" property="hnfdchl" />
+        <result column="flfdchl" property="flfdchl" />
+        <result column="tynfdchl" property="tynfdchl" />
+        <result column="mqchl" property="mqchl" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+    </resultMap>
+
+
+
+    <resultMap type="com.jointsky.edps.model.EnergyConsumeFlow" id="EnergyConsumeFlowResultMap">
+        <result column="regionCode" property="regionCode" />
+        <result column="region" property="region" />
+        <result column="year" property="year" />
+        <result column="mtxfl" property="mtxfl" />
+        <result column="jtxfl" property="jtxfl" />
+        <result column="yyxfl" property="yyxfl" />
+        <result column="qyxfl" property="qyxfl" />
+        <result column="myxfl" property="myxfl" />
+        <result column="chyxfl" property="chyxfl" />
+        <result column="rlyxfl" property="rlyxfl" />
+        <result column="trqxfl" property="trqxfl" />
+        <result column="dlxfl" property="dlxfl" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+    </resultMap>
+
+    <select id="getEnergyYieldFlowByMonth" resultMap="EnergyYieldFlowResultMap">
+        select * from energyyieldflow where month=#{month};
+    </select>
+
+    <select id="getEnergyYieldFlowStartEndMonth" resultMap="EnergyYieldFlowResultMap">
+        select * from energyyieldflow where month BETWEEN #{0} AND #{1};
+    </select>
+
+
+    <select id="getEnergyConsumeFlowByRegionYear" resultMap="EnergyConsumeFlowResultMap">
+        select * from energyconsumeflow where region=#{0} AND year=#{1};
+    </select>
+
+    <select id="getEnergyConsumeFlowByRegionStartEndYear" resultMap="EnergyConsumeFlowResultMap">
+        select * from energyconsumeflow where region=#{0} AND year BETWEEN #{1} AND #{2};
+    </select>
+
+
+
+</mapper>
