@@ -1,28 +1,49 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by root on 2017/5/22.
  */
 public class IndustryGDPFlow {
 
+    @ApiModelProperty(value = "年份")
     private int year;
+    @ApiModelProperty(value = "国内GDP（亿元）")
     private Double gdp;
+    @ApiModelProperty(value = "第一产业GDP（亿元）")
     private Double priindustry;
+    @ApiModelProperty(value = "第二产业GDP（亿元）")
     private Double secindustry;
+    @ApiModelProperty(value = "第三产业GDP（亿元）")
     private Double thiindustry;
+    @ApiModelProperty(value = "农林牧渔业GDP（亿元）")
     private Double nlmy;
+    @ApiModelProperty(value = "工业GDP（亿元）")
     private Double industry;
+    @ApiModelProperty(value = "建筑业GDP（亿元）")
     private Double construction;
+    @ApiModelProperty(value = "批发和零售业GDP（亿元）")
     private Double sale;
+    @ApiModelProperty(value = "交通运输、仓库和邮政业GDP（亿元）")
     private Double trans;
+    @ApiModelProperty(value = "住宿和餐饮业GDP（亿元）")
     private Double hotel;
+    @ApiModelProperty(value = "金融业GDP（亿元）")
     private Double finance;
+    @ApiModelProperty(value = "房地产业GDP（亿元）")
     private Double estate;
+    @ApiModelProperty(value = "人均GDP（亿元）")
     private Double pcgdp;
+    @ApiModelProperty(value = "烟尘排放量（千克）")
     private Double dustFlow;
+    @ApiModelProperty(value = "二氧化硫排放量（千克）")
     private Double so2Flow;
+    @ApiModelProperty(value = "氮氧化物排放量（千克）")
     private Double noxFlow;
+    @ApiModelProperty(value = "化学需氧量排放量（千克）")
     private Double codFlow;
+    @ApiModelProperty(value = "氨氮排放量（千克）")
     private Double nh4Flow;
 
 

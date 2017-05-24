@@ -1,6 +1,8 @@
 package com.jointsky.edps.model;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.sql.Date;
 
 /**
@@ -8,15 +10,26 @@ import java.sql.Date;
  */
 public class RegionFPCOFlow {
 
+
+    @ApiModelProperty(value = "省级行政区代码")
     private String regionCode;
+    @ApiModelProperty(value = "省级行政区名")
     private String regionName;
+    @ApiModelProperty(value = "月份")
     private Date month;
+    @ApiModelProperty(value = "火力发电量（亿千瓦时）")
     private Double firePower;
+    @ApiModelProperty(value = "原油加工量（万吨）")
     private Double crudeOil;
+    @ApiModelProperty(value = "烟尘排放量（千克）")
     private Double dustFlow;
+    @ApiModelProperty(value = "二氧化硫排放量（千克）")
     private Double so2Flow;
+    @ApiModelProperty(value = "氮氧化物排放量（千克）")
     private Double noxFlow;
+    @ApiModelProperty(value = "化学需氧量排放量（千克）")
     private Double codFlow;
+    @ApiModelProperty(value = "氨氮排放量（千克）")
     private Double nh4Flow;
 
 

@@ -1,5 +1,7 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.sql.Date;
 
 /**
@@ -7,20 +9,35 @@ import java.sql.Date;
  */
 public class RegionAQIFlow {
 
+    @ApiModelProperty(value = "城市代码")
     private String regionCode;
+    @ApiModelProperty(value = "城市名")
     private String regionName;
+    @ApiModelProperty(value = "日期")
     private Date date;
+    @ApiModelProperty(value = "环境质量等级")
     private String aqiLevel;
+    @ApiModelProperty(value = "环境质量指数")
     private String aqi;
+    @ApiModelProperty(value = "AQI当天排名")
     private String aqiOrder;
+    @ApiModelProperty(value = "PM2.5指数")
     private String pm25;
+    @ApiModelProperty(value = "PM10指数")
     private String pm10;
+    @ApiModelProperty(value = "二氧化硫指数")
     private String so2;
+    @ApiModelProperty(value = "二氧化氮指数")
     private String no2;
+    @ApiModelProperty(value = "一氧化碳指数")
     private String co;
+    @ApiModelProperty(value = "臭氧指数")
     private String o3;
+    @ApiModelProperty(value = "烟尘排放量（千克）")
     private Double dustFlow;
+    @ApiModelProperty(value = "二氧化硫排放量（千克）")
     private Double so2Flow;
+    @ApiModelProperty(value = "氮氧化物排放量（千克）")
     private Double noxFlow;
 
     public String getRegionCode() {
