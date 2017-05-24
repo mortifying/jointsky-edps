@@ -11,7 +11,7 @@ import java.sql.Date;
 public class RegionFPCOFlow {
 
 
-    @ApiModelProperty(value = "省级行政区代码")
+    @ApiModelProperty(value = "省级行政区编码")
     private String regionCode;
     @ApiModelProperty(value = "省级行政区名")
     private String regionName;

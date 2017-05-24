@@ -1,5 +1,7 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.sql.Date;
 
 /**
@@ -7,18 +9,31 @@ import java.sql.Date;
  */
 public class RegionGDPFlow {
 
+    @ApiModelProperty(value = "省级行政区编码")
     private String regionCode;
+    @ApiModelProperty(value = "省级行政区")
     private String region;
+    @ApiModelProperty(value = "季度")
     private Date quarter;
+    @ApiModelProperty(value = "GDP（亿元）")
     private Double gdp;
+    @ApiModelProperty(value = "农业总产值（亿元）")
     private Double agri;
+    @ApiModelProperty(value = "林业总产值（亿元）")
     private Double forestry;
+    @ApiModelProperty(value = "牧业总产值（亿元）")
     private Double animal;
+    @ApiModelProperty(value = "渔业总产值（亿元）")
     private Double fishery;
+    @ApiModelProperty(value = "烟尘排放量（千克）")
     private Double dustFlow;
+    @ApiModelProperty(value = "二氧化硫排放量（千克）")
     private Double so2Flow;
+    @ApiModelProperty(value = "氮氧化物排放量（千克）")
     private Double noxFlow;
+    @ApiModelProperty(value = "化学需氧量排放量（千克）")
     private Double codFlow;
+    @ApiModelProperty(value = "氨氮排放量（千克）")
     private Double nh4Flow;
 
     public String getRegionCode() {
