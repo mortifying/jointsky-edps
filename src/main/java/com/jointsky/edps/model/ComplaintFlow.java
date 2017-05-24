@@ -1,22 +1,37 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.sql.Date;
 /**
  * Created by LiuZifan on 2017/5/22.
  */
 public class ComplaintFlow {
+    @ApiModelProperty(value = "  省份名称")
     private String regionName;
+    @ApiModelProperty(value = "  日期(年月)")
     private Date month;
+    @ApiModelProperty(value = "  被举报/投诉次数")
     private int count;
+    @ApiModelProperty(value = "  烟尘平均浓度(毫克/立方米)")
     private double dustStrength;
+    @ApiModelProperty(value = "  烟尘总排放量(千克)")
     private double dustFlow;
+    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)")
     private double so2Strength;
+    @ApiModelProperty(value = "  二氧化硫总排放量(千克)")
     private double so2Flow;
+    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)")
     private double noxStrength;
+    @ApiModelProperty(value = "  氮氧化物总排放量(千克)")
     private double noxFlow;
+    @ApiModelProperty(value = "  化学需氧量平均浓度(毫克/立方米)")
     private double codStrength;
+    @ApiModelProperty(value = "  化学需氧量总排放量(千克)")
     private double codFlow;
+    @ApiModelProperty(value = "  氨氮平均浓度(毫克/立方米)")
     private double nh4Strength;
+    @ApiModelProperty(value = "  氨氮总排放量(千克)")
     private double nh4Flow;
 
     public String getRegionName() {

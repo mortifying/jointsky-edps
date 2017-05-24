@@ -1,26 +1,45 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by root on 2017/5/23.
  */
 public class EnergyConsumeFlow {
 
+    @ApiModelProperty(value = "  省份代码")
     private String regionCode;
+    @ApiModelProperty(value = "  省份名称")
     private String region;
+    @ApiModelProperty(value = "  时间(年)")
     private int year;
+    @ApiModelProperty(value = "  煤炭消费量（万吨）")
     private Double mtxfl;
+    @ApiModelProperty(value = "  焦炭消费量（万吨）")
     private Double jtxfl;
+    @ApiModelProperty(value = "  原油消费量（万吨）")
     private Double yyxfl;
+    @ApiModelProperty(value = "  汽油消费量（万吨）")
     private Double qyxfl;
+    @ApiModelProperty(value = "  煤油消费量（万吨）")
     private Double myxfl;
+    @ApiModelProperty(value = "  柴油消费量（万吨）")
     private Double chyxfl;
+    @ApiModelProperty(value = "  燃料油消费量（万吨）")
     private Double rlyxfl;
+    @ApiModelProperty(value = "  天然气消费量（万吨）")
     private Double trqxfl;
+    @ApiModelProperty(value = "  电力消费量（万吨）")
     private Double dlxfl;
+    @ApiModelProperty(value = "  烟尘总排放量(千克)")
     private Double dustFlow;
+    @ApiModelProperty(value = "  二氧化硫总排放量(千克)")
     private Double so2Flow;
+    @ApiModelProperty(value = "  氮氧化物总排放量(千克)")
     private Double noxFlow;
+    @ApiModelProperty(value = "  化学需氧量总排放量(千克)")
     private Double codFlow;
+    @ApiModelProperty(value = "  氨氮总排放量(千克)")
     private Double nh4Flow;
 
 
