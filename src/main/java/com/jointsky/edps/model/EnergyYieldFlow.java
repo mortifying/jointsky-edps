@@ -1,5 +1,7 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.sql.Date;
 
 /**
@@ -7,32 +9,59 @@ import java.sql.Date;
  */
 public class EnergyYieldFlow {
 
+    @ApiModelProperty(value = "  日期(年月)")
     private Date date;
+    @ApiModelProperty(value = "  原煤产量（万吨）")
     private Double ymchl;
+    @ApiModelProperty(value = "  原油产量（万吨）")
     private Double yychl;
+    @ApiModelProperty(value = "  天然气产量（万吨）")
     private Double trqchl;
+    @ApiModelProperty(value = "  煤层气产量（万吨）")
     private Double mcqchl;
+    @ApiModelProperty(value = "  液化天然气产量（万吨）")
     private Double yhtrqchl;
+    @ApiModelProperty(value = "  原油加工量（万吨）")
     private Double yyjglchl;
+    @ApiModelProperty(value = "  汽油产量（万吨）")
     private Double qychl;
+    @ApiModelProperty(value = "  煤油产量（万吨）")
     private Double mychl;
+    @ApiModelProperty(value = "  柴油产量（万吨）")
     private Double chychl;
+    @ApiModelProperty(value = "  燃料油产量（万吨）")
     private Double rlychl;
+    @ApiModelProperty(value = "  石脑油产量（万吨）")
     private Double shnychl;
+    @ApiModelProperty(value = "  液化石油气产量（万吨）")
     private Double yhshyqchl;
+    @ApiModelProperty(value = "  石焦油产量（万吨）")
     private Double shjychl;
+    @ApiModelProperty(value = "  石油沥青产量（万吨）")
     private Double shylqchl;
+    @ApiModelProperty(value = "  焦炭产量（万吨）")
     private Double mtchl;
+    @ApiModelProperty(value = "  火力发电量（亿千瓦时）")
     private Double hlfdchl;
+    @ApiModelProperty(value = "  水力发电量（亿千瓦时）")
     private Double shlfdchl;
+    @ApiModelProperty(value = "  核能发电量（亿千瓦时）")
     private Double hnfdchl;
+    @ApiModelProperty(value = "  风力发电量（亿千瓦时）")
     private Double flfdchl;
+    @ApiModelProperty(value = "  太阳能发电量（亿千瓦时）")
     private Double tynfdchl;
+    @ApiModelProperty(value = "  煤气产量（亿立方米）")
     private Double mqchl;
+    @ApiModelProperty(value = "  烟尘总排放量(千克)")
     private Double dustFlow;
+    @ApiModelProperty(value = "  二氧化硫总排放量(千克)")
     private Double so2Flow;
+    @ApiModelProperty(value = "  氮氧化物总排放量(千克)")
     private Double noxFlow;
+    @ApiModelProperty(value = "  化学需氧量总排放量(千克)")
     private Double codFlow;
+    @ApiModelProperty(value = "  氨氮总排放量(千克)")
     private Double nh4Flow;
 
 
