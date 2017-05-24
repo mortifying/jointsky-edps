@@ -13,7 +13,7 @@ public class ComplaintFlow {
     private double so2Strength;
     private double so2Flow;
     private double noxStrength;
-    private double noxtFlow;
+    private double noxFlow;
     private double codStrength;
     private double codFlow;
     private double nh4Strength;
@@ -83,12 +83,12 @@ public class ComplaintFlow {
         this.noxStrength = noxStrength;
     }
 
-    public double getNoxtFlow() {
-        return noxtFlow;
+    public double getNoxFlow() {
+        return noxFlow;
     }
 
-    public void setNoxtFlow(double noxtFlow) {
-        this.noxtFlow = noxtFlow;
+    public void setNoxFlow(double noxFlow) {
+        this.noxFlow = noxFlow;
     }
 
     public double getCodStrength() {

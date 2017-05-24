@@ -70,7 +70,7 @@ public class EnergyYieldFlowController {
     @ApiOperation(value = "各省各种能源资源消费量与排放量的信息",notes = "根据年份获取全省各种能源消费量与排放量信息结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "region",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
-            @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2016")
+            @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2015")
     })
     @RequestMapping(value = "/energyConsumeFlow",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public EnergyConsumeFlow getEnergyConsumeFlowInfo(@RequestParam(value = "region") String region,
@@ -88,7 +88,7 @@ public class EnergyYieldFlowController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "region",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
             @ApiImplicitParam(name = "start",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2010"),
-            @ApiImplicitParam(name = "end",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2016")
+            @ApiImplicitParam(name = "end",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2015")
     })
     @RequestMapping(value = "/energyConsumeFlowList",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public List<EnergyConsumeFlow> getEnergyConsumeFlowListInfo(@RequestParam(value = "region") String region,
