@@ -11,25 +11,25 @@ import java.sql.Date;
 public class RegionFPCOFlow {
 
 
-    @ApiModelProperty(value = "省级行政区编码")
+    @ApiModelProperty(value = "省级行政区编码",required = true)
     private String regionCode;
-    @ApiModelProperty(value = "省级行政区名")
+    @ApiModelProperty(value = "省级行政区名",required = true)
     private String regionName;
-    @ApiModelProperty(value = "月份")
+    @ApiModelProperty(value = "月份",required = true)
     private Date month;
-    @ApiModelProperty(value = "火力发电量（亿千瓦时）")
+    @ApiModelProperty(value = "火力发电量（亿千瓦时）",required = true)
     private Double firePower;
-    @ApiModelProperty(value = "原油加工量（万吨）")
+    @ApiModelProperty(value = "原油加工量（万吨）",required = true)
     private Double crudeOil;
-    @ApiModelProperty(value = "烟尘排放量（千克）")
+    @ApiModelProperty(value = "烟尘排放量（千克）",required = true)
     private Double dustFlow;
-    @ApiModelProperty(value = "二氧化硫排放量（千克）")
+    @ApiModelProperty(value = "二氧化硫排放量（千克）",required = true)
     private Double so2Flow;
-    @ApiModelProperty(value = "氮氧化物排放量（千克）")
+    @ApiModelProperty(value = "氮氧化物排放量（千克）",required = true)
     private Double noxFlow;
-    @ApiModelProperty(value = "化学需氧量排放量（千克）")
+    @ApiModelProperty(value = "化学需氧量排放量（千克）",required = true)
     private Double codFlow;
-    @ApiModelProperty(value = "氨氮排放量（千克）")
+    @ApiModelProperty(value = "氨氮排放量（千克）",required = true)
     private Double nh4Flow;
 
 

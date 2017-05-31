@@ -54,7 +54,7 @@ public class EnergyYieldFlowController {
             @ApiImplicitParam(name = "start",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-01-01"),
             @ApiImplicitParam(name = "end",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01")
     })
-    @RequestMapping(value = "/energyYieldFlowList",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/energyYieldFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public List<EnergyYieldFlow> getEnergyYieldFlowListInfo(@RequestParam(value = "start") Date start,
                                                             @RequestParam(value = "end") Date end){
         return energyYieldFlowService.getEnergyYieldFlowList(start,end);
@@ -90,7 +90,7 @@ public class EnergyYieldFlowController {
             @ApiImplicitParam(name = "start",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2010"),
             @ApiImplicitParam(name = "end",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2015")
     })
-    @RequestMapping(value = "/energyConsumeFlowList",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/energyConsumeFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public List<EnergyConsumeFlow> getEnergyConsumeFlowListInfo(@RequestParam(value = "region") String region,
                                                       @RequestParam(value = "start") int start,@RequestParam(value = "end") int end){
         return energyYieldFlowService.getEnergyConsumeFlowList(region,start,end);

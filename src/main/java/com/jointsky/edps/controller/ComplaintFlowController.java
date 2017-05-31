@@ -60,7 +60,7 @@ public class ComplaintFlowController {
             @ApiImplicitParam(name = "startMonth",value = "起始月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2014-02-01"),
             @ApiImplicitParam(name = "endMonth",value = "结束月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2014-05-01")
     })
-    @RequestMapping(value = "/ComplaintFlowList",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/ComplaintFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public List<ComplaintFlow> getComplaintFlowListInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "startMonth") Date startMonth, @RequestParam(value = "endMonth") Date endMonth){
 
         return complaintFlowService.getComplaintFlowList(regionName, startMonth,endMonth);

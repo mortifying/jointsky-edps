@@ -9,31 +9,31 @@ import java.sql.Date;
  */
 public class RegionGDPFlow {
 
-    @ApiModelProperty(value = "省级行政区编码")
+    @ApiModelProperty(value = "省级行政区编码",required = true)
     private String regionCode;
-    @ApiModelProperty(value = "省级行政区")
+    @ApiModelProperty(value = "省级行政区",required = true)
     private String region;
-    @ApiModelProperty(value = "季度")
+    @ApiModelProperty(value = "季度",required = true)
     private Date quarter;
-    @ApiModelProperty(value = "GDP（亿元）")
+    @ApiModelProperty(value = "GDP（亿元）",required = true)
     private Double gdp;
-    @ApiModelProperty(value = "农业总产值（亿元）")
+    @ApiModelProperty(value = "农业总产值（亿元）",required = true)
     private Double agri;
-    @ApiModelProperty(value = "林业总产值（亿元）")
+    @ApiModelProperty(value = "林业总产值（亿元）",required = true)
     private Double forestry;
-    @ApiModelProperty(value = "牧业总产值（亿元）")
+    @ApiModelProperty(value = "牧业总产值（亿元）",required = true)
     private Double animal;
-    @ApiModelProperty(value = "渔业总产值（亿元）")
+    @ApiModelProperty(value = "渔业总产值（亿元）",required = true)
     private Double fishery;
-    @ApiModelProperty(value = "烟尘排放量（千克）")
+    @ApiModelProperty(value = "烟尘排放量（千克）",required = true)
     private Double dustFlow;
-    @ApiModelProperty(value = "二氧化硫排放量（千克）")
+    @ApiModelProperty(value = "二氧化硫排放量（千克）",required = true)
     private Double so2Flow;
-    @ApiModelProperty(value = "氮氧化物排放量（千克）")
+    @ApiModelProperty(value = "氮氧化物排放量（千克）",required = true)
     private Double noxFlow;
-    @ApiModelProperty(value = "化学需氧量排放量（千克）")
+    @ApiModelProperty(value = "化学需氧量排放量（千克）",required = true)
     private Double codFlow;
-    @ApiModelProperty(value = "氨氮排放量（千克）")
+    @ApiModelProperty(value = "氨氮排放量（千克）",required = true)
     private Double nh4Flow;
 
     public String getRegionCode() {

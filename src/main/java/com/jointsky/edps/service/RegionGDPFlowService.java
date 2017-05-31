@@ -2,6 +2,7 @@ package com.jointsky.edps.service;
 
 import com.jointsky.edps.mapper.RegionGDPFlowMapper;
 import com.jointsky.edps.model.IndustryGDPFlow;
+import com.jointsky.edps.model.MainCityGDPFlow;
 import com.jointsky.edps.model.RegionGDPFlow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,13 @@ public class RegionGDPFlowService {
     public List<IndustryGDPFlow> getIndustryGDPFlowList(int start,int end){
 
         return regionGDPFlowMapper.getIndustryGDPFlowStartEndYear(start,end);
+    }
+
+    public MainCityGDPFlow getMainCityGDPFlow(String regionName,int year){
+        return regionGDPFlowMapper.getMainCityGDPFlowByYear(regionName,year);
+    }
+
+    public List<MainCityGDPFlow> getMainCityGDPFlowList(String regionName,int start,int end){
+        return regionGDPFlowMapper.getMainCityGDPFlowStartEndYear(regionName,start,end);
     }
 }

@@ -55,7 +55,7 @@ public class RegionAQIFlowController {
             @ApiImplicitParam(name = "start",value = "日期",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01"),
             @ApiImplicitParam(name = "end",value = "日期",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-10")
     })
-    @RequestMapping(value = "/regionAQIFlowList",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/regionAQIFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public List<RegionAQIFlow> getRegionAQIFlowListInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "start") Date start,
                                                        @RequestParam(value = "end") Date end){
 

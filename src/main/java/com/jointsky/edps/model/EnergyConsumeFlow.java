@@ -7,39 +7,39 @@ import io.swagger.annotations.ApiModelProperty;
  */
 public class EnergyConsumeFlow {
 
-    @ApiModelProperty(value = "  省份代码")
+    @ApiModelProperty(value = "  省份代码",required = true)
     private String regionCode;
-    @ApiModelProperty(value = "  省份名称")
+    @ApiModelProperty(value = "  省份名称",required = true)
     private String region;
-    @ApiModelProperty(value = "  时间(年)")
+    @ApiModelProperty(value = "  时间(年)",required = true)
     private int year;
-    @ApiModelProperty(value = "  煤炭消费量（万吨）")
+    @ApiModelProperty(value = "  煤炭消费量（万吨）",required = true)
     private Double mtxfl;
-    @ApiModelProperty(value = "  焦炭消费量（万吨）")
+    @ApiModelProperty(value = "  焦炭消费量（万吨）",required = true)
     private Double jtxfl;
-    @ApiModelProperty(value = "  原油消费量（万吨）")
+    @ApiModelProperty(value = "  原油消费量（万吨）",required = true)
     private Double yyxfl;
-    @ApiModelProperty(value = "  汽油消费量（万吨）")
+    @ApiModelProperty(value = "  汽油消费量（万吨）",required = true)
     private Double qyxfl;
-    @ApiModelProperty(value = "  煤油消费量（万吨）")
+    @ApiModelProperty(value = "  煤油消费量（万吨）",required = true)
     private Double myxfl;
-    @ApiModelProperty(value = "  柴油消费量（万吨）")
+    @ApiModelProperty(value = "  柴油消费量（万吨）",required = true)
     private Double chyxfl;
-    @ApiModelProperty(value = "  燃料油消费量（万吨）")
+    @ApiModelProperty(value = "  燃料油消费量（万吨）",required = true)
     private Double rlyxfl;
-    @ApiModelProperty(value = "  天然气消费量（万吨）")
+    @ApiModelProperty(value = "  天然气消费量（万吨）",required = true)
     private Double trqxfl;
-    @ApiModelProperty(value = "  电力消费量（万吨）")
+    @ApiModelProperty(value = "  电力消费量（万吨）",required = true)
     private Double dlxfl;
-    @ApiModelProperty(value = "  烟尘总排放量(千克)")
+    @ApiModelProperty(value = "  烟尘总排放量(千克)",required = true)
     private Double dustFlow;
-    @ApiModelProperty(value = "  二氧化硫总排放量(千克)")
+    @ApiModelProperty(value = "  二氧化硫总排放量(千克)",required = true)
     private Double so2Flow;
-    @ApiModelProperty(value = "  氮氧化物总排放量(千克)")
+    @ApiModelProperty(value = "  氮氧化物总排放量(千克)",required = true)
     private Double noxFlow;
-    @ApiModelProperty(value = "  化学需氧量总排放量(千克)")
+    @ApiModelProperty(value = "  化学需氧量总排放量(千克)",required = true)
     private Double codFlow;
-    @ApiModelProperty(value = "  氨氮总排放量(千克)")
+    @ApiModelProperty(value = "  氨氮总排放量(千克)",required = true)
     private Double nh4Flow;
 
 

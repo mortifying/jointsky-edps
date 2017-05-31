@@ -1,37 +1,40 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 
 import java.sql.Date;
 /**
  * Created by LiuZifan on 2017/5/22.
  */
 public class ComplaintFlow {
-    @ApiModelProperty(value = "  省份名称")
+
+    @ApiModelProperty(value = "省份名称",required = true)
     private String regionName;
-    @ApiModelProperty(value = "  日期(年月)")
+    @ApiModelProperty(value = "日期(年月)",required = true)
     private Date month;
-    @ApiModelProperty(value = "  被举报/投诉次数")
+    @ApiModelProperty(value = "被举报/投诉次数",required = true)
     private int count;
-    @ApiModelProperty(value = "  烟尘平均浓度(毫克/立方米)")
+    @ApiModelProperty(value = "烟尘平均浓度(毫克/立方米)",required = true)
     private double dustStrength;
-    @ApiModelProperty(value = "  烟尘总排放量(千克)")
+    @ApiModelProperty(value = "  烟尘总排放量(千克)",required = true)
     private double dustFlow;
-    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)")
+    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)",required = true)
     private double so2Strength;
-    @ApiModelProperty(value = "  二氧化硫总排放量(千克)")
+    @ApiModelProperty(value = "  二氧化硫总排放量(千克)",required = true)
     private double so2Flow;
-    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)")
+    @ApiModelProperty(value = "  二氧化硫平均浓度(毫克/立方米)",required = true)
     private double noxStrength;
-    @ApiModelProperty(value = "  氮氧化物总排放量(千克)")
+    @ApiModelProperty(value = "  氮氧化物总排放量(千克)",required = true)
     private double noxFlow;
-    @ApiModelProperty(value = "  化学需氧量平均浓度(毫克/立方米)")
+    @ApiModelProperty(value = "  化学需氧量平均浓度(毫克/立方米)",required = true)
     private double codStrength;
-    @ApiModelProperty(value = "  化学需氧量总排放量(千克)")
+    @ApiModelProperty(value = "  化学需氧量总排放量(千克)",required = true)
     private double codFlow;
-    @ApiModelProperty(value = "  氨氮平均浓度(毫克/立方米)")
+    @ApiModelProperty(value = "  氨氮平均浓度(毫克/立方米)",required = true)
     private double nh4Strength;
-    @ApiModelProperty(value = "  氨氮总排放量(千克)")
+    @ApiModelProperty(value = "  氨氮总排放量(千克)",required = true)
     private double nh4Flow;
 
     public String getRegionName() {
