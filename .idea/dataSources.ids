@@ -6,27 +6,69 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
-    <schema name="" catalog="dap"/>
-    <table name="city" schema="" catalog="dap" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="state" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="country" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-    </table>
-    <table name="env_qty" schema="" catalog="dap" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="max_value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="min_value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-    </table>
-    <table name="hotel" schema="" catalog="dap" type="TABLE">
-      <column name="city" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
-      <column name="zip" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
-    </table>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="dap">
+        <visible>1</visible>
+      </schema>
+      <table id="2" parent="1" name="city"/>
+      <table id="3" parent="1" name="env_qty"/>
+      <table id="4" parent="1" name="hotel"/>
+      <column id="5" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INT(10)|4</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="6" parent="2" name="name">
+        <data-type>VARCHAR(20)|12</data-type>
+      </column>
+      <column id="7" parent="2" name="state">
+        <data-type>VARCHAR(20)|12</data-type>
+      </column>
+      <column id="8" parent="2" name="country">
+        <data-type>VARCHAR(20)|12</data-type>
+      </column>
+      <key id="9" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="10" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INT UNSIGNED(10)|4</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="11" parent="3" name="name">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(20)|12</data-type>
+      </column>
+      <column id="12" parent="3" name="max_value">
+        <mandatory>1</mandatory>
+        <data-type>INT(10)|4</data-type>
+      </column>
+      <column id="13" parent="3" name="min_value">
+        <mandatory>1</mandatory>
+        <data-type>INT(10)|4</data-type>
+      </column>
+      <index id="14" parent="3" name="name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="15" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="16" parent="4" name="city">
+        <data-type>INT(10)|4</data-type>
+      </column>
+      <column id="17" parent="4" name="name">
+        <data-type>VARCHAR(30)|12</data-type>
+      </column>
+      <column id="18" parent="4" name="address">
+        <data-type>VARCHAR(40)|12</data-type>
+      </column>
+      <column id="19" parent="4" name="zip">
+        <data-type>VARCHAR(20)|12</data-type>
+      </column>
+    </database-model>
   </data-source>
 </component>

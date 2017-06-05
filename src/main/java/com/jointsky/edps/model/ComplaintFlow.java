@@ -10,7 +10,7 @@ import java.sql.Date;
  */
 public class ComplaintFlow {
 
-    @ApiModelProperty(value = "省份名称",required = true)
+    @ApiModelProperty(value = "省份名称",required = true,position = 1)
     private String regionName;
     @ApiModelProperty(value = "日期(年月)",required = true)
     private Date month;

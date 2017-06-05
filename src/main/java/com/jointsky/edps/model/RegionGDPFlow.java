@@ -9,7 +9,7 @@ import java.sql.Date;
  */
 public class RegionGDPFlow {
 
-    @ApiModelProperty(value = "省级行政区编码",required = true)//dfff
+    @ApiModelProperty(value = "省级行政区编码",required = true)
     private String regionCode;
     @ApiModelProperty(value = "省级行政区",required = true)
     private String region;
