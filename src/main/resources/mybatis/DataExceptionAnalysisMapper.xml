@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.DataExceptionAnalysisMapper">
+    <resultMap type="com.jointsky.edps.model.SteepRiseFall" id="SteepRiseFallResultMap">
+        <result column="pscode" property="psCode" />
+        <result column="psname" property="psName" />
+        <result column="outputcode" property="outputCode" />
+        <result column="outputname" property="outputName" />
+        <result column="pollutantcode" property="pollutantCode" />
+        <result column="pollutantname" property="pollutantName" />
+        <result column="exceptiontime" property="exceptionTime" />
+        <result column="beforevalue" property="beforeValue" />
+        <result column="aftervalue" property="afterValue" />
+    </resultMap>
+
+
+    <select id="getSteepRiseFallAll" resultMap="SteepRiseFallResultMap">
+        select * from steeprisefallexception;
+    </select>
+
+    <select id="getSteepRiseFallByPSInfo" resultMap="SteepRiseFallResultMap">
+        select * from steeprisefallexception where pscode=#{0} AND outputcode =#{1} AND pollutantcode=#{2};
+    </select>
+
+    <resultMap type="com.jointsky.edps.model.IndustryStrengthException" id="IndustryStrengthExceptionResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="psname" property="psName" />
+        <result column="industryname" property="industryName" />
+        <result column="outputname" property="outputName" />
+        <result column="pollutantname" property="pollutantName" />
+        <result column="standardvalue" property="standardValue" />
+        <result column="exceptiontime" property="exceptionTime" />
+        <result column="strength" property="strength" />
+        <result column="avgstrength" property="avgStrength" />
+    </resultMap>
+
+    <select id="getIndustryStrengthExceptionByRegion" resultMap="IndustryStrengthExceptionResultMap">
+        select * from industrystrengthexception WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getIndustryStrengthExceptionByIndustry" resultMap="IndustryStrengthExceptionResultMap">
+        select * from industrystrengthexception where industryname=#{industryName};
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.StrengthConstantValue" id="StrengthConstantValueResultMap">
+    <result column="regionname" property="regionName" />
+    <result column="psname" property="psName" />
+    <result column="industryname" property="industryName" />
+    <result column="outputname" property="outputName" />
+    <result column="pollutantname" property="pollutantName" />
+    <result column="starttime" property="startTime" />
+    <result column="endtime" property="endTime" />
+    <result column="strength" property="strength" />
+    <result column="comment" property="comment" />
+</resultMap>
+
+    <select id="getStrengthConstantValueByRegion" resultMap="StrengthConstantValueResultMap">
+        select * from strengthconstantvalue WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getStrengthConstantValueByIndustry" resultMap="StrengthConstantValueResultMap">
+        select * from strengthconstantvalue where industryname=#{industryName};
+    </select>
+
+    <select id="getStrengthConstantValueByPSInfo" resultMap="StrengthConstantValueResultMap">
+        select * from strengthconstantvalue where psname=#{0} and outputname=#{1} and pollutantname=#{2};
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.FlowConstantValue" id="FlowConstantValueResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="psname" property="psName" />
+        <result column="industryname" property="industryName" />
+        <result column="outputname" property="outputName" />
+        <result column="starttime" property="startTime" />
+        <result column="endtime" property="endTime" />
+        <result column="strength" property="strength" />
+        <result column="comment" property="comment" />
+    </resultMap>
+
+    <select id="getFlowConstantValueByRegion" resultMap="FlowConstantValueResultMap">
+        select * from flowconstantvalue WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getFlowConstantValueByIndustry" resultMap="FlowConstantValueResultMap">
+        select * from flowconstantvalue where industryname=#{industryName};
+    </select>
+
+    <select id="getFlowConstantValueByPSInfo" resultMap="FlowConstantValueResultMap">
+        select * from flowconstantvalue where psname=#{0} and outputname=#{1};
+    </select>
+
+
+
+    <resultMap type="com.jointsky.edps.model.FlowException" id="FlowExceptionResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="psname" property="psName" />
+        <result column="industryname" property="industryName" />
+        <result column="outputname" property="outputName" />
+        <result column="exceptiontime" property="exceptionTime" />
+        <result column="flow" property="flow" />
+        <result column="comment" property="comment" />
+    </resultMap>
+
+    <select id="getFlowExceptionByRegion" resultMap="FlowExceptionResultMap">
+        select * from flowexception WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getFlowExceptionByIndustry" resultMap="FlowExceptionResultMap">
+        select * from flowexception where industryname=#{industryName};
+    </select>
+
+    <select id="getFlowExceptionByPSInfo" resultMap="FlowExceptionResultMap">
+        select * from flowexception where psname=#{0} and outputname=#{1};
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.LogicException" id="LogicExceptionResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="psname" property="psName" />
+        <result column="industryname" property="industryName" />
+        <result column="outputname" property="outputName" />
+        <result column="pollutantname" property="pollutantName" />
+        <result column="exceptiontime" property="exceptionTime" />
+        <result column="strength" property="strength" />
+        <result column="flow" property="flow" />
+        <result column="pflow" property="pFlow" />
+        <result column="comment" property="comment" />
+    </resultMap>
+
+    <select id="getLogicExceptionByRegion" resultMap="LogicExceptionResultMap">
+        select * from logicexception WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getLogicExceptionByIndustry" resultMap="LogicExceptionResultMap">
+        select * from logicexception where industryname=#{industryName};
+    </select>
+
+    <select id="getLogicExceptionByPSInfo" resultMap="LogicExceptionResultMap">
+        select * from logicexception where psname=#{0} and outputname=#{1} and pollutantname=#{2};
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.ExcessAirCoefficient" id="ExcessAirCoefficientResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="psname" property="psName" />
+        <result column="industryname" property="industryName" />
+        <result column="outputname" property="outputName" />
+        <result column="faco2avg" property="facO2Avg" />
+        <result column="standardo2" property="standardO2" />
+        <result column="facstandardo2avg" property="facStandardO2Avg" />
+        <result column="comment" property="comment" />
+    </resultMap>
+
+    <select id="getExcessAirCoefficientByRegion" resultMap="ExcessAirCoefficientResultMap">
+        select * from excessaircoefficient WHERE regionname=#{regionName};
+    </select>
+
+    <select id="getExcessAirCoefficientByIndustry" resultMap="ExcessAirCoefficientResultMap">
+        select * from excessaircoefficient where industryname=#{industryName};
+    </select>
+
+    <select id="getExcessAirCoefficientByPSInfo" resultMap="ExcessAirCoefficientResultMap">
+        select * from excessaircoefficient where psname=#{0} and outputname=#{1};
+    </select>
+
+</mapper>
