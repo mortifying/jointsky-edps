@@ -1,0 +1,36 @@
+package com.jointsky.edps.controller;
+
+import com.jointsky.edps.service.HttpLogsService;
+import io.swagger.annotations.*;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+
+/**
+ * Created by root on 2017/6/7.
+ */
+@Api(value = "数据宏观概况",description = "长天长大数据平台数据宏观汇总情况")
+@RestController
+public class DataOutline {
+
+    private Logger logger = Logger.getLogger(DataOutline.class);
+
+    @Autowired
+    private HttpLogsService httpLogsService;
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiOperation(value = "接口被调用次数",notes = "获取数据平台的所有接口被调用的总次数")
+    @RequestMapping(value = "/interfaceCallNumber",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public int getInterfaceCallNumber(){
+        return httpLogsService.queryHttpLogsTotal();
+    }
+
+}
