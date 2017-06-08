@@ -24,4 +24,8 @@ public class DataOutlineService {
     public int psOutputNum(){
         return dataOutlineMapper.getPSOutputNum();
     }
+
+    public int pwshfPSNum(){
+        return dataOutlineMapper.getPwshfPSNum();
+    }
 }

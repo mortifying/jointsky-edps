@@ -15,5 +15,9 @@
         SELECT COUNT(DISTINCT pscode,outputcode) from zxjc_ps_outputcount;
     </select>
 
+    <select id="getPwshfPSNum" resultType="int">
+        SELECT COUNT(PSCode) from pwshfpscount;
+    </select>
+
 
 </mapper>
