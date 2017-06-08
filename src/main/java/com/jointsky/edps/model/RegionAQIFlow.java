@@ -1,5 +1,6 @@
 package com.jointsky.edps.model;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.sql.Date;
@@ -9,35 +10,35 @@ import java.sql.Date;
  */
 public class RegionAQIFlow {
 
-    @ApiModelProperty(value = "城市代码")
+    @ApiModelProperty(value = "城市代码",required = true)
     private String regionCode;
-    @ApiModelProperty(value = "城市名")
+    @ApiModelProperty(value = "城市名",required = true)
     private String regionName;
-    @ApiModelProperty(value = "日期")
+    @ApiModelProperty(value = "日期",required = true)
     private Date date;
-    @ApiModelProperty(value = "环境质量等级")
+    @ApiModelProperty(value = "环境质量等级",required = true)
     private String aqiLevel;
-    @ApiModelProperty(value = "环境质量指数")
+    @ApiModelProperty(value = "环境质量指数",required = true)
     private String aqi;
-    @ApiModelProperty(value = "AQI当天排名")
+    @ApiModelProperty(value = "AQI当天排名",required = true)
     private String aqiOrder;
-    @ApiModelProperty(value = "PM2.5指数")
+    @ApiModelProperty(value = "PM2.5指数",required = true)
     private String pm25;
-    @ApiModelProperty(value = "PM10指数")
+    @ApiModelProperty(value = "PM10指数",required = true)
     private String pm10;
-    @ApiModelProperty(value = "二氧化硫指数")
+    @ApiModelProperty(value = "二氧化硫指数",required = true)
     private String so2;
-    @ApiModelProperty(value = "二氧化氮指数")
+    @ApiModelProperty(value = "二氧化氮指数",required = true)
     private String no2;
-    @ApiModelProperty(value = "一氧化碳指数")
+    @ApiModelProperty(value = "一氧化碳指数",required = true)
     private String co;
-    @ApiModelProperty(value = "臭氧指数")
+    @ApiModelProperty(value = "臭氧指数",required = true)
     private String o3;
-    @ApiModelProperty(value = "烟尘排放量（千克）")
+    @ApiModelProperty(value = "烟尘排放量（千克）",required = true)
     private Double dustFlow;
-    @ApiModelProperty(value = "二氧化硫排放量（千克）")
+    @ApiModelProperty(value = "二氧化硫排放量（千克）",required = true)
     private Double so2Flow;
-    @ApiModelProperty(value = "氮氧化物排放量（千克）")
+    @ApiModelProperty(value = "氮氧化物排放量（千克）",required = true)
     private Double noxFlow;
 
     public String getRegionCode() {

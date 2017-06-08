@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.DataOutlineMapper">
+
+
+    <select id="getTotalDataRecordNum" resultType="int">
+        SELECT SUM(TABLE_ROWS) from information_schema.tables WHERE TABLE_SCHEMA='crawldata';
+    </select>
+
+    <select id="getPSNum" resultType="int">
+        SELECT COUNT(DISTINCT PSCode) from zxjcpscount;
+    </select>
+
+    <select id="getPSOutputNum" resultType="int">
+        SELECT COUNT(DISTINCT pscode,outputcode) from zxjc_ps_outputcount;
+    </select>
+
+
+</mapper>

@@ -1,26 +1,28 @@
 package com.jointsky.edps.model;
 
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.sql.Date;
-
 /**
- * Created by root on 2017/5/19.
+ * Created by root on 2017/5/31.
  */
-public class RegionFPCOFlow {
+@ApiModel
+public class MainCityGDPFlow {
 
-
-    @ApiModelProperty(value = "省级行政区编码",required = true)
+    @ApiModelProperty(value = "城市编码",required = true)
     private String regionCode;
-    @ApiModelProperty(value = "省级行政区名",required = true)
+    @ApiModelProperty(value = "城市名",required = true)
     private String regionName;
-    @ApiModelProperty(value = "月份",required = true)
-    private Date month;
-    @ApiModelProperty(value = "火力发电量（亿千瓦时）",required = true)
-    private Double firePower;
-    @ApiModelProperty(value = "原油加工量（万吨）",required = true)
-    private Double crudeOil;
+    @ApiModelProperty(value = "年份",required = true,position = 1)
+    private int year;
+    @ApiModelProperty(value = "国内生产总值（亿元）",required = true)
+    private Double gngdp;
+    @ApiModelProperty(value = "第一产业生产总值（亿元）",required = true)
+    private Double dycygdp;
+    @ApiModelProperty(value = "第二产业生产总值（亿元）",required = true)
+    private Double decygdp;
+    @ApiModelProperty(value = "第三产业生产总值（亿元）",required = true)
+    private Double dscygdp;
     @ApiModelProperty(value = "烟尘排放量（千克）",required = true)
     private Double dustFlow;
     @ApiModelProperty(value = "二氧化硫排放量（千克）",required = true)
@@ -41,6 +43,7 @@ public class RegionFPCOFlow {
         this.regionCode = regionCode;
     }
 
+
     public String getRegionName() {
         return regionName;
     }
@@ -49,29 +52,44 @@ public class RegionFPCOFlow {
         this.regionName = regionName;
     }
 
-
-    public Date getMonth() {
-        return month;
+    public int getYear() {
+        return year;
     }
 
-    public void setMonth(Date month) {
-        this.month = month;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public Double getFirePower() {
-        return firePower;
+    public Double getGngdp() {
+        return gngdp;
     }
 
-    public void setFirePower(Double firePower) {
-        this.firePower = firePower;
+    public void setGngdp(Double gngdp) {
+        this.gngdp = gngdp;
     }
 
-    public Double getCrudeOil() {
-        return crudeOil;
+    public Double getDycygdp() {
+        return dycygdp;
     }
 
-    public void setCrudeOil(Double crudeOil) {
-        this.crudeOil = crudeOil;
+    public void setDycygdp(Double dycygdp) {
+        this.dycygdp = dycygdp;
+    }
+
+    public Double getDecygdp() {
+        return decygdp;
+    }
+
+    public void setDecygdp(Double decygdp) {
+        this.decygdp = decygdp;
+    }
+
+    public Double getDscygdp() {
+        return dscygdp;
+    }
+
+    public void setDscygdp(Double dscygdp) {
+        this.dscygdp = dscygdp;
     }
 
     public Double getDustFlow() {

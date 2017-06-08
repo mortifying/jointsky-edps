@@ -1,6 +1,7 @@
 package com.jointsky.edps.mapper;
 
 import com.jointsky.edps.model.IndustryGDPFlow;
+import com.jointsky.edps.model.MainCityGDPFlow;
 import com.jointsky.edps.model.RegionGDPFlow;
 
 import java.sql.Date;
@@ -18,4 +19,8 @@ public interface RegionGDPFlowMapper {
     public IndustryGDPFlow getIndustryGDPFlowByYear(int year);
 
     public List<IndustryGDPFlow> getIndustryGDPFlowStartEndYear(int start,int end);
+
+    public MainCityGDPFlow getMainCityGDPFlowByYear(String regionName,int year);
+
+    public List<MainCityGDPFlow> getMainCityGDPFlowStartEndYear(String regionName,int start,int end);
 }
