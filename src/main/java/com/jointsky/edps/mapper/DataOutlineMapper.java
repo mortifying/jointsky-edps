@@ -10,4 +10,6 @@ public interface DataOutlineMapper {
     public int getPSNum();
 
     public int getPSOutputNum();
+
+    public int getPwshfPSNum();
 }

@@ -79,4 +79,16 @@ public class DataOutlineController {
         return dataOutlineService.psOutputNum();
     }
 
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiOperation(value = "录入的排污收费的企业数",notes = "获取数据平台的录入的排污收费的企业数")
+    @RequestMapping(value = "/pwshfPSNum",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public int getPwshfPSNum(){
+        return dataOutlineService.pwshfPSNum();
+    }
+
 }
