@@ -1,5 +1,6 @@
 package com.jointsky.edps.controller;
 
+import com.jointsky.edps.model.ProvinceCharge;
 import com.jointsky.edps.service.DataOutlineService;
 import com.jointsky.edps.service.HttpLogsService;
 import io.swagger.annotations.*;
@@ -7,7 +8,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.Date;
+import java.util.List;
 
 
 /**
@@ -89,6 +94,21 @@ public class DataOutlineController {
     @RequestMapping(value = "/pwshfPSNum",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public int getPwshfPSNum(){
         return dataOutlineService.pwshfPSNum();
+    }
+
+
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "int",paramType = "query",defaultValue = "201603")
+    @ApiOperation(value = "排污收费总费用最多的10个省份排名(按月)",notes = "获取某年月排污收费总费用最多的10个省份")
+    @RequestMapping(value = "/getTop10ChargeProvince",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public List<ProvinceCharge> getTop10ChargeProvince(@RequestParam(value = "dataMonth") int dataMonth){
+        return dataOutlineService.getTop10ChargeProvince(dataMonth);
     }
 
 }

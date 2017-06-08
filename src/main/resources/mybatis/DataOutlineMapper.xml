@@ -20,4 +20,15 @@
     </select>
 
 
+
+    <resultMap type="com.jointsky.edps.model.ProvinceCharge" id="ProvinceChargeMap">
+        <result column="RegionName" property="regionName" />
+        <result column="datamonth" property="dataMonth" />
+        <result column="charge" property="charge" />
+    </resultMap>
+
+    <select id="getTop10ChargeProvince" resultMap="ProvinceChargeMap">
+        SELECT regionname,datamonth,charge from pwshf_provincemonth_sum where datamonth=#{0} ORDER BY charge DESC LIMIT 0,10;
+    </select>
+
 </mapper>
