@@ -1,5 +1,6 @@
 package com.jointsky.edps.controller;
 
+import com.jointsky.edps.service.DataOutlineService;
 import com.jointsky.edps.service.HttpLogsService;
 import io.swagger.annotations.*;
 import org.apache.log4j.Logger;
@@ -20,6 +21,8 @@ public class DataOutline {
 
     @Autowired
     private HttpLogsService httpLogsService;
+    @Autowired
+    private DataOutlineService dataOutlineService;
 
     @ApiResponses({
             @ApiResponse(code = 400,message = "请求参数没有设置好"),
@@ -31,6 +34,19 @@ public class DataOutline {
     @RequestMapping(value = "/interfaceCallNumber",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public int getInterfaceCallNumber(){
         return httpLogsService.queryHttpLogsTotal();
+    }
+
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiOperation(value = "平台数据录入条数",notes = "获取数据平台的数据录入条数")
+    @RequestMapping(value = "/dataRecordNum",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public int getDataRecordNum(){
+        return dataOutlineService.dataRecordNum();
     }
 
 }
