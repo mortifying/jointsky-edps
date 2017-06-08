@@ -16,4 +16,12 @@ public class DataOutlineService {
     public int dataRecordNum(){
         return dataOutlineMapper.getTotalDataRecordNum();
     }
+
+    public int psNum(){
+        return dataOutlineMapper.getPSNum();
+    }
+
+    public int psOutputNum(){
+        return dataOutlineMapper.getPSOutputNum();
+    }
 }

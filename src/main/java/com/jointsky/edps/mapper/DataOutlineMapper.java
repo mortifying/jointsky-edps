@@ -6,4 +6,8 @@ package com.jointsky.edps.mapper;
 public interface DataOutlineMapper {
 
     public int getTotalDataRecordNum();
+
+    public int getPSNum();
+
+    public int getPSOutputNum();
 }
