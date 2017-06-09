@@ -1,14 +1,8 @@
 package com.jointsky.edps.service;
 
 import com.jointsky.edps.mapper.DataOutlineMapper;
-import com.jointsky.edps.model.FlowByYear;
-import com.jointsky.edps.model.FlowMonth;
-import com.jointsky.edps.model.FlowPerGDP;
-import com.jointsky.edps.model.FlowYear;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by root on 2017/6/8.
@@ -33,29 +27,5 @@ public class DataOutlineService {
 
     public int pwshfPSNum(){
         return dataOutlineMapper.getPwshfPSNum();
-    }
-
-    public List<FlowByYear> flowByYearList(int start,int end){
-        return dataOutlineMapper.getFlowByYear(start,end);
-    }
-
-    public List<FlowMonth> topTenFlowProvinceMonth(int month){
-        return dataOutlineMapper.getTopTenFlowProvinceByMonth(month);
-    }
-
-    public List<FlowYear> topTenFlowProvinceYear(int year){
-        return dataOutlineMapper.getTopTenFlowProvinceByYear(year);
-    }
-
-    public List<FlowMonth> topTenFlowCityMonth(int month){
-        return dataOutlineMapper.getTopTenFlowCityByMonth(month);
-    }
-
-    public List<FlowYear> topTenFlowCityYear(int year){
-        return dataOutlineMapper.getTopTenFlowCityByYear(year);
-    }
-
-    public List<FlowPerGDP> topTenFlowPerGDPQuarter(int year,int quarter,String order){
-        return dataOutlineMapper.getTopTenFlowPerGDPByQuarter(year,quarter,order);
     }
 }

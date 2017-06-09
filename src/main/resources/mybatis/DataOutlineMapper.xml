@@ -103,4 +103,25 @@
         LIMIT 10;
     </select>
 
+
+    <resultMap type="com.jointsky.edps.model.ProvinceCharge" id="ProvinceChargeMap">
+        <result column="RegionName" property="regionName" />
+        <result column="datamonth" property="dataMonth" />
+        <result column="charge" property="charge" />
+    </resultMap>
+
+    <select id="getTop10ChargeProvince" resultMap="ProvinceChargeMap">
+        SELECT regionname,datamonth,charge from pwshf_provincemonth_sum where datamonth=#{0} ORDER BY charge DESC LIMIT 0,10;
+    </select>
+
+    <resultMap type="com.jointsky.edps.model.ProvinceYearCharge" id="ProvinceYearChargeMap">
+        <result column="regionname" property="regionName" />
+        <result column="year" property="year" />
+        <result column="charge" property="charge" />
+    </resultMap>
+
+    <select id="getYearTop10ChargeProvince" resultMap="ProvinceYearChargeMap">
+        select regionname,substr(datamonth,1,4) year,sum(charge) charge from pwshf_provincemonth_sum where substr(datamonth,1,4)=#{0} GROUP BY regionname,substr(datamonth,1,4) ORDER BY sum(charge) desc LIMIT 0,10;
+    </select>
+
 </mapper>
