@@ -2,6 +2,7 @@ package com.jointsky.edps.service;
 
 import com.jointsky.edps.mapper.DataOutlineMapper;
 import com.jointsky.edps.model.ProvinceCharge;
+import com.jointsky.edps.model.ProvinceYearCharge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,9 @@ public class DataOutlineService {
 
     public List<ProvinceCharge> getTop10ChargeProvince(int dataMonth) {
         return dataOutlineMapper.getTop10ChargeProvince(dataMonth);
+    }
+
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(int year) {
+        return dataOutlineMapper.getYearTop10ChargeProvince(year);
     }
 }

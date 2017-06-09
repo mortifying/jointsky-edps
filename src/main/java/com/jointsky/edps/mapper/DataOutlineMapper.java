@@ -1,6 +1,7 @@
 package com.jointsky.edps.mapper;
 
 import com.jointsky.edps.model.ProvinceCharge;
+import com.jointsky.edps.model.ProvinceYearCharge;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface DataOutlineMapper {
     public int getPwshfPSNum();
 
     public List<ProvinceCharge> getTop10ChargeProvince(int dataMonth);
+
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(int year);
 }

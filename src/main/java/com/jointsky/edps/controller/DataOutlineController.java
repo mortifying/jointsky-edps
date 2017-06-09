@@ -1,6 +1,7 @@
 package com.jointsky.edps.controller;
 
 import com.jointsky.edps.model.ProvinceCharge;
+import com.jointsky.edps.model.ProvinceYearCharge;
 import com.jointsky.edps.service.DataOutlineService;
 import com.jointsky.edps.service.HttpLogsService;
 import io.swagger.annotations.*;
@@ -109,6 +110,19 @@ public class DataOutlineController {
     @RequestMapping(value = "/getTop10ChargeProvince",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public List<ProvinceCharge> getTop10ChargeProvince(@RequestParam(value = "dataMonth") int dataMonth){
         return dataOutlineService.getTop10ChargeProvince(dataMonth);
+    }
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParam(name = "year",value = "年",required = true,dataType = "int",paramType = "query",defaultValue = "2016")
+    @ApiOperation(value = "排污收费总费用最多的10个省份排名(按年)",notes = "获取某年排污收费总费用最多的10个省份")
+    @RequestMapping(value = "/getYearTop10ChargeProvince",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(@RequestParam(value = "year") int year){
+        return dataOutlineService.getYearTop10ChargeProvince(year);
     }
 
 }
