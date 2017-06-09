@@ -19,5 +19,88 @@
         SELECT COUNT(PSCode) from pwshfpscount;
     </select>
 
+    <resultMap type="com.jointsky.edps.model.FlowByYear" id="FlowByYearResultMap">
+        <result column="year" property="year" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+    </resultMap>
+
+
+    <select id="getFlowByYear" resultMap="FlowByYearResultMap">
+        select * from flowbyyear where year BETWEEN #{0} and #{1};
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.FlowMonth" id="FlowMonthResultMap">
+        <result column="regioncode" property="regionCode" />
+        <result column="regionname" property="regionName" />
+        <result column="month" property="month" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+        <result column="totalflow" property="totalFlow" />
+    </resultMap>
+
+
+    <select id="getTopTenFlowProvinceByMonth" resultMap="FlowMonthResultMap">
+        SELECT * from flowprovincemonth a WHERE a.regionname is not NULL and month=#{month} ORDER BY totalflow DESC LIMIT 10;
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.FlowYear" id="FlowYearResultMap">
+        <result column="regioncode" property="regionCode" />
+        <result column="regionname" property="regionName" />
+        <result column="year" property="year" />
+        <result column="dust_flow" property="dustFlow" />
+        <result column="so2_flow" property="so2Flow" />
+        <result column="nox_flow" property="noxFlow" />
+        <result column="cod_flow" property="codFlow" />
+        <result column="nh4_flow" property="nh4Flow" />
+        <result column="totalflow" property="totalFlow" />
+    </resultMap>
+
+
+    <select id="getTopTenFlowProvinceByYear" resultMap="FlowYearResultMap">
+        SELECT * from flowprovinceyear a WHERE a.regionname is not NULL and year=#{year} ORDER BY totalflow DESC LIMIT 10;
+    </select>
+
+    <select id="getTopTenFlowCityByMonth" resultMap="FlowMonthResultMap">
+        SELECT * from flowcitymonth a WHERE a.regionname is not NULL and month=#{month} ORDER BY totalflow DESC LIMIT 10;
+    </select>
+
+    <select id="getTopTenFlowCityByYear" resultMap="FlowYearResultMap">
+        SELECT * from flowcityyear a WHERE a.regionname is not NULL and year=#{year} ORDER BY totalflow DESC LIMIT 10;
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.FlowPerGDP" id="FlowPerGDPResultMap">
+        <result column="regioncode" property="regionCode" />
+        <result column="regionname" property="regionName" />
+        <result column="year" property="year" />
+        <result column="quarter" property="quarter" />
+        <result column="gdp" property="gdp" />
+        <result column="dust_flowpergdp" property="dustFlowPerGDP" />
+        <result column="so2_flowpergdp" property="so2FlowPerGDP" />
+        <result column="nox_flowpergdp" property="noxFlowPerGDP" />
+        <result column="cod_flowpergdp" property="codFlowPerGDP" />
+        <result column="nh4_flowpergdp" property="nh4FlowPerGDP" />
+        <result column="totalflowpergdp" property="totalFlowPerGDP" />
+    </resultMap>
+
+    <select id="getTopTenFlowPerGDPByQuarter" resultMap="FlowPerGDPResultMap">
+        SELECT * from flowpergdpbyprovincequarter WHERE year=#{0} and quarter=#{1} AND totalflowpergdp !=0
+        <if test='order == "desc"'>
+        ORDER BY totalflowpergdp DESC
+        </if>
+        <if test='order == "asc"'>
+        ORDER BY totalflowpergdp ASC
+        </if>
+        LIMIT 10;
+    </select>
 
 </mapper>
