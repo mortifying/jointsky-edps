@@ -1,9 +1,6 @@
 package com.jointsky.edps.controller;
 
-import com.jointsky.edps.model.FlowByYear;
-import com.jointsky.edps.model.FlowMonth;
-import com.jointsky.edps.model.FlowPerGDP;
-import com.jointsky.edps.model.FlowYear;
+import com.jointsky.edps.model.*;
 import com.jointsky.edps.service.DataOutlineService;
 import com.jointsky.edps.service.HttpLogsService;
 import io.swagger.annotations.*;
@@ -177,12 +174,73 @@ public class DataOutlineController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2016"),
             @ApiImplicitParam(name = "quarter",value = "季度",required = true,dataType = "int",paramType = "query",defaultValue = "1"),
-            @ApiImplicitParam(name = "order",value = "最多（desc），最少（asc）",required = true,dataType = "String",paramType = "query",defaultValue = "desc")
+            @ApiImplicitParam(name = "order",value = "最多，最少",required = true,dataType = "String",paramType = "query",defaultValue = "最多")
     })
     @RequestMapping(value = "/topTenFlowPerGDPQuarter",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public List<FlowPerGDP> getTopTenFlowPerGDPQuarter(@RequestParam(value = "year") int year, @RequestParam(value = "quarter") int quarter,
                                                        @RequestParam(value = "order") String order){
         return dataOutlineService.topTenFlowPerGDPQuarter(year,quarter,order);
+    }
+
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "int",paramType = "query",defaultValue = "201603")
+    @ApiOperation(value = "省级行政区总排污费(月)",notes = "获取某年月排污收费总费用最多的10个省份")
+    @RequestMapping(value = "/getTop10ChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    public List<ProvinceCharge> getTop10ChargeProvince(@RequestParam(value = "dataMonth") int dataMonth){
+        return dataOutlineService.getTop10ChargeProvince(dataMonth);
+    }
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParam(name = "year",value = "年",required = true,dataType = "int",paramType = "query",defaultValue = "2016")
+    @ApiOperation(value = "省级行政区总排污费(年)",notes = "获取某年排污收费总费用最多的10个省份")
+    @RequestMapping(value = "/getYearTop10ChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(@RequestParam(value = "year") int year){
+        return dataOutlineService.getYearTop10ChargeProvince(year);
+    }
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "int",paramType = "query",defaultValue = "201601"),
+            @ApiImplicitParam(name = "pollutantName",value = "污染物名称",required = true,dataType = "String",paramType = "query",defaultValue = "二氧化硫"),
+    })
+
+    @ApiOperation(value = "省级行政区各污染物排污费(月)",notes = "获取某月排污收费指定污染物费用最多的10个省份")
+    @RequestMapping(value = "/getTop10PollutantChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(@RequestParam(value = "dataMonth") int dataMonth, @RequestParam(value = "pollutantName") String pollutantName){
+        return dataOutlineService.getTop10PollutantChargeProvince(dataMonth,pollutantName);
+    }
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2016"),
+            @ApiImplicitParam(name = "pollutantName",value = "污染物名称",required = true,dataType = "String",paramType = "query",defaultValue = "二氧化硫"),
+    })
+
+    @ApiOperation(value = "省级行政区各污染物排污费(年)",notes = "获取某年排污收费指定污染物费用最多的10个省份")
+    @RequestMapping(value = "/getYearTop10PollutantChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    public List<ProvinceYearPollutantCharge> getYearTop10PollutantChargeProvince(@RequestParam(value = "year") int year, @RequestParam(value = "pollutantName") String pollutantName){
+        return dataOutlineService.getYearTop10PollutantChargeProvince(year,pollutantName);
     }
 
 }

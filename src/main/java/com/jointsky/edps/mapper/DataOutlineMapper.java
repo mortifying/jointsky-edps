@@ -1,9 +1,6 @@
 package com.jointsky.edps.mapper;
 
-import com.jointsky.edps.model.FlowByYear;
-import com.jointsky.edps.model.FlowMonth;
-import com.jointsky.edps.model.FlowPerGDP;
-import com.jointsky.edps.model.FlowYear;
+import com.jointsky.edps.model.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -32,4 +29,12 @@ public interface DataOutlineMapper {
     public List<FlowYear> getTopTenFlowCityByYear(int year);
 
     public List<FlowPerGDP> getTopTenFlowPerGDPByQuarter(int year,int quarter,@Param(value = "order") String order);
+
+    public List<ProvinceCharge> getTop10ChargeProvince(int dataMonth);
+
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(int year);
+
+    public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(int dataMonth, String pollutantName);
+
+    public List<ProvinceYearPollutantCharge> getYearTop10PollutantChargeProvince(int year, String pollutantName);
 }

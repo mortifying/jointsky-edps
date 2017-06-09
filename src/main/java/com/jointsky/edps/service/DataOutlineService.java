@@ -1,10 +1,7 @@
 package com.jointsky.edps.service;
 
 import com.jointsky.edps.mapper.DataOutlineMapper;
-import com.jointsky.edps.model.FlowByYear;
-import com.jointsky.edps.model.FlowMonth;
-import com.jointsky.edps.model.FlowPerGDP;
-import com.jointsky.edps.model.FlowYear;
+import com.jointsky.edps.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,5 +54,19 @@ public class DataOutlineService {
 
     public List<FlowPerGDP> topTenFlowPerGDPQuarter(int year,int quarter,String order){
         return dataOutlineMapper.getTopTenFlowPerGDPByQuarter(year,quarter,order);
+    }
+
+    public List<ProvinceCharge> getTop10ChargeProvince(int dataMonth) {
+        return dataOutlineMapper.getTop10ChargeProvince(dataMonth);
+    }
+    public List<ProvinceYearCharge> getYearTop10ChargeProvince(int year) {
+        return dataOutlineMapper.getYearTop10ChargeProvince(year);
+    }
+    public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(int dataMonth, String pollutantName) {
+        return dataOutlineMapper.getTop10PollutantChargeProvince(dataMonth,pollutantName);
+    }
+
+    public List<ProvinceYearPollutantCharge> getYearTop10PollutantChargeProvince(int year, String pollutantName) {
+        return dataOutlineMapper.getYearTop10PollutantChargeProvince(year,pollutantName);
     }
 }
