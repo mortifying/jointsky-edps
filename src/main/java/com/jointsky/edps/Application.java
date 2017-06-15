@@ -8,7 +8,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -23,7 +25,7 @@ import javax.sql.DataSource;
 @ComponentScan
 @EnableSwagger2
 @MapperScan("com.jointsky.edps.mapper")
-public class Application {
+public class Application extends SpringBootServletInitializer {
     private static Logger logger = Logger.getLogger(Application.class);
 
     @Bean
@@ -50,6 +52,11 @@ public class Application {
         return new DataSourceTransactionManager(dataSource());
     }
 
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Application.class);
+    }
 
     /**
      * Start

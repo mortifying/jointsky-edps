@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/dev/base_common.min.js"></script>
+    <script src="/js/my97datepicker/WdatePicker.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+
+<div class="relativeE">
+    <img src="/themes/bd/images/homePageBG.png" width="100%">
+    <div id="beginExp"></div>
+</div>
+
+<div class="homePage01">
+    <table class="homePage01 marginAuto">
+        <tr>
+            <td>
+                <ul>
+                    <li class="title">我们已服务</li>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        1,986<br>
+                        家注册用户
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li class="title">我们已提供</li>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        121,486<br>
+                        次调用接口
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li class="title">我们已收录</li>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        341,986<br>
+                        条环境数据
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="homePage02">
+    <div class="marginAuto">
+        <ul>
+            <li>
+                <div id="productIntro" class="marginAuto">产品介绍</div>
+            </li>
+            <li>
+                大数据平台数据入口以国控重点污染源在线监控系统和排污系统为主要数据来源,
+            </li>
+            <li>
+                结合第三方数据源（物联网感知数据和互联网公众数据等），构建大数据分析基础构架，搭建大数据分析、计算主体，
+            </li>
+            <li>
+                建立标准数据存储和分析模型库，提供了一系列功能丰富、便捷易用的综合环境数据REST API，
+            </li>
+            <li>
+                为环境应用开发用户提供丰富可靠的天气质量、国家统计、能源数据以及举报投诉等数据服务，
+            </li>
+            <li>
+                此外，大数据平台数据入口还为环境研究人员提供了自定义数据报表服务和自动监控设备、运维企业服务质量、
+            </li>
+            <li>
+                全国重污染区域、重污染行业以及重污染企业等一系列的统计服务。
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="homePage03">
+    <table class="marginAuto">
+        <tr>
+            <td class="down1">
+                <ul>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="title">专业的研发团队</li>
+                    <li class="img_line">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        不断优化产品生产及提升<br>
+                        产品质量提供技术保障
+                    </li>
+                </ul>
+            </td>
+            <td class="down2">
+                <ul>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="title">成熟的技术服务</li>
+                    <li class="img_line">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        提供一系列功能丰富、便捷易用<br>
+                        的综合环境数据REST API、数据<br>
+                        可视化展现和统计排行服务
+                    </li>
+                </ul>
+            </td>
+            <td class="down3">
+                <ul>
+                    <li class="img">
+                        <div></div>
+                    </li>
+                    <li class="title">高效的工作流程</li>
+                    <li class="img_line">
+                        <div></div>
+                    </li>
+                    <li class="word">
+                        消除多余的工作环节、合并<br>
+                        同类活动，使工作流程更为经<br>
+                        济、合理、简便和高效
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="homePage_foot">
+    <div class="L">
+        <ul>
+            <li class="title">
+                <div></div>
+            </li>
+            <li>
+                <span>地址 : 陕西省西安市高新区丈八东路一号汇鑫IBC &nbsp; B座16层</span>
+                <span>电话 : 029-82245879</span>
+            </li>
+            <li>
+                <span>网址 : www.jointsky.com</span>
+                <span>传真 : 029-82245879-8888</span>
+                <span>邮箱 : support@jointsky.com</span>
+            </li>
+        </ul>
+    </div>
+    <div class="R">
+        <div class="QR"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('#rank').click(function(){
+            var center2 = $('#lay2').layout('panel','center');
+            center2.panel('refresh','product/rank.html');
+        })
+
+    });
+
+</script>
+
+</body>
+</html>

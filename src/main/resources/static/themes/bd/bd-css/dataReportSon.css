@@ -1,0 +1,118 @@
+.dataReportSon_BG{
+    //background-image: url("../images/dataReportSon_BG.png");
+    min-height: 1300px;
+    margin: 0;
+    background-attachment: fixed;
+}
+div.division{
+    height: 26px;
+}
+div.dotLine{
+    height: 12px;
+    border: dashed #0643c2;
+    border-width: 0 0 1px 0;
+    margin-bottom: 14px;
+}
+
+.dataReportSon{
+    width: 1445px;
+    //color:white;
+    font-size: 20px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.dataReportSon .title{
+
+    border: solid 1px #0643c2;
+    line-height: 2;
+    box-sizing: border-box;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+
+}
+
+.dataReportSon .title .btn{
+    float: right;
+    width: 28px;
+    height: 41px;
+    background-image: url("../images/menuBtn_off.png");
+}
+.dataReportSon .title .btn.on{
+    background-image: url("../images/menuBtn_on.png");
+}
+
+
+.dataReportSon .body{
+
+    height: 317px;
+    margin: 6px 0;
+}
+.dataReportSon .body .select{
+    position: relative;
+    float: left;
+    border: solid 1px #0643c2;
+    width: 329px;
+    height: 100%;
+}
+.dataReportSon .body .chart{
+    float: right;
+    border: solid 1px #0643c2;
+    width: 1104px;
+    height: 100%;
+}
+
+
+.dataReportSon .body4{
+    height: 552px;
+    margin: 6px 0;
+}
+
+.dataReportSon .body4 .select{
+    position: relative;
+    float: left;
+    border: solid 1px #0643c2;
+    width: 329px;
+    height: 100%;
+}
+.dataReportSon .body4 .chart{
+    float: right;
+    width: 1104px;
+    height: 100%;
+}
+.dataReportSon .body4 .chart div{
+
+    float: left;
+    border: solid 1px #0643c2;
+    width: 544px;
+    height: 270px;
+}
+.dataReportSon .body4 .chart div.c1{
+    margin: 0 5px 5px 0;
+}
+.dataReportSon .body4 .chart div.c2{
+    margin: 0 0 5px 5px;
+}
+.dataReportSon .body4 .chart div.c3{
+    margin: 5px 5px 0 0;
+}
+.dataReportSon .body4 .chart div.c4{
+    margin: 5px 0 0 5px;
+}
+
+
+.dataReportSon .select .submit{
+    text-align: center;
+    line-height: 1.8;
+    width: 80px;
+    background-color: #0241c4;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+

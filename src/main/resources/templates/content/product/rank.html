@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品-排行统计</title>
+    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/dev/base_common.min.js"></script>
+    <script src="/js/my97datepicker/WdatePicker.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+
+
+<table class="product marginAuto" width="100%">
+    <tr>
+        <td>
+            <div class="cell">
+                <div class="title">在线监测设备排行</div>
+                <div>统计在线监测设备各参数进行排行</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="cell">
+                <div class="title">运维企业服务质量排行</div>
+                <div>统计运维企业服务质量进行排行</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="cell">
+                <div class="title">全国重污染区域排行</div>
+                <div>统计全国重污染区域污染程度进行排行</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="cell">
+                <div class="title">重污染行业排行</div>
+                <div>统计重污染行业污染程度进行排行</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="cell">
+                <div class="title">重污染企业排行</div>
+                <div>统计重污染企业污染程度进行排行</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+
+    $('table.product .cell').mouseenter(function(){
+        $(this).addClass('on');
+    });
+    $('table.product .cell').mouseleave(function(){
+        $(this).removeClass('on');
+    });
+
+    //点击每个td下的cell类进入数据展示页面
+    setTimeout(function(){
+        center2 = $('#lay2').layout('panel','center');
+    },0);
+
+
+    $('.product .cell').click(function(){
+        center2.panel('refresh','product/rank/rankSon001.html');
+    });
+    //点击每个td下的cell类进入数据展示页面
+
+</script>
+
+
+</body>
+</html>

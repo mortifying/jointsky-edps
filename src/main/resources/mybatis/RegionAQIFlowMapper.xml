@@ -24,7 +24,7 @@
     </select>
 
     <select id="getAQIFlowByRegionStartEndDate" resultMap="RegionAQIFlowResultMap">
-        select * from regionaqiflow where regionname=#{0} AND date BETWEEN #{1} AND #{2};
+        select * from regionaqiflow where regionname=#{0} AND date BETWEEN #{1} AND #{2} ORDER BY date;
     </select>
 
 </mapper>

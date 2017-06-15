@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品-数据接口</title>
+    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/dev/base_common.min.js"></script>
+    <script src="/js/my97datepicker/WdatePicker.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+
+
+<table class="product marginAuto" width="100%">
+    <tr>
+        <td>
+            <div class="cell">
+                <div class="title">国家统计</div>
+                <div>查询国家统计数据与污染源监控数据</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="cell">
+                <div class="title">环境质量</div>
+                <div>查询环境质量与污染源监控数据</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="cell">
+                <div class="title">举报投诉</div>
+                <div>查询举报投诉与污染源监控数据</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="cell">
+                <div class="title">能源数据</div>
+                <div>查询能源数据与污染源监控数据</div>
+                <div class="relativeE">
+                    <div class="free">免费</div>
+                    <div class="go"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+
+    $('table.product .cell').mouseenter(function(){
+        $(this).addClass('on');
+    });
+    $('table.product .cell').mouseleave(function(){
+        $(this).removeClass('on');
+    });
+
+
+    productReturn = 2;
+    productTab = 'dataInterface';
+    //点击每个td下的cell类进入数据接口页面
+    setTimeout(function(){
+        center2 = $('#lay2').layout('panel','center');
+    },0);
+
+
+    $('.product .cell').click(function(){
+        center2.panel('refresh','http://192.168.3.105:8080/swagger-ui.html#!/%E7%8E%AF%E5%A2%83%E8%B4%A8%E9%87%8F%E5%85%A5%E5%8F%A3/getRegionAQIFlowListInfoUsingPOST');
+    });
+    //点击每个td下的cell类进入数据接口页面
+
+</script>
+
+</body>
+</html>

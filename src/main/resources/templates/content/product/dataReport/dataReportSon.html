@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品-数据报表-子页面</title>
+    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/dev/base_common.min.js"></script>
+    <script src="/js/my97datepicker/WdatePicker.js"></script>
+    <script src="/js/common.js"></script>
+
+</head>
+<body>
+<div class="dataReportSon_BG">
+    <div class="dataReportSon marginAuto">
+        <!--1-->
+        <div class="myBlock">
+
+            <div class="title">
+                全国行业GDP与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--2-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title">
+                火力发电和原油与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div id="" class="chart">
+                    </div>
+                </div>
+
+                <div class="dotLine"></div>
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--3-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title">
+                GDP与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--4-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title thermalPower">
+                环境质量与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                    </div>
+                </div>
+
+                <div class="dotLine"></div>
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div id="thermalPowerLine01" class="chart">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--5-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title">
+                环境资源消费与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body4">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="c4"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--6-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title">
+                能源资源产量与排放量与排放量
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body4">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="c4"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--7-->
+        <div class="division"></div>
+
+        <div class="myBlock">
+
+            <div class="title">
+                举报投诉
+                <div class="btn">
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="body">
+                    <div class="select">
+                        <div class="submit">提交</div>
+                    </div>
+                    <div class="chart">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--end-->
+    </div>
+</div>
+
+<script src="/js/echarts/echarts.min.js"></script>
+
+<script type="text/javascript">
+
+    productReturn = 2;
+    productTab = 'dataReport';
+
+
+    $('.dataReportSon .myBlock .title').each(function(){
+        if($(this).find('.btn').hasClass('on')){
+            $(this).parent().find('.content').show();
+        }else{
+            $(this).parent().find('.content').hide();
+        }
+    });
+
+    $('.dataReportSon .myBlock .title').click(function(){
+        if($(this).find('.btn').hasClass('on')){
+            $(this).find('.btn').removeClass('on');
+            $(this).parent().find('.content').hide();
+        }else{
+            $(this).find('.btn').addClass('on');
+            $(this).parent().find('.content').show();
+        }
+    });
+
+
+    //alert(dataReportTab);
+    $('.dataReportSon .myBlock').eq(parseInt(dataReportTab)).find('.title').trigger('click');
+
+    //点击蓝色的提交按钮触发事件
+    $('.dataReportSon .select .submit').mousedown(function(){
+        $(this).css('backgroundColor','#023191')
+    });
+    $('.dataReportSon .select .submit').mouseup(function(){
+        $(this).css('backgroundColor','#0241c4')
+    });
+
+
+
+
+
+    //echart
+
+    var thermalPowerLine01 = echarts.init(document.getElementById('thermalPowerLine01'));
+    var config = ['aqi','pm25','pm10','co','dustFlow','no2','noxFlow','o3','so2','so2Flow'];
+
+    //*************定义初始化时该line图表要用的series值
+    var seriesCon = [];
+
+    $.each(config,function(i,n){
+        var ser = {};
+        ser.name=config[i];
+        ser.type='line';
+        ser.smooth=true;
+        seriesCon.push(ser);
+    });
+    console.log(seriesCon);
+    //*************定义初始化时该line图表要用的series值
+
+    var option ={
+        legend:{
+            data: config,
+            right:'5%',
+            top: '20%',
+            orient:'vertical'
+        },
+        grid:{
+            left:'5%',
+            right:'15%'
+        },
+        xAxis:{
+            data:[]
+        },
+        yAxis:[
+            {
+                name: '',
+                position: 'left'
+            },
+            {
+                name: '',
+                nameLocation: 'end'
+            }
+        ],
+        series: seriesCon
+    };
+    thermalPowerLine01.setOption(option);
+
+    //异步加载数据
+
+    var regionName = '北京市';
+    var start = '2016-05-01';
+    var end = '2016-05-10';
+
+    $.ajax({
+
+        url:'http://192.168.3.105:8080/regionAQIFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+        /*data:{
+            regionName: regionName,
+            start: start,
+            end: end
+        },*/
+        dataType:'json',
+        type:'post',
+        //url:'http://192.168.3.105:8080/regionAQIFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+        //dataType:'<a href="" class="keylink" title="JSONP" target="_blank">JSONP</a>',
+        //jsonp:'callback',
+        async:false,
+        success:function(myData){
+            //*************定义ajax时该line图表要用的横坐标值
+            var xDate = []; //xDate存储横坐标的数组值
+            $.each(myData,function(i,n){
+                xDate.push(myData[i].date);
+            });
+            //*************定义ajax时该line图表要用的横坐标值
+
+
+            //*************定义ajax时该line图表要用的series值
+
+            var series = []; //series为该line图表ajax时，setOption方法中series属性要给的值
+
+            $.each(config,function(ii,nn){
+
+                if( myData[0][config[ii]] ){ //检查config数组中存的元素是否是myData[0](myData数组的第一个元素)的一个属性
+                    //config[ii]就是一个字符串，如(pm25)
+                    var data = []; //定义一个临时数组data
+
+                    $.each(myData,function(i,n){
+                        data.push( myData[i][config[ii]] );
+                    });
+
+                    var ser={}; //定义series数组当前元素为一个对象，存在临时变量ser中
+                    ser.name = config[ii];
+                    ser.data = data;
+
+                    series.push(ser); //把临时变量ser放入数组series中
+                }
+            });
+
+            console.log(series);
+
+            //*************定义ajax时该line图表要用的series值
+
+            thermalPowerLine01.hideLoading();
+            thermalPowerLine01.setOption({
+                xAxis:{
+                    data:xDate
+                },
+                series: series
+            });
+       }
+    });
+
+
+//    $(window).resize(function(){
+//        thermalPowerLine01.resize();
+//    });
+
+    $('.thermalPower').click(function(){
+        $(window).resize(function(){
+            thermalPowerLine01.resize();
+        });
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

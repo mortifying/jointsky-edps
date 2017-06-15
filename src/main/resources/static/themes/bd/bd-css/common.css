@@ -1,0 +1,109 @@
+/*该工程的公用样式*/
+.marginAuto{
+    margin: 0 auto;
+}
+/*变为相对定位的样式*/
+.relativeE{
+    position: relative;
+}
+/*变为相对定位的样式*/
+
+
+img{
+    width: 100%;
+    margin: 0!important;
+}
+
+tr{
+    text-align: center;
+}
+/*该工程的公用样式*/
+
+/***公用标题栏***/
+
+.bd_titleBar_Word{
+    margin-left: 100px;
+    margin-top: 20px;
+    float: left;
+    width: 591px;
+    height: 45px;
+    background-image: url("../images/titleBarWord.png");
+}
+
+
+.bd_titleBar{
+    height: 95px;
+    min-width: 1300px;
+    background-image: url("../images/titleBarBG.png");
+}
+.bd_titleBar_btnList{
+    float: right;
+}
+.bd_titleBar_btnList td{
+    height: 88px;
+    width: 90px;
+    margin: 0;
+    cursor: pointer;
+}
+.bd_titleBar_btn.on,.bd_titleBar_btn:hover{
+    background-image: url("../images/titleBarBtnShadow.png");
+}
+
+.bd_titleBar_btnList a{
+    font-size: 23px;
+    color: white;
+
+}
+
+
+.login{
+    color: #e2bb1e!important;
+}
+/***公用标题栏***/
+
+/***公用工具栏***/
+
+.bd_toolBar{
+    height:64px;
+    min-width: 1300px;
+    background-color: #c9cbca;
+}
+
+/*公用工具栏左侧按钮组*/
+.bd_toolBar_btnList1{
+    float: left;
+    margin-left: 220px;
+}
+.bd_toolBar_btnList1 div{
+    background-color: white;
+    font-size: 23px;
+    line-height: 1.8;
+    width: 180px;
+    margin: 7px 5px;
+    cursor: pointer;
+}
+.bd_toolBar_btnList1 div.on,.bd_toolBar_btnList1 div:hover{
+    color:white;
+    background-color: #0241c4;
+}
+/*公用工具栏左侧按钮组*/
+
+/*公用工具栏右侧按钮组*/
+.bd_toolBar_btnList1_R{
+    float: right;
+    margin-right: 100px;
+    height: 20px;
+}
+.bd_toolBar_btnList1_R div{
+    background-color: white;
+    font-size: 23px;
+    line-height: 1.8;
+    width: 102px;
+    margin: 7px 5px;
+    cursor: pointer;
+}
+/*公用工具栏右侧按钮组*/
+
+
+/***公用工具栏***/
+

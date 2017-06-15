@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品</title>
+    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/js/dev/base_common.min.js"></script>
+    <script src="/js/my97datepicker/WdatePicker.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+
+<div id="lay2" class="ui-layout" style="height: 100%;">
+    <div class="bd_toolBar" data-options="region:'north'">
+
+        <table class="bd_toolBar_btnList1">
+            <tr>
+                <td>
+                    <div id="dataInterface">数据接口</div>
+                </td>
+                <td>
+                    <div id="dataReport">数据报表</div>
+                </td>
+                <td>
+                    <div id="rankSta">排行统计</div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="bd_toolBar_btnList1_R">
+            <tr>
+                <td>
+                    <div id="product_return">返回</div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div data-options="region:'center'">
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    setTimeout(function(){
+        center2 = $('#lay2').layout('panel','center');
+    },0);
+    setTimeout(function(){
+        productReturn = 1;
+    },30);
+
+
+    $('#dataInterface').click(function(){
+        setTimeout(function(){
+            productReturn = 1;
+        },30);
+        center2.panel('refresh','product/dataInterface.html');
+    });
+    $('#dataReport').click(function(){
+        setTimeout(function(){
+            productReturn = 1;
+        },10);
+        center2.panel('refresh','product/dataReport.html');
+    });
+    $('#rankSta').click(function(){
+        setTimeout(function(){
+            productReturn = 1;
+        },10);
+        center2.panel('refresh','product/rank.html');
+    });
+
+    //点击三个按钮要执行的公共事件
+    $('.bd_toolBar_btnList1 td').click(function(){
+        $(this).find('div').addClass('on');
+        $(this).siblings().find('div').removeClass('on');
+    });
+    //点击三个按钮要执行的公共事件
+
+    //点击"返回按钮"返回当前页的上一级页
+    $('#product_return').click(function(){
+        //alert(productReturn);
+        if(productReturn==1){
+            center1.panel('refresh','productEntry.html');
+        }else if(productReturn==2){
+            center1.panel('refresh','product.html');
+        }
+    });
+    //点击"返回按钮"返回当前页的上一级页
+
+
+    //根据上级页面传来的参数确定刚一进入此页后应该选中那个按钮
+    setTimeout(function(){
+        $('#'+productTab).trigger('click');
+    },0);
+    //根据上级页面传来的参数确定刚一进入此页后应该选中那个按钮
+
+</script>
+
+</body>
+</html>
