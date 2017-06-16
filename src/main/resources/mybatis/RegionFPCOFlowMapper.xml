@@ -20,7 +20,7 @@
     </select>
 
     <select id="getFPOCFlowByRegionStartEndDate" resultMap="RegionFPCOFlowResultMap">
-        select * from firepowercrudeoil where region=#{0} AND month BETWEEN #{1} AND #{2};
+        select * from firepowercrudeoil where region=#{0} AND month BETWEEN #{1} AND #{2} order by month;
     </select>
 
 </mapper>
