@@ -58,7 +58,7 @@
     </select>
 
     <select id="getEnergyYieldFlowStartEndMonth" resultMap="EnergyYieldFlowResultMap">
-        select * from energyyieldflow where month BETWEEN #{0} AND #{1};
+        select * from energyyieldflow where month BETWEEN #{0} AND #{1} ORDER BY month;
     </select>
 
 
@@ -67,7 +67,7 @@
     </select>
 
     <select id="getEnergyConsumeFlowByRegionStartEndYear" resultMap="EnergyConsumeFlowResultMap">
-        select * from energyconsumeflow where region=#{0} AND year BETWEEN #{1} AND #{2};
+        select * from energyconsumeflow where region=#{0} AND year BETWEEN #{1} AND #{2} ORDER BY year;
     </select>
 
 

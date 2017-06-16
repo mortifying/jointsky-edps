@@ -21,6 +21,6 @@
         select * from complaintflow where regionname=#{0} AND month=#{1};
     </select>
 <select id="getComplaintFlowByRegionDateList" resultMap="ComplaintFlowMap">
-    select * from complaintflow where regionname=#{0} AND month BETWEEN #{1} and #{2};
+    select * from complaintflow where regionname=#{0} AND month BETWEEN #{1} and #{2} order by month;
 </select>
 </mapper>

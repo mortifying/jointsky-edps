@@ -60,7 +60,7 @@
     </select>
 
     <select id="getGDPFlowByRegionStartEndQuarter" resultMap="RegionGDPFlowResultMap">
-        select * from regiongdpflow where region=#{0} AND quarter BETWEEN #{1} AND #{2};
+        select * from regiongdpflow where region=#{0} AND quarter BETWEEN #{1} AND #{2} order by quarter;
     </select>
 
     <select id="getIndustryGDPFlowByYear" resultMap="IndustryGDPFlowResultMap">
@@ -68,15 +68,15 @@
     </select>
 
     <select id="getIndustryGDPFlowStartEndYear" resultMap="IndustryGDPFlowResultMap">
-        select * from industrygdpflow where year BETWEEN #{0} AND #{1};
+        select * from industrygdpflow where year BETWEEN #{0} AND #{1} ORDER BY year;
     </select>
     
     <select id="getMainCityGDPFlowByYear" resultMap="MainCityGDPFlowResultMap">
-        SELECT * from maincitygdpflow WHERE regionname=#{0} AND year =#{1}
+        SELECT * from maincitygdpflow WHERE regionname=#{0} AND year =#{1};
     </select>
 
     <select id="getMainCityGDPFlowStartEndYear" resultMap="MainCityGDPFlowResultMap">
-        SELECT * from maincitygdpflow WHERE regionname=#{0} AND year BETWEEN #{1} AND #{2}
+        SELECT * from maincitygdpflow WHERE regionname=#{0} AND year BETWEEN #{1} AND #{2} ORDER by year;
     </select>
 
 </mapper>

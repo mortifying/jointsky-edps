@@ -30,7 +30,7 @@
 
 
     <select id="getFlowByYear" resultMap="FlowByYearResultMap">
-        select * from flowbyyear where year BETWEEN #{0} and #{1};
+        select * from flowbyyear where year BETWEEN #{0} and #{1} order by year;
     </select>
 
 
