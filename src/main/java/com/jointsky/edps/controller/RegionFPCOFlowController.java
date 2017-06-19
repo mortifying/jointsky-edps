@@ -3,6 +3,7 @@ package com.jointsky.edps.controller;
 import com.jointsky.edps.model.*;
 import com.jointsky.edps.service.RegionFPCOFlowService;
 import com.jointsky.edps.service.RegionGDPFlowService;
+import com.jointsky.edps.util.DateTransition;
 import io.swagger.annotations.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ public class RegionFPCOFlowController {
     private RegionFPCOFlowService regionFPCOFlowService;
     @Autowired
     private RegionGDPFlowService regionGDPFlowService;
+    private DateTransition dateTransition = new DateTransition();
 
     @ApiResponses({
             @ApiResponse(code = 400,message = "请求参数没有设置好"),
@@ -37,12 +39,12 @@ public class RegionFPCOFlowController {
     @ApiOperation(value = "火力发电和原油与排放量的信息",notes = "根据省份和月份获取火力发电量和原油生产量与排放量信息结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
-            @ApiImplicitParam(name = "date",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01")
+            @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年05月")
     })
     @RequestMapping(value = "/regionFPCOFlow",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public RegionFPCOFlow getRegionFPCOFlowInfo(@RequestParam(value = "regionName") String regionName, @RequestParam(value = "date") Date date){
+    public RegionFPCOFlow getRegionFPCOFlowInfo(@RequestParam(value = "regionName") String regionName, @RequestParam(value = "month") String month){
 
-        return regionFPCOFlowService.getRegionFPCOFlow(regionName,date);
+        return regionFPCOFlowService.getRegionFPCOFlow(regionName,dateTransition.monthToDate(month));
     }
 
     @ApiResponses({

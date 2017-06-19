@@ -16,7 +16,7 @@ public class RegionFPCOFlow {
     @ApiModelProperty(value = "省级行政区名",required = true)
     private String regionName;
     @ApiModelProperty(value = "月份",required = true)
-    private Date month;
+    private String month;
     @ApiModelProperty(value = "火力发电量（亿千瓦时）",required = true)
     private Double firePower;
     @ApiModelProperty(value = "原油加工量（万吨）",required = true)
@@ -50,11 +50,11 @@ public class RegionFPCOFlow {
     }
 
 
-    public Date getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Date month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface RegionFPCOFlowMapper {
 
-    public RegionFPCOFlow getFPOCFlowByRegionNameDate(String regionName, Date date);
+    public RegionFPCOFlow getFPOCFlowByRegionNameDate(String regionName, String date);
 
     public List<RegionFPCOFlow> getFPOCFlowByRegionStartEndDate(String regionName,Date start,Date end);
 }

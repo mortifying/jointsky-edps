@@ -1,4 +1,4 @@
-package com.jointsky.edps.controller;
+package com.jointsky.edps.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -17,7 +17,7 @@ public class RegionFPCOFlowService {
     @Autowired
     private RegionFPCOFlowMapper regionFPCOFlowMapper;
 
-    public RegionFPCOFlow getRegionFPCOFlow(String regionName , Date date){
+    public RegionFPCOFlow getRegionFPCOFlow(String regionName , String date){
         RegionFPCOFlow regionFPCOFlow = regionFPCOFlowMapper.getFPOCFlowByRegionNameDate(regionName,date);
         return regionFPCOFlow;
     }
