@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>产品-数据报表-子页面</title>
-    <link href="/themes/bd/main.css" rel="stylesheet" type="text/css"/>
+    <link href="themes/bd/main.css" rel="stylesheet" type="text/css"/>
 
-    <script src="/js/dev/base_common.min.js"></script>
-    <script src="/js/my97datepicker/WdatePicker.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="js/dev/base_common.min.js"></script>
+    <script src="js/my97datepicker/WdatePicker.js"></script>
+    <script src="js/common.js"></script>
 
-    <script src="/js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
 
 </head>
 <body>
@@ -94,7 +94,7 @@
 </div>
 
 
-<script type="text/javascript" src="/js/aOwnCode/echartFunction.js"></script>
+<script src="js/aOwnCode/echartFunction.js"></script>
 <script type="text/javascript">
 
 
@@ -149,7 +149,7 @@
         var start= '2010';
         var end= '2015';
         echart2yLine({
-            ajaxUrl:'http://192.168.3.105:8080/industryGDPFlowList?start='+start+'&end='+end,
+            ajaxUrl:'industryGDPFlowList?start='+start+'&end='+end,
             //ajaxUrl:'/json/industryGDPLine01.json',
             rootDivId:'industryGDPLine01',
             xValName:'year',
@@ -178,7 +178,7 @@
         var start='2010';
         var end='2015';
         echart2yLine({
-            ajaxUrl:'http://192.168.3.105:8080/mainCityGDPFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+            ajaxUrl:'mainCityGDPFlowList?regionName='+regionName+'&start='+start+'&end='+end,
             //ajaxUrl:'/json/cityGDPLine01.json',
             rootDivId:'cityGDPLine01',
             xValName:'year',
@@ -205,7 +205,7 @@
         var start='2016-05-01';
         var end='2016-05-10';
         echart2yLine({
-            ajaxUrl:'http://192.168.3.105:8080/regionAQIFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+            ajaxUrl:'regionAQIFlowList?regionName='+regionName+'&start='+start+'&end='+end,
             //ajaxUrl:'/json/thermalPowerLine01.json',
             rootDivId:'thermalPowerLine01',
             xValName:'date',
