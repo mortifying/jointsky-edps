@@ -3,6 +3,7 @@ package com.jointsky.edps.controller;
 import com.jointsky.edps.model.EnergyConsumeFlow;
 import com.jointsky.edps.model.EnergyYieldFlow;
 import com.jointsky.edps.service.EnergyYieldFlowService;
+import com.jointsky.edps.util.DateTransition;
 import io.swagger.annotations.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,8 @@ public class EnergyYieldFlowController {
     @Autowired
     private EnergyYieldFlowService energyYieldFlowService;
 
+    private DateTransition dateTransition = new DateTransition();
+
     @ApiResponses({
             @ApiResponse(code = 400,message = "请求参数没有设置好"),
             @ApiResponse(code=401,message="未授权访问"),
@@ -35,11 +38,11 @@ public class EnergyYieldFlowController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiOperation(value = "全国各种能源资源产量与排放量的信息",notes = "根据月份获取全国各种能源产量与排放量信息结果入口")
-    @ApiImplicitParam(name = "date",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01")
+    @ApiImplicitParam(name = "date",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年05月")
     @RequestMapping(value = "/energyYieldFlow",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public EnergyYieldFlow getEnergyYieldFlowInfo(@RequestParam(value = "date") Date date){
+    public EnergyYieldFlow getEnergyYieldFlowInfo(@RequestParam(value = "date") String date){
 
-        return energyYieldFlowService.getEnergyYieldFlow(date);
+        return energyYieldFlowService.getEnergyYieldFlow(dateTransition.monthToDate(date));
     }
 
 
@@ -51,13 +54,13 @@ public class EnergyYieldFlowController {
     })
     @ApiOperation(value = "全国各种能源资源产量与排放量的信息集",notes = "根据月份获取全国各种能源产量与排放量信息集结果入口")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "start",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-01-01"),
-            @ApiImplicitParam(name = "end",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01")
+            @ApiImplicitParam(name = "start",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年01月"),
+            @ApiImplicitParam(name = "end",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年05月")
     })
     @RequestMapping(value = "/energyYieldFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<EnergyYieldFlow> getEnergyYieldFlowListInfo(@RequestParam(value = "start") Date start,
-                                                            @RequestParam(value = "end") Date end){
-        return energyYieldFlowService.getEnergyYieldFlowList(start,end);
+    public List<EnergyYieldFlow> getEnergyYieldFlowListInfo(@RequestParam(value = "start") String start,
+                                                            @RequestParam(value = "end") String end){
+        return energyYieldFlowService.getEnergyYieldFlowList(dateTransition.monthToDate(start),dateTransition.monthToDate(end));
     }
 
 

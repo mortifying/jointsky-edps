@@ -12,9 +12,9 @@ import java.util.List;
  */
 public interface RegionGDPFlowMapper {
 
-    public RegionGDPFlow getGDPFlowByRegionQuarter(String regionName, Date date);
+    public RegionGDPFlow getGDPFlowByRegionQuarter(String regionName, String date);
 
-    public List<RegionGDPFlow> getGDPFlowByRegionStartEndQuarter(String regionName,Date start,Date end);
+    public List<RegionGDPFlow> getGDPFlowByRegionStartEndQuarter(String regionName,String start,String end);
 
     public IndustryGDPFlow getIndustryGDPFlowByYear(int year);
 

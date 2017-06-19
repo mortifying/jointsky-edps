@@ -14,7 +14,7 @@ public class RegionGDPFlow {
     @ApiModelProperty(value = "省级行政区",required = true)
     private String region;
     @ApiModelProperty(value = "季度",required = true)
-    private Date quarter;
+    private String quarter;
     @ApiModelProperty(value = "GDP（亿元）",required = true)
     private Double gdp;
     @ApiModelProperty(value = "农业总产值（亿元）",required = true)
@@ -52,11 +52,12 @@ public class RegionGDPFlow {
         this.region = region;
     }
 
-    public Date getQuarter() {
+
+    public String getQuarter() {
         return quarter;
     }
 
-    public void setQuarter(Date quarter) {
+    public void setQuarter(String quarter) {
         this.quarter = quarter;
     }
 

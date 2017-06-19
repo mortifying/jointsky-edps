@@ -13,7 +13,7 @@ public class ComplaintFlow {
     @ApiModelProperty(value = "省份名称",required = true,position = 1)
     private String regionName;
     @ApiModelProperty(value = "日期(年月)",required = true)
-    private Date month;
+    private String month;
     @ApiModelProperty(value = "被举报/投诉次数",required = true)
     private int count;
     @ApiModelProperty(value = "烟尘平均浓度(毫克/立方米)",required = true)
@@ -45,11 +45,11 @@ public class ComplaintFlow {
         this.regionName = regionName;
     }
 
-    public Date getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Date month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 

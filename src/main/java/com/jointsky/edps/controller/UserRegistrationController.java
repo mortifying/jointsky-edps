@@ -1,4 +1,4 @@
-package com.jointsky.edps.web;
+package com.jointsky.edps.controller;
 
 import com.jointsky.edps.service.UserRegistrationService;
 import io.swagger.annotations.*;

@@ -12,5 +12,5 @@ public interface RegionFPCOFlowMapper {
 
     public RegionFPCOFlow getFPOCFlowByRegionNameDate(String regionName, String date);
 
-    public List<RegionFPCOFlow> getFPOCFlowByRegionStartEndDate(String regionName,Date start,Date end);
+    public List<RegionFPCOFlow> getFPOCFlowByRegionStartEndDate(String regionName,String start,String end);
 }

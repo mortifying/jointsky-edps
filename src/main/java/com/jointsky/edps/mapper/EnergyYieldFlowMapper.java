@@ -12,9 +12,9 @@ import java.util.List;
 public interface EnergyYieldFlowMapper {
 
 
-    public EnergyYieldFlow getEnergyYieldFlowByMonth(Date month);
+    public EnergyYieldFlow getEnergyYieldFlowByMonth(String month);
 
-    public List<EnergyYieldFlow> getEnergyYieldFlowStartEndMonth(Date start,Date end);
+    public List<EnergyYieldFlow> getEnergyYieldFlowStartEndMonth(String start,String end);
 
     public EnergyConsumeFlow getEnergyConsumeFlowByRegionYear(String region,int year);
 

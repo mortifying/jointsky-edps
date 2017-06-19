@@ -4,6 +4,7 @@ import com.jointsky.edps.model.ComplaintFlow;
 import com.jointsky.edps.model.RegionAQIFlow;
 import com.jointsky.edps.service.ComplaintFlowService;
 import com.jointsky.edps.service.RegionAQIFlowService;
+import com.jointsky.edps.util.DateTransition;
 import io.swagger.annotations.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class ComplaintFlowController {
     @Autowired
     private ComplaintFlowService complaintFlowService;
 
+    private DateTransition dateTransition = new DateTransition();
+
     @ApiResponses({
             @ApiResponse(code = 400,message = "请求参数没有设置好"),
             @ApiResponse(code=401,message="未授权访问"),
@@ -39,12 +42,12 @@ public class ComplaintFlowController {
     @ApiOperation(value = "按省份环境举报投诉、排放总量、平均排放浓度信息",notes = "根据省份和日期获取环境举报投诉和污染物平均浓度、排放总量信息结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份名",required = true,dataType = "String",paramType = "query",defaultValue = "上海市"),
-            @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2014-02-01")
+            @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2014年02月")
     })
     @RequestMapping(value = "/ComplaintFlow",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public ComplaintFlow getComplaintFlowInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "month") Date month){
+    public ComplaintFlow getComplaintFlowInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "month") String month){
 
-        return complaintFlowService.getComplaintFlow(regionName, month);
+        return complaintFlowService.getComplaintFlow(regionName, dateTransition.monthToDate(month));
     }
 
     @ApiResponses({
@@ -57,13 +60,13 @@ public class ComplaintFlowController {
     @ApiOperation(value = "按省份及时间区间环境举报投诉、排放总量、平均排放浓度信息",notes = "根据省份和日期获取环境举报投诉和污染物平均浓度、排放总量信息结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份名",required = true,dataType = "String",paramType = "query",defaultValue = "上海市"),
-            @ApiImplicitParam(name = "startMonth",value = "起始月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2014-02-01"),
-            @ApiImplicitParam(name = "endMonth",value = "结束月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2014-05-01")
+            @ApiImplicitParam(name = "startMonth",value = "起始月份",required = true,dataType = "String",paramType = "query",defaultValue = "2014年02月"),
+            @ApiImplicitParam(name = "endMonth",value = "结束月份",required = true,dataType = "String",paramType = "query",defaultValue = "2014年05月")
     })
     @RequestMapping(value = "/ComplaintFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<ComplaintFlow> getComplaintFlowListInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "startMonth") Date startMonth, @RequestParam(value = "endMonth") Date endMonth){
+    public List<ComplaintFlow> getComplaintFlowListInfo(@RequestParam(value = "regionName")  String regionName, @RequestParam(value = "startMonth") String startMonth, @RequestParam(value = "endMonth") String endMonth){
 
-        return complaintFlowService.getComplaintFlowList(regionName, startMonth,endMonth);
+        return complaintFlowService.getComplaintFlowList(regionName, dateTransition.monthToDate(startMonth),dateTransition.monthToDate(endMonth));
     }
 }
 

@@ -56,13 +56,13 @@ public class RegionFPCOFlowController {
     @ApiOperation(value = "火力发电和原油与排放量的信息集",notes = "根据省份和月份获取火力发电量和原油生产量与排放量信息集结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
-            @ApiImplicitParam(name = "start",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-05-01"),
-            @ApiImplicitParam(name = "end",value = "月份",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-07-01")
+            @ApiImplicitParam(name = "start",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年05月"),
+            @ApiImplicitParam(name = "end",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年07月")
     })
     @RequestMapping(value = "/regionFPCOFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<RegionFPCOFlow> getRegionFPCOFlowListInfo(@RequestParam(value = "regionName") String regionName, @RequestParam(value = "start") Date start,
-                                                          @RequestParam(value = "end") Date end){
-        return regionFPCOFlowService.getRegionFPCOFlowList(regionName,start,end);
+    public List<RegionFPCOFlow> getRegionFPCOFlowListInfo(@RequestParam(value = "regionName") String regionName, @RequestParam(value = "start") String start,
+                                                          @RequestParam(value = "end") String end){
+        return regionFPCOFlowService.getRegionFPCOFlowList(regionName,dateTransition.monthToDate(start),dateTransition.monthToDate(end));
     }
 
 
@@ -75,11 +75,11 @@ public class RegionFPCOFlowController {
     @ApiOperation(value = "GDP数据与排放量的信息",notes = "根据省份和月份获取GDP数据与排放量信息结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
-            @ApiImplicitParam(name = "date",value = "季度（最后一天）",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-03-31"),
+            @ApiImplicitParam(name = "date",value = "季度",required = true,dataType = "String",paramType = "query",defaultValue = "2016年第一季度"),
     })
     @RequestMapping(value = "/regionGDPFlow",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public RegionGDPFlow getRegionGDPFlowInfo(@RequestParam(value = "regionName") String region,@RequestParam(value = "date") Date date ){
-        return regionGDPFlowService.getRegionGDPFlow(region,date);
+    public RegionGDPFlow getRegionGDPFlowInfo(@RequestParam(value = "regionName") String region,@RequestParam(value = "date") String date ){
+        return regionGDPFlowService.getRegionGDPFlow(region,dateTransition.quarterToDate(date));
     }
 
 
@@ -92,13 +92,13 @@ public class RegionFPCOFlowController {
     @ApiOperation(value = "GDP数据与排放量的信息集",notes = "根据省份和月份获取GDP数据与排放量信息集结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "regionName",value = "省份",required = true,dataType = "String",paramType = "query",defaultValue = "北京市"),
-            @ApiImplicitParam(name = "start",value = "季度（最后一天）",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-03-31"),
-            @ApiImplicitParam(name = "end",value = "季度（最后一天）",required = true,dataType = "Date",paramType = "query",defaultValue = "2016-09-30")
+            @ApiImplicitParam(name = "start",value = "季度",required = true,dataType = "String",paramType = "query",defaultValue = "2016年第一季度"),
+            @ApiImplicitParam(name = "end",value = "季度",required = true,dataType = "String",paramType = "query",defaultValue = "2016年第三季度")
     })
     @RequestMapping(value = "/regionGDPFlowList",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<RegionGDPFlow> getRegionGDPFlowListInfo(@RequestParam(value = "regionName") String region, @RequestParam(value = "start") Date start,
-                                                        @RequestParam(value = "end") Date end){
-        return regionGDPFlowService.getRegionGDPFlowList(region,start,end);
+    public List<RegionGDPFlow> getRegionGDPFlowListInfo(@RequestParam(value = "regionName") String region, @RequestParam(value = "start") String start,
+                                                        @RequestParam(value = "end") String end){
+        return regionGDPFlowService.getRegionGDPFlowList(region,dateTransition.quarterToDate(start),dateTransition.quarterToDate(end));
     }
 
     @ApiResponses({

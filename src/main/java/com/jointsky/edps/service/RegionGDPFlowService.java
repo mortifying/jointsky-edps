@@ -19,11 +19,11 @@ public class RegionGDPFlowService {
     @Autowired
     private RegionGDPFlowMapper regionGDPFlowMapper;
 
-    public RegionGDPFlow getRegionGDPFlow(String region, Date date){
+    public RegionGDPFlow getRegionGDPFlow(String region, String date){
         return regionGDPFlowMapper.getGDPFlowByRegionQuarter(region,date);
     }
 
-    public List<RegionGDPFlow> getRegionGDPFlowList(String region,Date start,Date end){
+    public List<RegionGDPFlow> getRegionGDPFlowList(String region,String start,String end){
         return regionGDPFlowMapper.getGDPFlowByRegionStartEndQuarter(region,start,end);
     }
 

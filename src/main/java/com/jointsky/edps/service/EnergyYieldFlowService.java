@@ -20,11 +20,11 @@ public class EnergyYieldFlowService {
     private EnergyYieldFlowMapper energyYieldFlowMapper;
 
 
-    public EnergyYieldFlow getEnergyYieldFlow(Date month){
+    public EnergyYieldFlow getEnergyYieldFlow(String month){
         return energyYieldFlowMapper.getEnergyYieldFlowByMonth(month);
     }
 
-    public List<EnergyYieldFlow> getEnergyYieldFlowList(Date start,Date end){
+    public List<EnergyYieldFlow> getEnergyYieldFlowList(String start,String end){
         return energyYieldFlowMapper.getEnergyYieldFlowStartEndMonth(start,end);
     }
 

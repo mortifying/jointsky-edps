@@ -22,7 +22,7 @@ public class RegionFPCOFlowService {
         return regionFPCOFlow;
     }
 
-    public List<RegionFPCOFlow> getRegionFPCOFlowList(String regionName,Date start,Date end){
+    public List<RegionFPCOFlow> getRegionFPCOFlowList(String regionName,String start,String end){
         return regionFPCOFlowMapper.getFPOCFlowByRegionStartEndDate(regionName,start,end);
     }
 }

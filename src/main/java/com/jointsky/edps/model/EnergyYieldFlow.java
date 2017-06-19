@@ -10,7 +10,7 @@ import java.sql.Date;
 public class EnergyYieldFlow {
 
     @ApiModelProperty(value = "  日期(年月)",required = true)
-    private Date date;
+    private String date;
     @ApiModelProperty(value = "  原煤产量（万吨）",required = true)
     private Double ymchl;
     @ApiModelProperty(value = "  原油产量（万吨）",required = true)
@@ -65,11 +65,11 @@ public class EnergyYieldFlow {
     private Double nh4Flow;
 
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

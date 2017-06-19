@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface ComplaintFlowMapper {
     //通过地区名称、月份获取地区投诉及排放量、污染物浓度信息
-    public ComplaintFlow getComplaintFlowByRegionDate(String regionName, Date month);
+    public ComplaintFlow getComplaintFlowByRegionDate(String regionName, String month);
     //通过地区名称，月份区间获取地区投诉及排放量、污染物浓度信息
-    public List<ComplaintFlow> getComplaintFlowByRegionDateList(String regionName, Date startMonth, Date endMonth);
+    public List<ComplaintFlow> getComplaintFlowByRegionDateList(String regionName, String startMonth, String endMonth);
 }

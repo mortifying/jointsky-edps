@@ -16,10 +16,10 @@ public class ComplaintFlowService {
     @Autowired
     private ComplaintFlowMapper complaintFlowMapper;
 
-    public ComplaintFlow getComplaintFlow (String regionName, Date month){
+    public ComplaintFlow getComplaintFlow (String regionName, String month){
         return complaintFlowMapper.getComplaintFlowByRegionDate(regionName,month);
     }
-    public List<ComplaintFlow> getComplaintFlowList (String regionName, Date startMonth, Date endMonth) {
+    public List<ComplaintFlow> getComplaintFlowList (String regionName, String startMonth, String endMonth) {
         return complaintFlowMapper.getComplaintFlowByRegionDateList(regionName,startMonth,endMonth);
     }
 }
