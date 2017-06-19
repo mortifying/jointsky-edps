@@ -59,10 +59,10 @@
         select t.RegionCode,
             t.region,
             (
-                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN '第一季度'
-                WHEN LOCATE('06-30',t.quarter) > 0 THEN '第二季度'
-                WHEN LOCATE('09-30',t.quarter) > 0 THEN '第三季度'
-                WHEN LOCATE('12-31',t.quarter) > 0 THEN '第四季度' END
+                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第一季度')
+                WHEN LOCATE('06-30',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第二季度')
+                WHEN LOCATE('09-30',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第三季度')
+                WHEN LOCATE('12-31',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第四季度') END
             ) quarter,
             t.gdp,
             t.agri,
@@ -81,10 +81,10 @@
         select
             t.region,
             (
-                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN '第一季度'
-                WHEN LOCATE('06-30',t.quarter) > 0 THEN '第二季度'
-                WHEN LOCATE('09-30',t.quarter) > 0 THEN '第三季度'
-                WHEN LOCATE('12-31',t.quarter) > 0 THEN '第四季度' END
+                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第一季度')
+                WHEN LOCATE('06-30',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第二季度')
+                WHEN LOCATE('09-30',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第三季度')
+                WHEN LOCATE('12-31',t.quarter) > 0 THEN date_format(t.quarter,'%Y年第四季度') END
             ) quarter,
             t.gdp,
             t.agri,
@@ -96,7 +96,7 @@
             t.nox_flow,
             t.cod_flow,
             t.nh4_flow
-        from regiongdpflow t where region=#{0} AND quarter BETWEEN #{1} AND #{2} order by quarter;
+        from regiongdpflow t where region=#{0} AND quarter BETWEEN #{1} AND #{2} order by t.quarter;
     </select>
 
     <select id="getIndustryGDPFlowByYear" resultMap="IndustryGDPFlowResultMap">
