@@ -56,11 +56,47 @@
 
 
     <select id="getGDPFlowByRegionQuarter" resultMap="RegionGDPFlowResultMap">
-        select * from regiongdpflow where region=#{0} AND quarter=#{1};
+        select t.RegionCode,
+            t.region,
+            (
+                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN '第一季度'
+                WHEN LOCATE('06-30',t.quarter) > 0 THEN '第二季度'
+                WHEN LOCATE('09-30',t.quarter) > 0 THEN '第三季度'
+                WHEN LOCATE('12-31',t.quarter) > 0 THEN '第四季度' END
+            ) quarter,
+            t.gdp,
+            t.agri,
+            t.forestry,
+            t.animal,
+            t.fishery,
+            t.dust_flow,
+            t.so2_flow,
+            t.nox_flow,
+            t.cod_flow,
+            t.nh4_flow
+        from regiongdpflow t where region=#{0} AND quarter=#{1};
     </select>
 
     <select id="getGDPFlowByRegionStartEndQuarter" resultMap="RegionGDPFlowResultMap">
-        select * from regiongdpflow where region=#{0} AND quarter BETWEEN #{1} AND #{2} order by quarter;
+        select
+            t.region,
+            (
+                CASE WHEN LOCATE('03-31',t.quarter) > 0 THEN '第一季度'
+                WHEN LOCATE('06-30',t.quarter) > 0 THEN '第二季度'
+                WHEN LOCATE('09-30',t.quarter) > 0 THEN '第三季度'
+                WHEN LOCATE('12-31',t.quarter) > 0 THEN '第四季度' END
+            ) quarter,
+            t.gdp,
+            t.agri,
+            t.forestry,
+            t.animal,
+            t.fishery,
+            t.dust_flow,
+            t.so2_flow,
+            t.nox_flow,
+            t.cod_flow,
+            t.nh4_flow
+        from regiongdpflow t where region=#{0} AND quarter BETWEEN #{1} AND #{2} order by quarter;
     </select>
 
     <select id="getIndustryGDPFlowByYear" resultMap="IndustryGDPFlowResultMap">

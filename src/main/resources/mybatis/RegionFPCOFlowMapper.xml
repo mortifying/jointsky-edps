@@ -16,11 +16,33 @@
 
 
     <select id="getFPOCFlowByRegionNameDate" resultMap="RegionFPCOFlowResultMap">
-        select * from firepowercrudeoil where region=#{0} AND month=#{1};
+        select
+          t.RegionCode,
+          t.region,
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.firepower,
+          t.crudeoil,
+          t.dust_flow,
+          t.so2_flow,
+          t.nox_flow,
+          t.cod_flow,
+          t.nh4_flow
+        from firepowercrudeoil t where region=#{0} AND month=#{1};
     </select>
 
     <select id="getFPOCFlowByRegionStartEndDate" resultMap="RegionFPCOFlowResultMap">
-        select * from firepowercrudeoil where region=#{0} AND month BETWEEN #{1} AND #{2} order by month;
+        select
+          t.RegionCode,
+          t.region,
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.firepower,
+          t.crudeoil,
+          t.dust_flow,
+          t.so2_flow,
+          t.nox_flow,
+          t.cod_flow,
+          t.nh4_flow
+        from firepowercrudeoil t where region=#{0} AND month BETWEEN #{1} AND #{2} order by month;
     </select>
 
 </mapper>

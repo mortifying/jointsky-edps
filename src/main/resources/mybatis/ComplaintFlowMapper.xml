@@ -2,25 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jointsky.edps.mapper.ComplaintFlowMapper">
     <resultMap type="com.jointsky.edps.model.ComplaintFlow" id="ComplaintFlowMap">
-        <result column="regionName" property="regionName" />
-        <result column="month" property="month" />
-        <result column="count" property="count" />
-        <result column="dust_Strength" property="dustStrength" />
-        <result column="dust_flow" property="dustFlow" />
-        <result column="so2_Strength" property="so2Strength" />
-        <result column="so2_flow" property="so2Flow" />
-        <result column="nox_Strength" property="noxStrength" />
-        <result column="nox_flow" property="noxFlow" />
-        <result column="cod_Strength" property="codStrength" />
-        <result column="cod_flow" property="codFlow" />
-        <result column="nh4_Strength" property="nh4Strength" />
-        <result column="nh4_flow" property="nh4Flow" />
+        <result column="regionName" property="regionName"/>
+        <result column="month" property="month"/>
+        <result column="count" property="count"/>
+        <result column="dust_Strength" property="dustStrength"/>
+        <result column="dust_flow" property="dustFlow"/>
+        <result column="so2_Strength" property="so2Strength"/>
+        <result column="so2_flow" property="so2Flow"/>
+        <result column="nox_Strength" property="noxStrength"/>
+        <result column="nox_flow" property="noxFlow"/>
+        <result column="cod_Strength" property="codStrength"/>
+        <result column="cod_flow" property="codFlow"/>
+        <result column="nh4_Strength" property="nh4Strength"/>
+        <result column="nh4_flow" property="nh4Flow"/>
     </resultMap>
 
     <select id="getComplaintFlowByRegionDate" resultMap="ComplaintFlowMap">
-        select * from complaintflow where regionname=#{0} AND month=#{1};
+        select
+          t.regionName,
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.count,
+          t.dust_Strength,
+          t.dust_flow,
+          t.so2_Strength,
+          t.so2_flow,
+          t.nox_Strength,
+          t.nox_flow,
+          t.cod_Strength,
+          t.cod_flow,
+          t.nh4_Strength,
+          t.nh4_flow
+        from complaintflow t
+        where regionname=#{0} AND month=#{1};
     </select>
-<select id="getComplaintFlowByRegionDateList" resultMap="ComplaintFlowMap">
-    select * from complaintflow where regionname=#{0} AND month BETWEEN #{1} and #{2} order by month;
-</select>
+    <select id="getComplaintFlowByRegionDateList" resultMap="ComplaintFlowMap">
+        select
+          t.regionName,
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.count,
+          t.dust_Strength,
+          t.dust_flow,
+          t.so2_Strength,
+          t.so2_flow,
+          t.nox_Strength,
+          t.nox_flow,
+          t.cod_Strength,
+          t.cod_flow,
+          t.nh4_Strength,
+          t.nh4_flow
+        from complaintflow t
+        where regionname=#{0} AND month
+        BETWEEN #{1} and #{2} order by month;
+    </select>
 </mapper>

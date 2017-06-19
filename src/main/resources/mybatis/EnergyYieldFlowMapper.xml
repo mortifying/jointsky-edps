@@ -54,11 +54,71 @@
     </resultMap>
 
     <select id="getEnergyYieldFlowByMonth" resultMap="EnergyYieldFlowResultMap">
-        select * from energyyieldflow where month=#{month};
+        SELECT
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.ymchl,
+          t.yychl,
+          t.trqchl,
+          t.mcqchl,
+          t.yhtrqchl,
+          t.yyjglchl,
+          t.qychl,
+          t.mychl,
+          t.chychl,
+          t.rlychl,
+          t.shnychl,
+          t.yhshyqchl,
+          t.shjychl,
+          t.shylqchl,
+          t.mtchl,
+          t.hlfdchl,
+          t.shlfdchl,
+          t.hnfdchl,
+          t.flfdchl,
+          t.tynfdchl,
+          t.mqchl,
+          t.dust_flow,
+          t.so2_flow,
+          t.nox_flow,
+          t.cod_flow,
+          t.nh4_flow
+        FROM
+          energyyieldflow t
+        WHERE month=#{month};
     </select>
 
     <select id="getEnergyYieldFlowStartEndMonth" resultMap="EnergyYieldFlowResultMap">
-        select * from energyyieldflow where month BETWEEN #{0} AND #{1} ORDER BY month;
+       SELECT
+          DATE_FORMAT(t.month, '%Y年%m月') month,
+          t.ymchl,
+          t.yychl,
+          t.trqchl,
+          t.mcqchl,
+          t.yhtrqchl,
+          t.yyjglchl,
+          t.qychl,
+          t.mychl,
+          t.chychl,
+          t.rlychl,
+          t.shnychl,
+          t.yhshyqchl,
+          t.shjychl,
+          t.shylqchl,
+          t.mtchl,
+          t.hlfdchl,
+          t.shlfdchl,
+          t.hnfdchl,
+          t.flfdchl,
+          t.tynfdchl,
+          t.mqchl,
+          t.dust_flow,
+          t.so2_flow,
+          t.nox_flow,
+          t.cod_flow,
+          t.nh4_flow
+        FROM
+          energyyieldflow t
+        where month BETWEEN #{0} AND #{1} ORDER BY month;
     </select>
 
 
