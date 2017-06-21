@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jointsky.edps.mapper.RankStatisticsMapper">
+    <resultMap type="com.jointsky.edps.model.MonitorRank" id="MonitorRankResultMap">
+        <result column="manufacture" property="manufacture" />
+        <result column="year" property="year" />
+        <result column="quarter" property="quarter" />
+        <result column="totalscore" property="totalScore" />
+    </resultMap>
+
+    <select id="getMonitorRank" resultMap="MonitorRankResultMap">
+        SELECT manufacture,year,quarter,totalscore FROM monitorrank WHERE year=#{0} and quarter=#{1} ORDER BY totalScore DESC;
+    </select>
+
+    <resultMap type="com.jointsky.edps.model.RegionFlowRank" id="RegionFlowRankResultMap">
+        <result column="regioncode" property="regionCode" />
+        <result column="regionname" property="regionName" />
+        <result column="month" property="month" />
+        <result column="totalflow" property="totalFlow" />
+    </resultMap>
+
+    <select id="getRegionFlowRank" resultMap="RegionFlowRankResultMap">
+        SELECT regioncode,regionname,month,totalflow from flowprovincemonth WHERE month=#{month} ORDER BY totalflow DESC LIMIT 10;
+    </select>
+
+    <resultMap type="com.jointsky.edps.model.PSFlowRank" id="PSFlowRankResultMap">
+        <result column="pscode" property="psCode" />
+        <result column="psname" property="psName" />
+        <result column="month" property="month" />
+        <result column="sumflow" property="sumFlow" />
+    </resultMap>
+
+    <select id="getPSFlowRank" resultMap="PSFlowRankResultMap">
+        SELECT pscode,psname,month,sumflow from psflowsum WHERE month=#{month} ORDER BY SumFlow DESC limit 30;
+    </select>
+
+
+</mapper>
