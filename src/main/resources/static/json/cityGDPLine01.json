@@ -7,11 +7,11 @@
     "dycygdp": 124.36,
     "decygdp": 3388.38,
     "dscygdp": 10600.84,
-    "dustFlow": 0.001,
-    "so2Flow": 0.001,
-    "noxFlow": 0.001,
-    "codFlow": 0.001,
-    "nh4Flow": 0.001
+    "dustFlow": 0,
+    "so2Flow": 0,
+    "noxFlow": 0,
+    "codFlow": 0,
+    "nh4Flow": 0
   },
   {
     "regionCode": "110100000",
@@ -21,11 +21,11 @@
     "dycygdp": 136.27,
     "decygdp": 3752.48,
     "dscygdp": 12363.18,
-    "dustFlow": 43038,
-    "so2Flow": 43038,
-    "noxFlow": 43038,
-    "codFlow": 43038,
-    "nh4Flow": 43038
+    "dustFlow": 0,
+    "so2Flow": 0,
+    "noxFlow": 0,
+    "codFlow": 0,
+    "nh4Flow": 0
   },
   {
     "regionCode": "110100000",
@@ -35,11 +35,11 @@
     "dycygdp": 150.2,
     "decygdp": 4059.27,
     "dscygdp": 13669.93,
-    "dustFlow": 43038,
-    "so2Flow": 43038,
-    "noxFlow": 43038,
-    "codFlow": 43038,
-    "nh4Flow": 43038
+    "dustFlow": 0,
+    "so2Flow": 0,
+    "noxFlow": 0,
+    "codFlow": 0,
+    "nh4Flow": 0
   },
   {
     "regionCode": "110100000",

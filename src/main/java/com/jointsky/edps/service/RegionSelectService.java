@@ -29,4 +29,8 @@ public class RegionSelectService {
 
         return regionSelectMapper.getRegionSelect(code);
     }
+
+    public List<String> getCityList(){
+       return regionSelectMapper.getCity();
+    }
 }

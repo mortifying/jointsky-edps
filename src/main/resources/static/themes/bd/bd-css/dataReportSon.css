@@ -115,4 +115,12 @@ div.dotLine{
     color: white;
 }
 
+.dataReportSon .select li{
+    padding: 5px;
+}
+.dataReportSon .select li input{
+    width: 200px;
+    height:32px;
+}
+
 

@@ -1,0 +1,112 @@
+﻿[
+  {
+    "regionCode": 130200000,
+    "regionName": "唐山市",
+    "month": 201612,
+    "dustFlow": 683109.825315,
+    "so2Flow": 1897357.441637,
+    "noxFlow": 5115323.181178,
+    "codFlow": 497409.53,
+    "nh4Flow": 37052.95,
+    "totalFlow": 8230252.92813
+  },
+  {
+    "regionCode": 130400000,
+    "regionName": "邯郸市",
+    "month": 201612,
+    "dustFlow": 1044274.681218,
+    "so2Flow": 2423934.012154,
+    "noxFlow": 3420368.334652,
+    "codFlow": 359074.73,
+    "nh4Flow": 27293.011,
+    "totalFlow": 7274944.769024
+  },
+  {
+    "regionCode": 610800000,
+    "regionName": "榆林市",
+    "month": 201612,
+    "dustFlow": 375609.451076,
+    "so2Flow": 1750778.169388,
+    "noxFlow": 2608803.09825,
+    "codFlow": 181804.612495,
+    "nh4Flow": 11621.791662,
+    "totalFlow": 4928617.122871
+  },
+  {
+    "regionCode": 150600000,
+    "regionName": "鄂尔多斯市",
+    "month": 201612,
+    "dustFlow": 303112.41864,
+    "so2Flow": 1855627.059027,
+    "noxFlow": 2107210.788347,
+    "codFlow": 104406.67,
+    "nh4Flow": 3257.237,
+    "totalFlow": 4373614.173014
+  },
+  {
+    "regionCode": 320500000,
+    "regionName": "苏州市",
+    "month": 201612,
+    "dustFlow": 144126.27028,
+    "so2Flow": 723191.478892,
+    "noxFlow": 1403599.3397,
+    "codFlow": 1901707.897,
+    "nh4Flow": 42752.1441,
+    "totalFlow": 4215377.129972
+  },
+  {
+    "regionCode": 150200000,
+    "regionName": "包头市",
+    "month": 201612,
+    "dustFlow": 290019.6,
+    "so2Flow": 1498199.97,
+    "noxFlow": 1618408.988,
+    "codFlow": 167884.16,
+    "nh4Flow": 7094.9,
+    "totalFlow": 3581607.618
+  },
+  {
+    "regionCode": 150100000,
+    "regionName": "呼和浩特市",
+    "month": 201612,
+    "dustFlow": 232461.036,
+    "so2Flow": 1451004.777,
+    "noxFlow": 1354230.37,
+    "codFlow": 287724.74,
+    "nh4Flow": 19235.29,
+    "totalFlow": 3344656.213
+  },
+  {
+    "regionCode": 120100000,
+    "regionName": "天津市",
+    "month": 201612,
+    "dustFlow": 186565.831862,
+    "so2Flow": 678788.909882,
+    "noxFlow": 1448895.272276,
+    "codFlow": 660385.851852,
+    "nh4Flow": 37138.179447,
+    "totalFlow": 3011774.045319
+  },
+  {
+    "regionCode": 210200000,
+    "regionName": "大连市",
+    "month": 201612,
+    "dustFlow": 137931.296269,
+    "so2Flow": 538466.90902,
+    "noxFlow": 1040084.379045,
+    "codFlow": 777792.217091,
+    "nh4Flow": 41033.746917,
+    "totalFlow": 2535308.548342
+  },
+  {
+    "regionCode": 320200000,
+    "regionName": "无锡市",
+    "month": 201612,
+    "dustFlow": 84619.9016,
+    "so2Flow": 370897.3631,
+    "noxFlow": 805057.6111,
+    "codFlow": 1173875.07,
+    "nh4Flow": 22264.1,
+    "totalFlow": 2456714.0458
+  }
+]

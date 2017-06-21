@@ -1,0 +1,38 @@
+﻿[
+  {
+    "regionCode": "110100000",
+    "regionName": "北京市",
+    "month": "2016年05月",
+    "firePower": 168.4,
+    "crudeOil": 374.1,
+    "dustFlow": 20920.401515,
+    "so2Flow": 15701.653337,
+    "noxFlow": 122695.682372,
+    "codFlow": 1071554.429283,
+    "nh4Flow": 56897.081717
+  },
+  {
+    "regionCode": "110100000",
+    "regionName": "北京市",
+    "month": "2016年06月",
+    "firePower": 193.7,
+    "crudeOil": 387.1,
+    "dustFlow": 17676.920766,
+    "so2Flow": 8412.98028,
+    "noxFlow": 97362.592402,
+    "codFlow": 1134407.400175,
+    "nh4Flow": 48153.428724
+  },
+  {
+    "regionCode": "110100000",
+    "regionName": "北京市",
+    "month": "2016年07月",
+    "firePower": 231.8,
+    "crudeOil": 434.8,
+    "dustFlow": 30118.316427,
+    "so2Flow": 17331.169433,
+    "noxFlow": 179236.670663,
+    "codFlow": 1090998.07911,
+    "nh4Flow": 42492.877078
+  }
+]

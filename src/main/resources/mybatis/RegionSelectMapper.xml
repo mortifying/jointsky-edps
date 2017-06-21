@@ -12,4 +12,8 @@
 
     </select>
 
+    <select id="getCity" resultType="String">
+        SELECT DISTINCT CONCAT(a.region,"市") city from cityaqidaydata_copy a;
+    </select>
+
 </mapper>

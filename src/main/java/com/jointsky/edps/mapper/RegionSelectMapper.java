@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface RegionSelectMapper {
     List<RegionSelect> getRegionSelect(String code);
+
+    public List<String> getCity();
 }
