@@ -243,4 +243,18 @@ public class DataOutlineController {
         return dataOutlineService.getYearTop10PollutantChargeProvince(year,pollutantName);
     }
 
+
+    @ApiResponses({
+            @ApiResponse(code = 400,message = "请求参数没有设置好"),
+            @ApiResponse(code=401,message="未授权访问"),
+            @ApiResponse(code=403,message="请求被拒绝"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
+
+    @ApiOperation(value = "平台录入数据的细分情况",notes = "按水气、日数据、小时数据和分钟数据等类别获取平台录入数据的细分情况")
+    @RequestMapping(value = "/dataStatistics",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public DataStatistics getDataStatistics(){
+        return dataOutlineService.getDataStatisticsInfo();
+    }
+
 }

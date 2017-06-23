@@ -146,4 +146,23 @@
         select regionname,substr(datamonth,1,4) year,pollutantname, sum(charge) charge from pwshf_provincemonth_pollutant where substr(datamonth,1,4)=#{0} and pollutantname = #{1} GROUP BY regionname,substr(datamonth,1,4),pollutantname ORDER BY sum(charge) desc LIMIT 0,10;
     </select>
 
+
+    <resultMap type="com.jointsky.edps.model.DataStatistics" id="DataStatisticsResultMap">
+        <result column="currentdate" property="currentDate" />
+        <result column="gasdaydatacount" property="gasDayDataCount" />
+        <result column="waterdaydatacount" property="waterDayDataCount" />
+        <result column="gashourdatacount" property="gasHourDataCount" />
+        <result column="waterhourdatacount" property="waterHourDataCount" />
+        <result column="gasminutedatacount" property="gasMinuteDataCount" />
+        <result column="waterminutedatacount" property="waterMinuteDataCount" />
+        <result column="gaspscount" property="gasPSCount" />
+        <result column="waterpscount" property="waterPSCount" />
+        <result column="gasoutputcount" property="gasOutputCount" />
+        <result column="wateroutputcount" property="waterOutputCount" />
+    </resultMap>
+
+    <select id="getDataStatistics" resultMap="DataStatisticsResultMap">
+       SELECT * FROM statistics order by currentdate DESC limit 1;
+    </select>
+
 </mapper>

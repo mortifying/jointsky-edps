@@ -69,4 +69,8 @@ public class DataOutlineService {
     public List<ProvinceYearPollutantCharge> getYearTop10PollutantChargeProvince(int year, String pollutantName) {
         return dataOutlineMapper.getYearTop10PollutantChargeProvince(year,pollutantName);
     }
+
+    public DataStatistics getDataStatisticsInfo(){
+        return dataOutlineMapper.getDataStatistics();
+    }
 }

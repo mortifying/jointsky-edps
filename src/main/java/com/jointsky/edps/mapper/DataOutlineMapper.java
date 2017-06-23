@@ -37,4 +37,6 @@ public interface DataOutlineMapper {
     public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(int dataMonth, String pollutantName);
 
     public List<ProvinceYearPollutantCharge> getYearTop10PollutantChargeProvince(int year, String pollutantName);
+
+    public DataStatistics getDataStatistics();
 }
