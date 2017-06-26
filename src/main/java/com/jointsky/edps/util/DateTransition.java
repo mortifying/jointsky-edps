@@ -29,4 +29,11 @@ public class DateTransition {
 
         return quarter;
     }
+
+    public int monthConvert(String str){
+
+        String year = str.substring(0,4);
+        String month = str.substring(5,7);
+        return Integer.valueOf(year+month);
+    }
 }

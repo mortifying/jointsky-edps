@@ -3,6 +3,7 @@ package com.jointsky.edps.controller;
 import com.jointsky.edps.model.*;
 import com.jointsky.edps.service.DataOutlineService;
 import com.jointsky.edps.service.HttpLogsService;
+import com.jointsky.edps.util.DateTransition;
 import io.swagger.annotations.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ public class DataOutlineController {
     private HttpLogsService httpLogsService;
     @Autowired
     private DataOutlineService dataOutlineService;
+
+    private DateTransition dateTransition = new DateTransition();
 
     @ApiResponses({
             @ApiResponse(code = 400,message = "请求参数没有设置好"),
@@ -115,10 +118,10 @@ public class DataOutlineController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiOperation(value = "省级行政区排放量情况（月）",notes = "根据月份获取省级行政区排放量排名前十的省份排放情况")
-    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "int",paramType = "query",defaultValue = "201612")
+    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年12月")
     @RequestMapping(value = "/topTenFlowProvinceMonth",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<FlowMonth> getTopTenFlowProvinceMonth(@RequestParam(value = "month") int month){
-        return dataOutlineService.topTenFlowProvinceMonth(month);
+    public List<FlowMonth> getTopTenFlowProvinceMonth(@RequestParam(value = "month") String month){
+        return dataOutlineService.topTenFlowProvinceMonth(dateTransition.monthConvert(month));
     }
 
 
@@ -143,10 +146,10 @@ public class DataOutlineController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiOperation(value = "市级行政区排放量情况（月）",notes = "根据月份获取市级行政区排放量排名前十的城市排放情况")
-    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "int",paramType = "query",defaultValue = "201612")
+    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年12月")
     @RequestMapping(value = "/topTenFlowCityMonth",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<FlowMonth> getTopTenFlowCityMonth(@RequestParam(value = "month") int month){
-        return dataOutlineService.topTenFlowCityMonth(month);
+    public List<FlowMonth> getTopTenFlowCityMonth(@RequestParam(value = "month") String month){
+        return dataOutlineService.topTenFlowCityMonth(dateTransition.monthConvert(month));
     }
 
 
@@ -189,11 +192,11 @@ public class DataOutlineController {
             @ApiResponse(code=403,message="请求被拒绝"),
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
-    @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "int",paramType = "query",defaultValue = "201603")
+    @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "String",paramType = "query",defaultValue = "2016年03月")
     @ApiOperation(value = "省级行政区总排污费(月)",notes = "获取某年月排污收费总费用最多的10个省份")
     @RequestMapping(value = "/getTop10ChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<ProvinceCharge> getTop10ChargeProvince(@RequestParam(value = "dataMonth") int dataMonth){
-        return dataOutlineService.getTop10ChargeProvince(dataMonth);
+    public List<ProvinceCharge> getTop10ChargeProvince(@RequestParam(value = "dataMonth") String dataMonth){
+        return dataOutlineService.getTop10ChargeProvince(dateTransition.monthConvert(dataMonth));
     }
 
     @ApiResponses({
@@ -216,14 +219,14 @@ public class DataOutlineController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "int",paramType = "query",defaultValue = "201601"),
+            @ApiImplicitParam(name = "dataMonth",value = "年月",required = true,dataType = "String",paramType = "query",defaultValue = "2016年01月"),
             @ApiImplicitParam(name = "pollutantName",value = "污染物名称",required = true,dataType = "String",paramType = "query",defaultValue = "二氧化硫"),
     })
 
     @ApiOperation(value = "省级行政区各污染物排污费(月)",notes = "获取某月排污收费指定污染物费用最多的10个省份")
     @RequestMapping(value = "/getTop10PollutantChargeProvince",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(@RequestParam(value = "dataMonth") int dataMonth, @RequestParam(value = "pollutantName") String pollutantName){
-        return dataOutlineService.getTop10PollutantChargeProvince(dataMonth,pollutantName);
+    public List<ProvincePollutantCharge> getTop10PollutantChargeProvince(@RequestParam(value = "dataMonth") String dataMonth, @RequestParam(value = "pollutantName") String pollutantName){
+        return dataOutlineService.getTop10PollutantChargeProvince(dateTransition.monthConvert(dataMonth),pollutantName);
     }
 
     @ApiResponses({

@@ -5,6 +5,7 @@ import com.jointsky.edps.model.MonitorRank;
 import com.jointsky.edps.model.PSFlowRank;
 import com.jointsky.edps.model.RegionFlowRank;
 import com.jointsky.edps.service.RankStatisticsService;
+import com.jointsky.edps.util.DateTransition;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,8 @@ public class RankStatisticsController {
 
     @Autowired
     private RankStatisticsService rankStatisticsService;
+
+    private DateTransition dateTransition = new DateTransition();
 
 
     @ApiResponses({
@@ -50,10 +53,10 @@ public class RankStatisticsController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiOperation(value = "全国重污染域排行",notes = "根据月份获取全国重污染域排行前十结果入口")
-    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "int",paramType = "query",defaultValue = "201601")
+    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年01月")
     @RequestMapping(value = "/getRegionFlowRankInfo",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public List<RegionFlowRank> getRegionFlowRankInfo(@RequestParam(value = "month") int month){
-        return rankStatisticsService.getRegionFlowRankList(month);
+    public List<RegionFlowRank> getRegionFlowRankInfo(@RequestParam(value = "month") String month){
+        return rankStatisticsService.getRegionFlowRankList(dateTransition.monthConvert(month));
     }
 
     @ApiResponses({
@@ -63,9 +66,9 @@ public class RankStatisticsController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @ApiOperation(value = "全国重污染企业排行",notes = "根据月份获取全国重污染企业排行前三十结果入口")
-    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "int",paramType = "query",defaultValue = "201601")
+    @ApiImplicitParam(name = "month",value = "月份",required = true,dataType = "String",paramType = "query",defaultValue = "2016年01月")
     @RequestMapping(value = "/getPSFlowRankInfo",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
-    public List<PSFlowRank> getPSFlowRankInfo(@RequestParam(value = "month") int month){
-        return rankStatisticsService.getPSFlowRankList(month);
+    public List<PSFlowRank> getPSFlowRankInfo(@RequestParam(value = "month") String month){
+        return rankStatisticsService.getPSFlowRankList(dateTransition.monthConvert(month));
     }
 }
