@@ -1,0 +1,1662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="yui3-js-enabled">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=10,transtion= 50)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=20,transtion= 6)">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+
+    <link rel="stylesheet" href="themes/bigdata/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/goTopstyle.css">
+    <link rel="stylesheet" href="themes/bigdata/font-awesome.min.css">
+    <link rel="stylesheet" href="themes/bigdata/shieldui-all.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/product-report.css">
+    <link rel="stylesheet" href="themes/bigdata/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="themes/bigdata/ui.css">
+    <link rel="stylesheet" href="themes/bigdata/icon.css">
+
+
+    <link rel="stylesheet" href="themes/bigdata/select2/select2.min.css">
+
+    <link rel="stylesheet" href="themes/bigdata/aOwnCss/own.css">
+
+    <script src="js/bigdata/jquery-1.11.1.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/jquery.ui.js"></script>
+    <script src="js/ui-lang-zh_CN.js"></script>
+    <script src="js/bigdata/bootstrap.min.js"></script>
+    <script src="js/bigdata/shieldui-all.min.js"></script>
+    <script src="js/bigdata/common.js"></script>
+    <script src="js/bigdata/Base64.js"></script>
+    <script src="js/bigdata/bootstrap-datetimepicker.js"></script>
+    <script src="js/bigdata/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="js/bigdata/zh-CN.js"></script>
+    <script src="js/bigdata/product-report.js"></script>
+    <script src="js/select2/select2.min.js"></script>
+
+    <!-- ECharts单文件引入 -->
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/bigdata/chart-create.js"></script>
+
+    <script src="js/aOwnCode/echartFunction.js"></script>
+
+
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
+    <script type="text/javascript" src="js/bigdata/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="background-white">
+
+<!-- NAVIGATION -->
+<div >
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"  href="#" title="生态大数据服务平台">
+                    <h2 style="margin-top: 10px; color: #ffffff;">生态环保大数据平台</h2>
+                    <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin:0 auto;max-width: 960px">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="active"><a href="product.html">产品</a></li>
+                    <li><a href="#">帮助</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<!-- /NAVIGATION -->
+
+<!-- /MENU -->
+<SECTION id="p-section">
+    <DIV class="container">
+        <DIV class="row"  style=" margin-right: 0px; margin-left: 0px;">
+            <UL id="menu">
+                <LI data-icon-cls="fa fa-line-chart" data-href="productApi.html">
+                    <P>环境数据API</P>
+                    <UL>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=数据宏观概况">
+                            数据宏观概况
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=能源数据入口">
+                            能源数据入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=环境质量入口">
+                            环境质量入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=国家统计入口">
+                            国家统计入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=数据异常分析入口">
+                            数据异常分析入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=举报投诉数据入口">
+                            举报投诉数据入口
+                        </LI>
+                    </UL>
+                </LI>
+                <LI >
+                    <P><span style="color:#0072ba;"> <i class="fa fa-bar-chart-o"></i>&nbsp;&nbsp;数据报表</span></P>
+                    <UL>
+                        <li>
+                            <P> 国家统计</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国行业GDP与排放量报表
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国主要城市GDP与排放量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        火力发电和原油与排放量报
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        GDP与排放量报表
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 环境质量</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#envQua">
+                                        环境质量和排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 举报投诉数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#repComp">
+                                        按省份环境举报投诉、排放总量、平均排放浓度
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 能源数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        各省各种能源资源消费量与排放量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        全国各种能源资源产量与排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 数据宏观概况</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        各污染物年排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        单位GDP污染物排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(年)
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                    </UL>
+                </LI>
+                <LI data-icon-cls="fa fa-line-chart" data-href="productRankingList.html">
+                    <P>排行统计</P>
+                    <UL>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productRankingList.html">
+                            在线监测设备排行
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productRankingList.html">
+                            运维企业服务质量排行
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productRankingList.html">
+                            全国重污染域排行
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productRankingList.html">
+                            重污染企业排行<
+                        </LI>
+                    </UL>
+                </LI>
+            </UL>
+        </DIV>
+    </DIV>
+</SECTION>
+<SCRIPT type="text/javascript">
+    $(document).ready(function() {
+        $("#menu").shieldMenu({
+            cls: 'p-menu',
+            orientation: 'horizontal'
+        });
+    });
+</SCRIPT>
+<!-- /MENU -->
+
+<!-- REPORT -->
+<SECTION id="r-section">
+    <div id="myEchart" class="container">
+        <!--************************图表************************-->
+        <!--
+        <div class="bs-callout bs-callout-success">
+            <div id="mainCityGDPFlow" class="row show-grid margin-0" style="background-color: #fff;" >
+                <div class="col-xs-12" style="background-color: #f6faf2; height:35px; padding-top: 8px; border-radius: 4px;" >
+                    <a data-toggle="collapse" href="#全国主要城市GDP与排放量的信息" onclick="javascript:showHideItem(this)">
+                        <h4>
+                            <i class="fa fa-angle-double-down"></i><span id="tags-name2" >&nbsp;&nbsp;全国主要城市GDP与排放量的信息</span>
+                        </h4>
+                    </a>
+                </div>
+            </div>
+            <div id="全国主要城市GDP与排放量的信息" class="row collapse show-grid  sss"  style="margin-right: -13px;">
+                <div class="col-md-3">
+                    <div  class="form-danger-2" style="background-color: #fff;"  >
+                        <form class="form-inline">
+                            <div class="form-group" >
+                                <label>地区</label>
+
+                                <div class="input-group" style="margin-bottom: 5px;">
+                                    <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+
+                                    <div class="myCombobox">
+                                        <select name="regionName" placeholder="城市" class="myCity"></select>
+                                    </div>
+                                </div>
+
+                                <label for="begin-year">时间</label>
+                                <div class="input-group" style="margin-bottom: 5px;">
+                                    <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input name="start" type="text" class="form_datetime form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="开始日期">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 5px;">
+                                    <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input name="end" type="text" class="form_datetime form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="结束日期">
+                                </div>
+                                <div style="width:100%;text-align: right;" >
+                                    <button id="mainCityGDPFlow_S" type="button" class="btn btn-warning" style="width:100%">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-9" style="margin-right: 0px;">
+                    <div  class="form-danger-2" style="margin-right: 0px;" >
+                        <div class="echartRoot" id="mainCityGDPFlowLine01" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!--************************图表************************-->
+    </div>
+</SECTION>
+
+
+<!--图表部分模板-->
+<script id="myEchartS" type="text/html">
+
+    {{each rows as row i}}
+
+    {{if i==0}}
+    <div id="natSta" class="row" style="background-color: #fff;">
+        <div class="" style="text-align: center; color:#428bca;">
+            <h3>国家统计入口</h3>
+            <p>长天长大数据平台国家统计数据与污染源监控数据分析API</p>
+        </div>
+    </div>
+    {{/if}}
+    {{if i==4}}
+    <div id="envQua" class="row" style="background-color: #fff;">
+        <div class="" style="text-align: center; color:#428bca;">
+            <h3>环境质量入口</h3>
+            <p>长天长大数据平台环境质量与污染源监控数据分析API</p>
+        </div>
+    </div>
+    {{/if}}
+    {{if i==5}}
+    <div id="repComp" class="row" style="background-color: #fff;">
+        <div class="" style="text-align: center; color:#428bca;">
+            <h3>举报投诉数据入口</h3>
+            <p>长天长大数据平台举报投诉与污染源监控数据分析API</p>
+        </div>
+    </div>
+    {{/if}}
+    {{if i==6}}
+    <div id="enerData" class="row" style="background-color: #fff;">
+        <div class="" style="text-align: center; color:#428bca;">
+            <h3>能源数据入口</h3>
+            <p>长天长大数据平台能源数据与污染源监控数据分析API</p>
+        </div>
+    </div>
+    {{/if}}
+    {{if i==8}}
+    <div id="dataSurv" class="row" style="background-color: #fff;">
+        <div class="" style="text-align: center; color:#428bca;">
+            <h3>数据宏观概况</h3>
+            <p>长天长大数据平台数据宏观汇总情况</p>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="bs-callout bs-callout-success">
+        <div id="{{row.titleId}}" class="row show-grid margin-0" style="background-color: #fff;" >
+            <div class="col-xs-12" style="background-color: #f6faf2; height:35px; padding-top: 8px; border-radius: 4px;" >
+                <a data-toggle="collapse" href="#{{row.aText}}" onclick="javascript:showHideItem(this)">
+                    <h4>
+                        <i class="fa fa-angle-double-down"></i><span id="tags-name2" >&nbsp;&nbsp;{{row.titleText}}</span>
+                    </h4>
+                </a>
+            </div>
+        </div>
+        <div id="{{row.aText}}" class="row collapse show-grid  sss"  style="margin-right: -13px;">
+            <div class="col-md-3">
+                <div  class="form-danger-2" style="background-color: #fff;"  >
+                    <form class="form-inline">
+                        <div class="form-group" >
+
+                            <span style="display: {{if row.regionShow==false}}none{{/if}};">
+                                <label>地区</label>
+
+                            <div class="input-group" style="margin-bottom: 5px;">
+                                <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+
+                                <div class="myCombobox">
+                                    <select name="{{row.regionName}}" placeholder="地区" class="{{row.regionClass}}"></select>
+                                </div>
+                            </div>
+
+                            </span>
+
+                            <label for="begin-year">时间</label>
+
+                            <div class="input-group" style="margin-bottom: 5px;">
+                                <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input name="{{row.startTimeName}}" type="text" class="{{row.timeClass}} form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="开始时间">
+                                <div style="display: {{if row.quarterShow==false}}none{{/if}};" class="myCombobox">
+                                    <select name="{{row.quarterName}}" placeholder="季度" class="myQuarter"></select>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 5px; display: {{if row.endTimeShow==false}}none{{/if}}; ">
+                                <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+
+                                <input name="{{row.endTimeName}}" type="text" class="{{row.timeClass}} form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="结束时间">
+                                <div style="display:{{if row.quarterShow==false}}none{{/if}};" class="myCombobox">
+                                    <select placeholder="季度" class="myQuarter"></select>
+                                </div>
+                            </div>
+
+
+                            <span style="display: {{if row.pollutantShow==false}}none{{/if}};">
+                                <label>污染物</label>
+
+                            <div class="input-group" style="margin-bottom: 5px;">
+                                <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+
+                                <div class="myCombobox">
+                                    <select name="{{row.pollutantName}}" placeholder="污染物" class="myPollutant"></select>
+                                </div>
+                            </div>
+
+                            </span>
+
+                            <span style="display: {{if row.orderShow==false}}none{{/if}};">
+                                <label>排序</label>
+
+                            <div class="input-group" style="margin-bottom: 5px;">
+                                <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+
+                                <div class="myCombobox">
+                                    <select name="{{row.orderName}}" placeholder="排序" class="myOrder"></select>
+                                </div>
+                            </div>
+
+                            </span>
+
+
+                            <div style="width:100%;text-align: right;" >
+                                <button id="{{row.subId}}" type="button" class="btn btn-warning" style="width:100%">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9" style="margin-right: 0px;">
+                <div  class="form-danger-2" style="margin-right: 0px;" >
+                    <div class="echartRoot {{if row.echartRootClass}}{{row.echartRootClass}}{{/if}}" id="{{row.echartRootId}}" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--图表部分模板-->
+<script type="text/javascript">
+
+    //******************注入模板
+
+    //注入菜单部分
+    //注入菜单部分
+
+    //注入图表部分
+    var eData = [
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:true,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'全国行业GDP数据与排放量的信息',
+            aText:'全国行业GDP数据与排放量的信息',
+            titleId:'industryGDPFlow',
+            subId:'industryGDPFlow_S',
+            echartRootId:'industryGDPFlowLine01',
+            regionName:'',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myCity',
+            endTimeShow:true,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'全国主要城市GDP与排放量的信息',
+            aText:'全国主要城市GDP与排放量的信息',
+            titleId:'mainCityGDPFlow',
+            subId:'mainCityGDPFlow_S',
+            echartRootId:'mainCityGDPFlowLine01',
+            regionName:'regionName',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myProvince',
+            endTimeShow:true,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'火力发电和原油与排放量的信息',
+            aText:'火力发电和原油与排放量的信息',
+            titleId:'regionFPCOFlow',
+            subId:'regionFPCOFlow_S',
+            echartRootId:'regionFPCOFlowLine01',
+            regionName:'regionName',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myProvince',
+            endTimeShow:true,
+            timeClass:'dt_year',
+            quarterShow:true,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'GDP数据与排放量的信息',
+            aText:'GDP数据与排放量的信息',
+            titleId:'regionGDPFlow',
+            subId:'regionGDPFlow_S',
+            echartRootId:'regionGDPFlowLine01',
+            regionName:'regionName',
+            startTimeName:'',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myCity',
+            endTimeShow:true,
+            timeClass:'dt_date',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'环境质量和排放量信息',
+            aText:'环境质量和排放量信息',
+            titleId:'regionAQIFlow',
+            subId:'regionAQIFlow_S',
+            echartRootId:'regionAQIFlowLine01',
+            regionName:'regionName',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myProvince',
+            endTimeShow:true,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'按省份环境举报投诉、排放总量、平均排放浓度信息',
+            aText:'按省份环境举报投诉、排放总量、平均排放浓度信息',
+            titleId:'ComplaintFlow',
+            subId:'ComplaintFlow_S',
+            echartRootId:'ComplaintFlowLine01',
+            regionName:'regionName',
+            startTimeName:'startMonth',
+            quarterName:'',
+            endTimeName:'endMonth',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:true,
+            regionClass:'myProvince',
+            endTimeShow:true,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'各省各种能源资源消费量与排放量的信息',
+            aText:'各省各种能源资源消费量与排放量的信息',
+            titleId:'energyConsumeFlow',
+            subId:'energyConsumeFlow_S',
+            echartRootId:'energyConsumeFlowLine01',
+            regionName:'region',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:true,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'全国各种能源资源产量与排放量的信息',
+            aText:'全国各种能源资源产量与排放量的信息',
+            titleId:'energyYieldFlow',
+            subId:'energyYieldFlow_S',
+            echartRootId:'energyYieldFlowLine01',
+            regionName:'',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:true,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'各污染物年排放总量',
+            aText:'各污染物年排放总量',
+            titleId:'flowByYear',
+            subId:'flowByYear_S',
+            echartRootId:'flowByYearBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'start',
+            quarterName:'',
+            endTimeName:'end',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'省级行政区总排污费(月)',
+            aText:'省级行政区总排污费month',
+            titleId:'getTop10ChargeProvince',
+            subId:'getTop10ChargeProvince_S',
+            echartRootId:'getTop10ChargeProvinceBar01',
+            echartRootClass:'bar1',
+            regionName:'',
+            startTimeName:'dataMonth',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:true,
+            orderShow:false,
+            titleText:'省级行政区各污染物排污费(月)',
+            aText:'省级行政区各污染物排污费month',
+            titleId:'getTop10PollutantChargeProvince',
+            subId:'getTop10PollutantChargeProvince_S',
+            echartRootId:'getTop10PollutantChargeProvinceBar01',
+            echartRootClass:'bar1',
+            regionName:'',
+            startTimeName:'dataMonth',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'pollutantName',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'省级行政区总排污费(年)',
+            aText:'省级行政区总排污费year',
+            titleId:'getYearTop10ChargeProvince',
+            subId:'getYearTop10ChargeProvince_S',
+            echartRootId:'getYearTop10ChargeProvinceBar01',
+            echartRootClass:'bar1',
+            regionName:'',
+            startTimeName:'year',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:true,
+            orderShow:false,
+            titleText:'省级行政区各污染物排污费(年)',
+            aText:'省级行政区各污染物排污费year',
+            titleId:'getYearTop10PollutantChargeProvince',
+            subId:'getYearTop10PollutantChargeProvince_S',
+            echartRootId:'getYearTop10PollutantChargeProvinceBar01',
+            echartRootClass:'bar1',
+            regionName:'',
+            startTimeName:'year',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'pollutantName',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'市级行政区排放量情况(月)',
+            aText:'市级行政区排放量情况month',
+            titleId:'topTenFlowCityMonth',
+            subId:'topTenFlowCityMonth_S',
+            echartRootId:'topTenFlowCityMonthBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'month',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'市级行政区排放量情况(年)',
+            aText:'市级行政区排放量情况year',
+            titleId:'topTenFlowCityYear',
+            subId:'topTenFlowCityYear_S',
+            echartRootId:'topTenFlowCityYearBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'year',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_year',
+            quarterShow:true,
+            pollutantShow:false,
+            orderShow:true,
+            titleText:'单位GDP污染物排放总量',
+            aText:'单位GDP污染物排放总量',
+            titleId:'topTenFlowPerGDPQuarter',
+            subId:'topTenFlowPerGDPQuarter_S',
+            echartRootId:'topTenFlowPerGDPQuarterBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'year',
+            quarterName:'quarter',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:'order'
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_month',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'省级行政区排放量情况(月)',
+            aText:'省级行政区排放量情况month',
+            titleId:'topTenFlowProvinceMonth',
+            subId:'topTenFlowProvinceMonth_S',
+            echartRootId:'topTenFlowProvinceMonthBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'month',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        },
+        {
+            regionShow:false,
+            regionClass:'',
+            endTimeShow:false,
+            timeClass:'dt_year',
+            quarterShow:false,
+            pollutantShow:false,
+            orderShow:false,
+            titleText:'省级行政区排放量情况(年)',
+            aText:'省级行政区排放量情况year',
+            titleId:'topTenFlowProvinceYear',
+            subId:'topTenFlowProvinceYear_S',
+            echartRootId:'topTenFlowProvinceYearBar01',
+            echartRootClass:'bar',
+            regionName:'',
+            startTimeName:'year',
+            quarterName:'',
+            endTimeName:'',
+            pollutantName:'',
+            orderName:''
+        }
+
+    ];
+    var echartHtml = template('myEchartS',{rows:eData});
+    $('#myEchart').html(echartHtml);
+    //注入图表部分
+
+    //******************注入模板
+
+
+    //初始化所有的污染物下拉表
+    $('.myPollutant').select2({
+        data: [
+            '氮氧化物',
+            '烟尘',
+            '二氧化硫',
+            '一般性粉尘',
+            '化学需氧量(COD)',
+            '氨氮',
+            '悬浮物(SS)',
+            '石油类',
+            '废气排放量',
+            '污水排放量'
+        ]
+    });
+    //初始化所有的污染物下拉表
+
+    //初始化所有的排序下拉表
+    $('.myOrder').select2({
+        data: [
+            '最多',
+            '最少'
+        ]
+    });
+    //初始化所有的排序下拉表
+
+    //初始化所有的季度下拉表
+    $('.myQuarter').select2({
+        data: [
+            '第一季度',
+            '第二季度',
+            '第三季度',
+            '第四季度'
+        ]
+    });
+    //初始化所有的季度下拉表
+
+    //初始化所有的城市下拉表
+    var myCity = [];
+    $.ajax({
+        url: 'json/echarts/getMainCity.json',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(theData){
+            $.each(theData,function(i,n){
+                var one = {};
+                one.id=theData[i];
+                one.text=theData[i];
+                myCity.push(one);
+            })
+        }
+    });
+    $('.myCity').select2({
+        data: myCity
+    });
+    //初始化所有的城市下拉表
+
+    //初始化所有的省下拉表
+    var myProvince = [];
+    $.ajax({
+        url: 'json/echarts/getRegionSelect.json',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(theData){
+            $.each(theData,function(i,n){
+                var one = {};
+                one.id=theData[i].regionName;
+                one.text=theData[i].regionName;
+                myProvince.push(one);
+            })
+        }
+    });
+    $('.myProvince').select2({
+        data: myProvince
+    });
+    //初始化所有的省下拉表
+
+
+
+
+
+    function showHideItem(obj) {
+        var collapse_icon = $(obj).find('.fa');
+        (collapse_icon.attr('class') == "fa fa-angle-double-down") ? collapse_icon.attr("class", "fa fa-angle-double-up") : collapse_icon.attr("class", "fa fa-angle-double-down");
+    }
+
+
+
+    ////////////////////echarts图标////////////////////
+
+
+    //*******************************曲线图
+
+    //全国行业GDP数据与排放量
+    var industryGDPFlow = true;
+    $('#industryGDPFlow').click(function(){
+        if(industryGDPFlow){
+
+            industryGDPFlow = false;
+
+            var start= '2010';
+            var end= '2015';
+
+            echart2yLine({
+
+                ajaxUrl:'industryGDPFlowList?start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/industryGDPLine01.json',
+                rootDivId:'industryGDPFlowLine01',
+                xValName:'year',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'GDP(亿元)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['gdp','国内GDP','R'],
+                    ['industry','工业GDP','R'],
+                    ['pcgdp','人均GDP','R'],
+                    ['priindustry','第一产业GDP','R'],
+                    ['secindustry','第二产业GDP','R'],
+                    ['thiindustry','第三产业GDP','R']
+                ]
+            });
+
+        }
+    });
+
+    $('#industryGDPFlow_S').click(function(){
+        var newP = $('#全国行业GDP数据与排放量的信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'industryGDPFlowList?'+newP,
+            rootDivId:'industryGDPFlowLine01'
+        });
+    });
+
+
+    //全国主要城市GDP数据与排放量
+    var mainCityGDPFlow = true;
+    $('#mainCityGDPFlow').click(function(){
+        if(mainCityGDPFlow){
+            mainCityGDPFlow = false;
+
+            var regionName= '北京市';
+            var start='2010';
+            var end='2015';
+            echart2yLine({
+                ajaxUrl:'mainCityGDPFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/cityGDPLine01.json',
+                rootDivId:'mainCityGDPFlowLine01',
+                xValName:'year',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'GDP(亿元)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['dycygdp','第一产业生产总值','R'],
+                    ['decygdp','第二产业生产总值','R'],
+                    ['dscygdp','第三产业生产总值','R'],
+                    ['gngdp','国内生产总值','R']
+                ]
+            });
+
+        }
+    });
+
+    $('#mainCityGDPFlow_S').click(function(){
+        var newP = $('#全国主要城市GDP与排放量的信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'mainCityGDPFlowList?'+newP,
+            rootDivId:'mainCityGDPFlowLine01'
+        });
+    });
+
+    //火力发电和原油与排放量
+    var regionFPCOFlow =true;
+    $('#regionFPCOFlow').click(function(){
+        if(regionFPCOFlow){
+            regionFPCOFlow = false;
+
+            var regionName= '北京市';
+            var start='2016年05月';
+            var end='2016年07月';
+            echart2yLine({
+                ajaxUrl:'regionFPCOFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/regionFPCOFlowLine01.json',
+                rootDivId:'regionFPCOFlowLine01',
+                xValName:'month',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'总量(万吨)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['crudeOil','原油加工量','R'],
+                    ['firePower','火力发电量','R']
+                ]
+            });
+        }
+    });
+
+    $('#regionFPCOFlow_S').click(function(){
+        var newP = $('#火力发电和原油与排放量的信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'regionFPCOFlowList?'+newP,
+            rootDivId:'regionFPCOFlowLine01'
+        });
+    });
+
+    //GDP数据与排放量
+    var regionGDPFlow =true;
+    $('#regionGDPFlow').click(function(){
+        if(regionGDPFlow){
+            regionGDPFlow =false;
+
+            var regionName= '北京市';
+            var start='2016年第一季度';
+            var end='2016年第三季度';
+            echart2yLine({
+                ajaxUrl:'regionGDPFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/regionGDPFlowLine01.json',
+                rootDivId:'regionGDPFlowLine01',
+                xValName:'quarter',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'GDP(亿元)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['gdp','GDP','R']
+                ]
+            });
+        }
+
+    });
+
+    $('#regionGDPFlow_S').click(function(){
+        var newP = $('#GDP数据与排放量的信息 form').serialize();
+
+        var startY = $('#GDP数据与排放量的信息 input').eq(0).val();
+        var startQ = $('#GDP数据与排放量的信息 select').eq(1).val();
+        var start = startY +'年'+ startQ;
+        var endY = $('#GDP数据与排放量的信息 input').eq(1).val();
+        var endQ = $('#GDP数据与排放量的信息 select').eq(2).val();
+        var end = endY +'年'+ endQ;
+        newP = newP+'&start='+start+'&end='+end;
+
+        //newP = encodeURI(newP);
+
+        alert(newP);
+
+        echart2yLine('reload',{
+            ajaxUrl:'regionGDPFlowList?'+newP,
+            rootDivId:'regionGDPFlowLine01'
+        });
+    });
+
+    //环境质量与排放量
+    var regionAQIFlow =true;
+    $('#regionAQIFlow').click(function(){
+        if(regionAQIFlow){
+            regionAQIFlow=false;
+
+            var regionName= '北京市';
+            var start='2016-05-01';
+            var end='2016-05-10';
+            echart2yLine({
+                ajaxUrl:'regionAQIFlowList?regionName='+regionName+'&start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/thermalPowerLine01.json',
+                rootDivId:'regionAQIFlowLine01',
+                xValName:'date',
+                yLAxisName:'指数',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['aqi','环境质量指数','L'],
+                    ['co','一氧化碳指数','L'],
+                    ['o3','臭氧指数','L'],
+                    ['pm10','PM10指数','L'],
+                    ['pm25','PM2.5指数','L'],
+                    ['so2','二氧化硫指数','L'],
+
+                    ['dustFlow','烟尘排放量','R'],
+                    ['noxFlow','氮氧化物排放量','R'],
+                    ['so2Flow','二氧化硫排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#regionAQIFlow_S').click(function(){
+        var newP = $('#环境质量和排放量信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'regionAQIFlowList?'+newP,
+            rootDivId:'regionAQIFlowLine01'
+        });
+    });
+
+    //按省份及时间区间环境举报投诉、排放总量、平均排放浓度信息
+    var ComplaintFlow =true;
+    $('#ComplaintFlow').click(function(){
+        if(ComplaintFlow){
+            ComplaintFlow=false;
+
+            var regionName= '上海市';
+            var startMonth='2014年02月';
+            var endMonth='2014年05月';
+            echart2yLine({
+                ajaxUrl:'ComplaintFlowList?regionName='+regionName+'&startMonth='+startMonth+'&endMonth='+endMonth,
+                //ajaxUrl:'json/echarts/ComplaintFlowLine01.json',
+                rootDivId:'ComplaintFlowLine01',
+                xValName:'month',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'被投诉次数',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['count','被举报/投诉次数','R']
+                ]
+            });
+        }
+    });
+
+    $('#ComplaintFlow_S').click(function(){
+        var newP = $('#按省份环境举报投诉、排放总量、平均排放浓度信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'ComplaintFlowList?'+newP,
+            rootDivId:'ComplaintFlowLine01'
+        });
+    });
+
+    //各省各种能源资源消费量与排放量
+    var energyConsumeFlow =true;
+    $('#energyConsumeFlow').click(function(){
+        if(energyConsumeFlow){
+            energyConsumeFlow=false;
+
+            var region= '北京市';
+            var start='2010';
+            var end='2015';
+            echart2yLine({
+                ajaxUrl:'energyConsumeFlowList?region='+region+'&start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/energyConsumeFlowLine01.json',
+                rootDivId:'energyConsumeFlowLine01',
+                xValName:'year',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'消费量(万吨)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['dlxfl','电力消费量','R'],
+                    ['mtxfl','煤炭消费量','R'],
+                    ['trqxfl','天然气消费量','R'],
+                    ['yyxfl','原油消费量','R']
+                ]
+            });
+        }
+    });
+
+    $('#energyConsumeFlow_S').click(function(){
+        var newP = $('#各省各种能源资源消费量与排放量的信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'energyConsumeFlowList?'+newP,
+            rootDivId:'energyConsumeFlowLine01'
+        });
+    });
+
+    //全国各种能源资源产量与排放量
+    var energyYieldFlow =true;
+    $('#energyYieldFlow').click(function(){
+        if(energyYieldFlow){
+            energyYieldFlow=false;
+
+            var start='2016年01月';
+            var end='2016年05月';
+            echart2yLine({
+                ajaxUrl:'energyYieldFlowList?start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/energyYieldFlowLine01.json',
+                rootDivId:'energyYieldFlowLine01',
+                xValName:'date',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'产量(万吨)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['nh4Flow','氨氮排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['chychl','柴油产量','R'],
+                    ['hlfdchl','火力发电量','R'],
+                    ['qychl','汽油产量','R'],
+                    ['trqchl','天然气产量','R'],
+                    ['ymchl','原煤产量','R'],
+                    ['yychl','原油产量','R'],
+                    ['yyjglchl','原油加工量','R']
+                ]
+            });
+        }
+
+    });
+
+    $('#energyYieldFlow_S').click(function(){
+        var newP = $('#全国各种能源资源产量与排放量的信息 form').serialize();
+        alert(newP);
+        echart2yLine('reload',{
+            ajaxUrl:'energyYieldFlowList?'+newP,
+            rootDivId:'energyYieldFlowLine01'
+        });
+    });
+
+    //*******************************曲线图
+
+
+
+
+    //*******************************柱状图
+
+    //各污染物年排放总量
+    var flowByYear = true;
+    $('#flowByYear').click(function(){
+        if(flowByYear){
+            flowByYear=false;
+
+            var start='2010';
+            var end='2016';
+            echart2yBar({
+                ajaxUrl:'flowByYearList?start='+start+'&end='+end,
+                //ajaxUrl:'json/echarts/flowByYearBar01.json',
+                rootDivId:'flowByYearBar01',
+                xValName:'year',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+
+                    ['nh4Flow','氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#flowByYear_S').click(function(){
+        var newP = $('#各污染物年排放总量 form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'flowByYearList?'+newP,
+            rootDivId:'flowByYearBar01'
+        });
+    });
+
+    //省级行政区总排污费(月)
+    var getTop10ChargeProvince = true;
+    $('#getTop10ChargeProvince').click(function(){
+        if(getTop10ChargeProvince){
+            getTop10ChargeProvince=false;
+
+            var dataMonth='2016年03月';
+            echart2yBar({
+                ajaxUrl:'getTop10ChargeProvince?dataMonth='+dataMonth,
+                //ajaxUrl:'json/echarts/getTop10ChargeProvinceBar01.json',
+                rootDivId:'getTop10ChargeProvinceBar01',
+                xValName:'regionName',
+                yLAxisName:'总费用',
+                yRAxisName:'',
+                config:[
+                    ['charge','总费用','L']
+                ]
+            });
+        }
+    });
+
+    $('#getTop10ChargeProvince_S').click(function(){
+        var newP = $('#省级行政区总排污费month form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'getTop10ChargeProvince?'+newP,
+            rootDivId:'getTop10ChargeProvinceBar01'
+        });
+    });
+
+    //省级行政区各污染物排污费(月)
+    var getTop10PollutantChargeProvince = true;
+    $('#getTop10PollutantChargeProvince').click(function(){
+        if(getTop10PollutantChargeProvince){
+            getTop10PollutantChargeProvince=false;
+
+            var dataMonth='2016年01月';
+            var pollutantName='二氧化硫';
+            echart2yBar({
+                ajaxUrl:'getTop10PollutantChargeProvince?dataMonth='+dataMonth+'&pollutantName='+pollutantName,
+                //ajaxUrl:'json/echarts/getTop10PollutantChargeProvinceBar01.json',
+                rootDivId:'getTop10PollutantChargeProvinceBar01',
+                xValName:'regionName',
+                yLAxisName:'费用',
+                yRAxisName:'',
+                config:[
+                    ['charge','费用','L']
+                ]
+            });
+        }
+    });
+
+    $('#getTop10PollutantChargeProvince_S').click(function(){
+        var newP = $('#省级行政区各污染物排污费month form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'getTop10PollutantChargeProvince?'+newP,
+            rootDivId:'getTop10PollutantChargeProvinceBar01'
+        });
+    });
+
+    //省级行政区总排污费(年)
+    var getYearTop10ChargeProvince = true;
+    $('#getYearTop10ChargeProvince').click(function(){
+        if(getYearTop10ChargeProvince){
+            getYearTop10ChargeProvince=false;
+
+            var year='2016';
+            echart2yBar({
+                ajaxUrl:'getYearTop10ChargeProvince?year='+year,
+                //ajaxUrl:'json/echarts/getYearTop10ChargeProvinceBar01.json',
+                rootDivId:'getYearTop10ChargeProvinceBar01',
+                xValName:'regionName',
+                yLAxisName:'总费用',
+                yRAxisName:'',
+                config:[
+                    ['charge','总费用','L']
+                ]
+            });
+        }
+    });
+
+    $('#getYearTop10ChargeProvince_S').click(function(){
+        var newP = $('#省级行政区总排污费year form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'getYearTop10ChargeProvince?'+newP,
+            rootDivId:'getYearTop10ChargeProvinceBar01'
+        });
+    });
+
+    //省级行政区各污染物排污费(年)
+    var getYearTop10PollutantChargeProvince = true;
+    $('#getYearTop10PollutantChargeProvince').click(function(){
+        if(getYearTop10PollutantChargeProvince){
+            getYearTop10PollutantChargeProvince=false;
+
+            var year='2016';
+            var pollutantName='二氧化硫';
+            echart2yBar({
+                ajaxUrl:'getYearTop10PollutantChargeProvince?year='+year+'&pollutantName='+pollutantName,
+                //ajaxUrl:'json/echarts/getYearTop10PollutantChargeProvinceBar01.json',
+                rootDivId:'getYearTop10PollutantChargeProvinceBar01',
+                xValName:'regionName',
+                yLAxisName:'费用',
+                yRAxisName:'',
+                config:[
+                    ['charge','费用','L']
+                ]
+            });
+        }
+    });
+
+    $('#getYearTop10PollutantChargeProvince_S').click(function(){
+        var newP = $('#省级行政区各污染物排污费year form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'getYearTop10PollutantChargeProvince?'+newP,
+            rootDivId:'getYearTop10PollutantChargeProvinceBar01'
+        });
+    });
+
+    //市级行政区排放量情况(月)
+    var topTenFlowCityMonth = true;
+    $('#topTenFlowCityMonth').click(function(){
+        if(topTenFlowCityMonth){
+            topTenFlowCityMonth=false;
+
+            var month='2016年12月';
+            echart2yBar({
+                ajaxUrl:'topTenFlowCityMonth?month='+month,
+                //ajaxUrl:'json/echarts/topTenFlowCityMonthBar01.json',
+                rootDivId:'topTenFlowCityMonthBar01',
+                xValName:'regionName',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+                    ['totalFlow','总排放量','L'],
+
+                    ['nh4Flow','氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#topTenFlowCityMonth_S').click(function(){
+        var newP = $('#市级行政区排放量情况month form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'topTenFlowCityMonth?'+newP,
+            rootDivId:'topTenFlowCityMonthBar01'
+        });
+    });
+
+    //市级行政区排放量情况(年)
+    var topTenFlowCityYear = true;
+    $('#topTenFlowCityYear').click(function(){
+        if(topTenFlowCityYear){
+            topTenFlowCityYear=false;
+
+            var year='2016';
+            echart2yBar({
+                ajaxUrl:'topTenFlowCityYear?year='+year,
+                //ajaxUrl:'json/echarts/topTenFlowCityYearBar01.json',
+                rootDivId:'topTenFlowCityYearBar01',
+                xValName:'regionName',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+                    ['totalFlow','总排放量','L'],
+
+                    ['nh4Flow','氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#topTenFlowCityYear_S').click(function(){
+        var newP = $('#市级行政区排放量情况year form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'topTenFlowCityYear?'+newP,
+            rootDivId:'topTenFlowCityYearBar01'
+        });
+    });
+
+    //单位GDP污染物排放总量
+    var topTenFlowPerGDPQuarter = true;
+    $('#topTenFlowPerGDPQuarter').click(function(){
+        if(topTenFlowPerGDPQuarter){
+            topTenFlowPerGDPQuarter=false;
+
+            var year='2016';
+            var quarter= '第一季度';
+            var order='最多';
+            echart2yBar({
+                ajaxUrl:'topTenFlowPerGDPQuarter?year='+year+'&quarter='+quarter+'&order='+order,
+                //ajaxUrl:'json/echarts/topTenFlowPerGDPQuarterBar01.json',
+                rootDivId:'topTenFlowPerGDPQuarterBar01',
+                xValName:'regionName',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlowPerGDP','单位GDP化学需氧量排放量','L'],
+                    ['dustFlowPerGDP','单位GDP烟尘排放量','L'],
+                    ['noxFlowPerGDP','单位GDP氮氧化物排放量','L'],
+                    ['so2FlowPerGDP','单位GDP二氧化硫排放量','L'],
+                    ['totalFlowPerGDP','单位GDP总排放量','L'],
+
+                    ['nh4FlowPerGDP','单位GDP氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#topTenFlowPerGDPQuarter_S').click(function(){
+        var newP = $('#单位GDP污染物排放总量 form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'topTenFlowPerGDPQuarter?'+newP,
+            rootDivId:'topTenFlowPerGDPQuarterBar01'
+        });
+    });
+
+    //省级行政区排放量情况(月)
+    var topTenFlowProvinceMonth = true;
+    $('#topTenFlowProvinceMonth').click(function(){
+        if(topTenFlowProvinceMonth){
+            topTenFlowProvinceMonth=false;
+
+            var month='2016年12月';
+            echart2yBar({
+                ajaxUrl:'topTenFlowProvinceMonth?month='+month,
+                //ajaxUrl:'json/echarts/topTenFlowProvinceMonthBar01.json',
+                rootDivId:'topTenFlowProvinceMonthBar01',
+                xValName:'regionName',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+                    ['totalFlow','总排放量','L'],
+
+                    ['nh4Flow','氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#topTenFlowProvinceMonth_S').click(function(){
+        var newP = $('#省级行政区排放量情况month form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'topTenFlowProvinceMonth?'+newP,
+            rootDivId:'topTenFlowProvinceMonthBar01'
+        });
+    });
+
+    //省级行政区排放量情况(年)
+    var topTenFlowProvinceYear = true;
+    $('#topTenFlowProvinceYear').click(function(){
+        if(topTenFlowProvinceYear){
+            topTenFlowProvinceYear=false;
+
+            var year='2016';
+            echart2yBar({
+                ajaxUrl:'topTenFlowProvinceYear?year='+year,
+                //ajaxUrl:'json/echarts/topTenFlowProvinceYearBar01.json',
+                rootDivId:'topTenFlowProvinceYearBar01',
+                xValName:'regionName',
+                yLAxisName:'排放量(千克)',
+                yRAxisName:'排放量(千克)',
+                config:[
+                    ['codFlow','化学需氧量排放量','L'],
+                    ['dustFlow','烟尘排放量','L'],
+                    ['noxFlow','氮氧化物排放量','L'],
+                    ['so2Flow','二氧化硫排放量','L'],
+                    ['totalFlow','总排放量','L'],
+
+                    ['nh4Flow','氨氮排放量','R']
+                ]
+            });
+        }
+    });
+
+    $('#topTenFlowProvinceYear_S').click(function(){
+        var newP = $('#省级行政区排放量情况year form').serialize();
+        alert(newP);
+        echart2yBar('reload',{
+            ajaxUrl:'topTenFlowProvinceYear?'+newP,
+            rootDivId:'topTenFlowProvinceYearBar01'
+        });
+    });
+
+    //*******************************柱状图
+
+
+</script>
+<!-- REPORT -->
+
+<SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
+</body>
+</html>

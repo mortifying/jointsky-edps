@@ -1,0 +1,49 @@
+section#p-section {
+    margin-top: 80px;
+    padding: 10px 0;
+}
+.p-menu {
+    width: 100%;
+}
+.p-menu li {
+    min-width: 50%;
+}
+@media (min-width: 768px) {
+    .p-menu li {
+        min-width: 25%;
+    }
+    .p-separator {
+        height: 10px;
+    }
+    .p-board {
+        padding: 15px;
+        width: 50%;
+    }
+    .p-title {
+        font-size: 20px;
+    }
+    .p-description {
+        font-size: 12px;
+    }
+}
+@media (min-width: 992px) {
+    .p-separator {
+        height: 15px;
+    }
+    .p-board {
+        padding: 20px;
+        width: 33.333333%;
+    }
+    .p-title {
+        font-size: 18px;
+    }
+}
+@media (min-width: 1200px) {
+    .p-separator {
+        height: 20px;
+    }
+    .p-board {
+        padding: 30px;
+        width: 25%;
+    }
+}

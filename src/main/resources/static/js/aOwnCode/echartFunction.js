@@ -1,9 +1,41 @@
 //双y轴线图函数
-function echart2yLine(p){
+function echart2yLine(){
+
+
+    //计算出echart要用的对象p
+
+    var p = arguments[0];
+    if(typeof(arguments[0])=='string'){
+
+        if(arguments[0]=='reload'){
+            if(arguments[1]==null||arguments[1].rootDivId==null){
+                alert('第二个参数内没有rootDivId属性！');
+                return ;
+            }
+
+            p = $('#'+arguments[1].rootDivId).data('myP');
+
+            if(p){
+                var p2 = arguments[1];
+                $.extend(p,p2);
+            }else{
+                alert('图标未初始化！');
+                return ;
+            }
+        }
+
+    }else if(typeof(arguments[0])=='object'){
+        $('#'+arguments[0].rootDivId).data('myP',p);
+    }
+    console.log(p);
+    //计算出echart要用的对象p
+
 
     setTimeout(function(){
 
+
         var echartRoot = echarts.init(document.getElementById(p.rootDivId));
+
 
         $.ajax({
             url: p.ajaxUrl,
@@ -60,30 +92,72 @@ function echart2yLine(p){
                 //*************定义该line图表要用的series值
 
                 var option ={
-                    legend:{
-                        data: legendData,
-                        right:'2%',
-                        top: '10%',
-                        height:'100%',
-                        orient:'vertical'
+                    baseOption: {
+                        legend:{
+                            data: legendData,
+                            height:'100%',
+                            orient:'vertical'
+                        },
+                        grid:{
+                            right:'15%'
+                        },
+                        xAxis:{
+                            data:xDate
+                        },
+                        yAxis: [
+                            {
+                                name: p.yLAxisName
+                            },
+                            {
+                                name: p.yRAxisName
+                            }
+                        ],
+                        series: series
                     },
-                    grid:{
-                        left:'10%',
-                        right:'15%',
-                        width:'70%'
-                    },
-                    xAxis:{
-                        data:xDate
-                    },
-                    yAxis: [
+                    media:[
                         {
-                            name: p.yLAxisName
+                            query:{
+                                minWidth:0
+                            },
+                            option:{
+                                legend:{
+                                    left:'0%',
+                                    bottom:'0%'
+                                },
+                                grid:{
+                                    left:'20%',
+                                    bottom:'50%',
+                                    width:'60%'
+                                }
+                            }
                         },
                         {
-                            name: p.yRAxisName
+                            query:{
+                                minWidth:480
+                            },
+                            option:{
+                                legend:{
+                                    right:'0%',
+                                    top: '17%'
+                                },
+                                grid:{
+                                    left:'12%',
+                                    bottom:'20%',
+                                    width:'50%'
+                                }
+                            }
+                        },
+                        {
+                            query:{
+                                minWidth:768
+                            },
+                            option:{
+                                grid:{
+                                    width:'60%'
+                                }
+                            }
                         }
-                    ],
-                    series: series
+                    ]
                 };
 
                 echartRoot.setOption(option);
@@ -94,13 +168,41 @@ function echart2yLine(p){
 
             }
         });
-    },0);
+    },30);
 
 }
 //双y轴线图函数
 
 //双y轴条形图函数
-function echart2yBar(p){
+function echart2yBar(){
+
+    //计算出echart要用的对象p
+
+    var p = arguments[0];
+    if(typeof(arguments[0])=='string'){
+
+        if(arguments[0]=='reload'){
+            if(arguments[1]==null||arguments[1].rootDivId==null){
+                alert('第二个参数内没有rootDivId属性！');
+                return ;
+            }
+
+            p = $('#'+arguments[1].rootDivId).data('myP');
+
+            if(p){
+                var p2 = arguments[1];
+                $.extend(p,p2);
+            }else{
+                alert('图标未初始化！');
+                return ;
+            }
+        }
+
+    }else if(typeof(arguments[0])=='object'){
+        $('#'+arguments[0].rootDivId).data('myP',p);
+    }
+    console.log(p);
+    //计算出echart要用的对象p
 
     setTimeout(function(){
 
@@ -160,57 +262,105 @@ function echart2yBar(p){
                 //*************定义该bar图表要用的series值
 
                 var option ={
-                    legend:{
-                        data: legendData,
-                        right:'2%',
-                        top: '17%',
-                        height:'100%',
-                        orient:'vertical'
-                    },
-                    grid:{
-                        left:'10%',
-                        right:'15%',
-                        width:'66%'
-                    },
-                    xAxis:{
-                        data:xDate,
-                        axisLabel:{
-                            formatter:function(value,index){
-                                if(value.length>5){
+                    baseOption: {
+                        legend:{
+                            data: legendData,
+                            right:'2%',
+                            top: '17%',
+                            height:'100%',
+                            orient:'vertical'
+                        },
+                        grid:{
+                            left:'10%',
+                            right:'15%',
+                            width:'66%'
+                        },
+                        xAxis:{
+                            data:xDate,
+                            axisLabel:{
+                                formatter:function(value,index){
+                                    if(value.length>2){
 
-                                    var arr = value.split('');
-                                    var newArr=[];
+                                        var arr = value.split('');
+                                        var newArr=[];
 
-                                    $.each(arr,function(i,n){
-                                        newArr.push(n);
-                                        if((i+1)%5==0){
-                                            newArr.push('\n');
-                                        }
-                                    });
+                                        $.each(arr,function(i,n){
+                                            newArr.push(n);
+                                            if((i+1)%2==0){
+                                                newArr.push('\n');
+                                            }
+                                        });
 
 
-                                    return newArr.join('');
+                                        return newArr.join('');
+                                    }
+                                    return value;
                                 }
-                                return value;
                             }
-                        }
+                        },
+                        yAxis: [
+                            {
+                                name: p.yLAxisName
+                            },
+                            {
+                                name: p.yRAxisName
+                            }
+                        ],
+                        itemStyle:{
+                            normal:{
+                                barBorderRadius:[6,6,0,0],
+                                borderWidth:1,
+                                borderColor:'black'
+                            }
+                        },
+                        series: series
                     },
-                    yAxis: [
+                    media:[
                         {
-                            name: p.yLAxisName
+                            query:{
+                                minWidth:0
+                            },
+                            option:{
+                                legend:{
+                                    left:'0%',
+                                    bottom:'0%'
+                                },
+                                grid:{
+                                    left:'20%',
+                                    bottom:'50%',
+                                    top:'10%',
+                                    width:'60%',
+                                    height:240
+                                }
+                            }
                         },
                         {
-                            name: p.yRAxisName
+                            query:{
+                                minWidth:480
+                            },
+                            option:{
+                                legend:{
+                                    right:'0%',
+                                    top: '17%'
+                                },
+                                grid:{
+                                    left:'12%',
+                                    bottom:'20%',
+                                    width:'50%'
+                                }
+                            }
+                        },
+                        {
+                            query:{
+                                minWidth:768
+                            },
+                            option:{
+                                grid:{
+                                    width:'60%'
+                                }
+                            }
                         }
-                    ],
-                    itemStyle:{
-                        normal:{
-                            barBorderRadius:[6,6,0,0],
-                            borderWidth:1,
-                            borderColor:'black'
-                        }
-                    },
-                    series: series
+                    ]
                 };
 
                 echartRoot.setOption(option);

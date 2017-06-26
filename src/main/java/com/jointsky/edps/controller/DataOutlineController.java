@@ -176,13 +176,13 @@ public class DataOutlineController {
     @ApiOperation(value = "单位GDP污染物排放总量",notes = "根据季度获取单位GDP污染物季度排放总量前十的省份排放情况")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2016"),
-            @ApiImplicitParam(name = "quarter",value = "季度",required = true,dataType = "int",paramType = "query",defaultValue = "1"),
+            @ApiImplicitParam(name = "quarter",value = "季度",required = true,dataType = "String",paramType = "query",defaultValue = "第一季度"),
             @ApiImplicitParam(name = "order",value = "最多，最少",required = true,dataType = "String",paramType = "query",defaultValue = "最多")
     })
     @RequestMapping(value = "/topTenFlowPerGDPQuarter",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public List<FlowPerGDP> getTopTenFlowPerGDPQuarter(@RequestParam(value = "year") int year, @RequestParam(value = "quarter") int quarter,
+    public List<FlowPerGDP> getTopTenFlowPerGDPQuarter(@RequestParam(value = "year") int year, @RequestParam(value = "quarter") String quarter,
                                                        @RequestParam(value = "order") String order){
-        return dataOutlineService.topTenFlowPerGDPQuarter(year,quarter,order);
+        return dataOutlineService.topTenFlowPerGDPQuarter(year,dateTransition.quarterToNum(quarter),order);
     }
 
 

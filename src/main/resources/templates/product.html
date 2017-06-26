@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="yui3-js-enabled">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=10,transtion= 50)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=20,transtion= 6)">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <link rel="stylesheet" href="themes/bigdata/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/product.css">
+    <link rel="stylesheet" href="themes/bigdata/goTopstyle.css">
+
+    <script src="js/bigdata/jquery-1.11.1.min.js"></script>
+    <script src="js/bigdata/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
+    <script type="text/javascript" src="js/bigdata/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="background-white">
+<!-- NAVIGATION -->
+<div style="width:100%;">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" title="生态大数据服务平台">
+                   <h2 style="margin-top: 10px; color: #0659a5;">生态环保大数据平台</h2>
+                    <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin:0 auto;max-width: 960px">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="active"><a href="product.html">产品</a></li>
+                    <li><a href="#">帮助</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<script type="text/javascript">
+    $(document).ready(function (){
+        var index =  QueryString("title");
+        index = parseInt(index, 10);
+        $.each($(".navbar-nav li"),function (i){
+            $(this).removeClass("active");
+            if(i==index){
+                $(this).addClass("active");
+            }
+        });
+        refreshNewsState();
+        setInterval('refreshNewsState()',60000);
+    });
+    function refreshNewsState(){
+        var param={};
+        if($("#newscenter").hasClass("active")){
+            return;
+        }
+        if($(".littercycle:visible").length>0){
+            return;
+        }
+        $.get("/loadNewsState",param,function(data){
+            if(data.isHasNews){
+                $(".littercycle").show();
+            }
+        },"json");
+    }
+</script>
+<!-- /NAVIGATION -->
+<!-- BROADCAST -->
+<section id="productmenu" class=" bg-dark" >
+    <div class="container">
+        <div class="row mission">
+            <div class="col-xs-12 col-sm-6 mission-img">
+                <img src="themes/bigdata/images/API.png" class="img-productmenu img-responsive img-centered" alt="">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h3 class="mission-coloe-1" >环境数据API</h3>
+                <p>
+                    想开发自己的环境应用？我们为您提供了丰富的环境数据调用REST API。
+                </p>
+                <button class="btn btn-primary btn-sm" style="font-size: 16px; width:150px;"
+                        onclick="window.location.href='#div-api'">查看使用</button>
+            </div>
+        </div>
+        <div class="row mission mission-item">
+            <div class="col-xs-12 col-sm-6 mission-left mission-img">
+                <img src="themes/bigdata/images/DataReport.png" class="img-productmenu img-responsive img-centered" alt="">
+            </div>
+            <div class="col-xs-12 col-sm-6 mission-left">
+                <h3 class="mission-coloe-2" >数据报表</h3>
+                <p>
+                    对国家统计、环境质量、举报投诉、能源以及在线监控排污数据进行可视化展现。
+                </p>
+                <button class="btn btn-success btn-sm" style="font-size: 16px; width:150px;"
+                        onclick="window.location.href='#div-datareport'">查看使用</button>
+
+            </div>
+        </div>
+        <div class="row mission mission-item">
+            <div class="col-xs-12 col-sm-6 mission-img">
+                <img src="themes/bigdata/images/order.png" class="img-productmenu img-responsive img-centered" alt="">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h3 class="mission-coloe-3" >排行统计</h3>
+                <p>
+                    从不同层面和维度对数据进行汇总分析，以固定的方式对环保单位，公众，排污企业，环保服务企业进行数据的展示
+                </p>
+                <button class="btn btn-danger btn-sm" style="font-size: 16px; width:150px;"
+                        onclick="window.location.href='#div-rankinglist'">查看使用</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /BROADCAST -->
+<!-- PRODUCT -->
+<SECTION id="p-section">
+    <DIV class="container">
+        <div id="div-api" style="height: 80px;"></div>
+        <DIV class="row" id="api">
+            <H2 class="text-center" style="margin-bottom: 30px; color:#428bca;">环境数据API</H2>
+            <DIV class="p-board" id="report-api-1">
+                <DIV class="p-title">数据宏观概况</DIV>
+                <DIV class="p-price"><SPAN class="bg-price">免费</SPAN></DIV>
+                <DIV class="p-description">长天长大数据平台数据宏观汇总情况</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=数据宏观概况"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board" id="report-api-2">
+                <DIV class="p-title">能源数据</DIV>
+                <DIV class="p-price"><SPAN class="bg-price">免费</SPAN></DIV>
+                <DIV class="p-description">查询能源数据与污染源监控数据</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=能源数据入口"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board" id="report-api-3">
+                <DIV class="p-title">环境质量</DIV>
+                <DIV class="p-price"><SPAN class="bg-price ">免费</SPAN></DIV>
+                <DIV class="p-description">查询环境质量与污染源监控数据</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=环境质量入口"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board" id="report-api-4">
+                <DIV class="p-title">国家统计</DIV>
+                <DIV class="p-price"><SPAN class="bg-price ">免费</SPAN></DIV>
+                <DIV class="p-description">查询国家统计数据与污染源监控数据</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=国家统计入口"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board" id="report-api-5">
+                <DIV class="p-title">数据异常分析</DIV>
+                <DIV class="p-price"><SPAN class="bg-price ">免费</SPAN></DIV>
+                <DIV class="p-description">长天长大数据平台数据异常分析结果API</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=数据异常分析入口"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board" id="report-api-6">
+                <DIV class="p-title">举报投诉</DIV>
+                <DIV class="p-price"><SPAN class="bg-price ">免费</SPAN></DIV>
+                <DIV class="p-description">查询举报投诉与污染源监控数据</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-primary" href="productApi.html?code=举报投诉数据入口"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情 </A>
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    <DIV class="container" style="margin-top: 25px;">
+        <div id="div-datareport" style="height: 80px;"></div>
+        <DIV class="row" id="datareport">
+            <H2 class="text-center" style="margin-bottom: 30px; color:#08a061;">数据报表</H2>
+            <DIV class="p-board-2" id="report-pm25-history">
+                <DIV class="p-title">全国行业GDP与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2 ">免费</SPAN></DIV>
+                <DIV class="p-description">对全国行业GDP与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success"  href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV></DIV>
+            <DIV class="p-board-2" id="report-discharge-history">
+                <DIV class="p-title">火力发电和原油与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2 ">免费</SPAN></DIV>
+                <DIV class="p-description">对火力发电和原油与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success"  href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV></DIV>
+            <DIV class="p-board-2" id="report-weather-history">
+                <DIV class="p-title">GDP与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2 ">免费</SPAN></DIV>
+                <DIV class="p-description">对GDP与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success"  href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV></DIV>
+            <DIV class="p-board-2" id="report-air-history">
+                <DIV class="p-title">环境质量与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2">免费</SPAN></DIV>
+                <DIV class="p-description">对环境质量与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success" href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-2" id="report-air-history">
+                <DIV class="p-title">能源资源消费与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2">免费</SPAN></DIV>
+                <DIV class="p-description">对能源资源消费与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success" href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-2" id="report-air-history">
+                <DIV class="p-title">能源资源产量与排放量报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2">免费</SPAN></DIV>
+                <DIV class="p-description">对能源资源产量与排放量进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success" href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-2" id="report-air-history">
+                <DIV class="p-title">举报投诉报表</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-2">免费</SPAN></DIV>
+                <DIV class="p-description">对举报投诉进行可视化展示</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-success" href="productDataReport.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>&nbsp;&nbsp;查看详情				 </A>
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    </DIV>
+    <DIV class="container" style="margin-top: 25px;">
+        <div id="div-rankinglist" style="height: 80px;"></div>
+        <DIV class="row" id="rankinglist">
+            <H2 class="text-center" style="margin-bottom: 30px; color:#d9534f;">排行统计</H2>
+            <DIV class="p-board-3" id="report-pm25-history">
+                <DIV class="p-title">在线监测设备排行</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-3">免费</SPAN></DIV>
+                <DIV class="p-description">统计在线监测设备各参数进行排行</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-danger" href="productRankingList.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情</A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-3" id="report-discharge-history">
+                <DIV class="p-title">运维企业服务质量排行</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-3">免费</SPAN></DIV>
+                <DIV class="p-description">统计运维企业服务质量进行排行</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-danger" href="productRankingList.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情</A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-3" id="report-discharge-history">
+                <DIV class="p-title">全国重污染域排行</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-3">免费</SPAN></DIV>
+                <DIV class="p-description">统计全国重污染域污染程度进行排行</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-danger" href="productRankingList.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情</A>
+                </DIV>
+            </DIV>
+            <DIV class="p-board-3" id="report-discharge-history">
+                <DIV class="p-title">重污染企业排行</DIV>
+                <DIV class="p-price"><SPAN class="bg-price-3">免费</SPAN></DIV>
+                <DIV class="p-description">统计重污染企业污染程度进行排行</DIV>
+                <DIV class="p-button"><A class="btn btn-sm btn-danger" href="productRankingList.html?code=1"
+                                         type="button"><SPAN class="fa fa-eye"></SPAN>查看详情</A>
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    </DIV>
+</SECTION>
+<!-- PRODUCT -->
+
+<SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
+
+<!-- FOOTER -->
+<section id="footer" >
+    <div class="row text-center">
+        <div class="col-sm-12" style="line-height: 20px;"><br>
+            <img src="themes/bigdata/images/flag.png" alt="" style="width:370px;"><br>
+            地址:西安市高新区新区丈八东路汇鑫IBC-B座16层内<br>
+            总机:029-82245879  服务热线:400-029-2516<br>
+            邮编：710065     传真：029-82245879-8888<br>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿[
+  {
+    "regionName": "内蒙古自治区",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "46503389.00"
+  },
+  {
+    "regionName": "山东省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "28194111.58"
+  },
+  {
+    "regionName": "贵州省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "18877041.84"
+  },
+  {
+    "regionName": "陕西省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "18462586.29"
+  },
+  {
+    "regionName": "河南省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "11956408.00"
+  },
+  {
+    "regionName": "江西省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "10073400.96"
+  },
+  {
+    "regionName": "新疆维吾尔自治区",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "7579165.04"
+  },
+  {
+    "regionName": "湖北省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "5722731.00"
+  },
+  {
+    "regionName": "辽宁省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "5223185.00"
+  },
+  {
+    "regionName": "江苏省",
+    "year": 2016,
+    "pollutantName": "二氧化硫",
+    "charge": "5051998.00"
+  }
+]

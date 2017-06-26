@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="yui3-js-enabled">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=10,transtion= 50)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=20,transtion= 6)">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <link rel="stylesheet" href="themes/bigdata/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/goTopstyle.css">
+    <link rel="stylesheet" href="themes/bigdata/home.css">
+    <script src="js/bigdata/jquery-1.11.1.min.js"></script>
+    <script src="js/bigdata/bootstrap.min.js"></script>
+    <script src="js/bigdata/shieldui-all.min.js"></script>
+    <script src="js/bigdata/common.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
+    <script type="text/javascript" src="js/bigdata/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="background-white">
+<!-- NAVIGATION -->
+<div style="width:100%;">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" title="生态大数据服务平台">
+                   <h2 style="margin-top: 10px; color: #0659a5;">生态环保大数据平台</h2>
+                    <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin:0 auto;max-width: 960px">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="product.html">产品</a></li>
+                    <li><a href="#">帮助</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<!-- /NAVIGATION -->
+<!-- BROADCAST -->
+<section id="broadcast" >
+    <div class="container">
+        <h1 id="broadcast-title"></h1>
+        <h2 >大数据推动<span style="color: #9bff7c" >“互联网+环保”</span>&nbsp;&nbsp;新模式</h2>
+        <p id="broadcast-subtitle" style="color:#fff;">
+            “互联网+”环保的创新模式，加强了资源环境动态监测、<br>
+            转变了传统监管方式，实现了精细化管理，开拓了智慧环保。
+            “互联网+环保”将给环境监管带来颠覆性的变革。
+        </p>
+        <div id="broadcast-buttons">
+            <a href="product.html" type="button" class="btn btn-lgx btn-success">开始体验</a>
+        </div>
+    </div>
+    <canvas width="1592" height="744" style="width: 100%; height: 100%;"></canvas>
+</section>
+<!-- /BROADCAST -->
+<!-- STAT -->
+<section id="section-stat">
+    <div class="container stat-bg" style="width:99%">
+        <div class="row">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="stat-item-1" >
+                        <div class="stat-title color-1">
+                            我们已收录
+                        </div>
+                        <h4 id="dataRecordNum" class="stat-heading" style="display: block;">4,420,357</h4>
+                            <code  class="color-1" >条环境相关数据</code>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-item-2" >
+                    <div class="stat-title color-2">
+                        我们已收录
+                    </div>
+                    <h4 id="psNum" class="stat-heading" style="display: block;">16,609</h4>
+                        <code class="color-2" >家重点污染源</code>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-item-3" >
+                    <div class="stat-title color-3">
+                        我们已收录
+                    </div>
+                    <h4 id="psOutputNum" class="stat-heading" style="display: block;">26,817</h4>
+
+                        <code class="color-3" >个污染排放口</code>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /STAT -->
+
+<!-- PRODUCT -->
+<section id="section-product" >
+<div class="row">
+    <div class="container stat-bg-product" style="width:99%">
+    <div class="row text-center" style="width:99%">
+        <div class="col-sm-12">
+            <div class="stat-item-4" >
+                <div class="stat-title-product color-4">
+                    产品介绍
+                </div>
+                <h4 id="stat-product" class="stat-heading-product" style="display: block;">
+                    大数据平台数据入口以国控重点污染源在线监控系统和排污收费系统为主要数据基础来源，结合第三方数据源（物联网感知数据和互联网公众数据等），构建大数据分析基础构架，搭建大数据分析、计算主体，建立标准数据存储和分析模型库，提供了一系统列功能丰富、便捷易用的综合环境数据REST API，为环境应用开发用户提供丰富可靠的天气质量、国家统计、能源数据以及举报投诉等数据服务，此外，大数据平台数据入口还为环境研究人员提供了自定义数据报表服务和自动监控设备、运维企业服务质量、全国重污染区域、重污染行业以及重污染企业等一系列的统计服务。
+                </h4>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+<!-- /PRODUCT -->
+<SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
+
+<!-- FOOTER -->
+<section id="team" >
+    <div class="row text-center" style="width:99%">
+        <div class="row text-center">
+            <div class="col-sm-4" >
+                <img src="themes/bigdata/images/homePage_down1.png">
+                <h4 class="color-5">专业的研发团队</h4>
+                <img src="themes/bigdata/images/line_1.jpg">
+                <p class="padding-top-10 padding-left-right-20">
+                    不断优化产品生产及提升产品质量提供技术保障
+                </p>
+            </div>
+            <div class="col-sm-4" >
+                <img src="themes/bigdata/images/homePage_down2.png">
+                <h4 class="color-6">成熟的技术服务</h4>
+                <img src="themes/bigdata/images/line_2.jpg">
+                <p class="padding-top-10 padding-left-right-20">
+                    提供一系列功能丰富，便捷易用的综合环境数据挖掘REST API、数据可视化展现和统计排行服务。
+                </p>
+
+            </div>
+            <div class="col-sm-4" >
+                <img src="themes/bigdata/images/homePage_down3.png">
+                <h4 class="color-7">高效的工作流程</h4>
+                <img src="themes/bigdata/images/line_3.jpg">
+                <p class="padding-top-10 padding-left-right-20">
+                    消除多余的工作环节，合并同类活动工作流程更为经济、合理、简便和高效。
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section id="footer" >
+    <div class="container"  style="width:99%" >
+        <div class="row text-center" >
+            <div class="col-sm-12" style="line-height: 20px;"><br>
+                <img src="themes/bigdata/images/flag.png" alt="" style="width:370px;"><br>
+                地址:西安市高新区新区丈八东路汇鑫IBC-B座16层内<br>
+                总机:029-82245879  服务热线:400-029-2516<br>
+                邮编：710065     传真：029-82245879-8888<br>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+</body>
+</html>

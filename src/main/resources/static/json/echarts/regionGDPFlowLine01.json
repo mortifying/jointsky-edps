@@ -1,0 +1,47 @@
+﻿[
+  {
+    "regionCode": null,
+    "region": "北京市",
+    "quarter": "2016年第一季度",
+    "gdp": 5451.89,
+    "agri": 12.63,
+    "forestry": 8.14,
+    "animal": 29.83,
+    "fishery": 0.59,
+    "dustFlow": 55977.088499,
+    "so2Flow": 49994.724382,
+    "noxFlow": 496928.990885,
+    "codFlow": 2280093.28086,
+    "nh4Flow": 149375.868273
+  },
+  {
+    "regionCode": null,
+    "region": "北京市",
+    "quarter": "2016年第二季度",
+    "gdp": 11413.83,
+    "agri": 42.65,
+    "forestry": 25,
+    "animal": 61.84,
+    "fishery": 3.21,
+    "dustFlow": 51342.931029,
+    "so2Flow": 31122.600827,
+    "noxFlow": 300021.197105,
+    "codFlow": 3067696.766635,
+    "nh4Flow": 157846.518289
+  },
+  {
+    "regionCode": null,
+    "region": "北京市",
+    "quarter": "2016年第三季度",
+    "gdp": 17367.77,
+    "agri": 92.7,
+    "forestry": 37.11,
+    "animal": 91.67,
+    "fishery": 5.49,
+    "dustFlow": 90231.399683,
+    "so2Flow": 45619.100106,
+    "noxFlow": 531048.662779,
+    "codFlow": 3228788.188046,
+    "nh4Flow": 132990.928576
+  }
+]

@@ -1,0 +1,36 @@
+.clearfix::after {
+	height: 0px; clear: both; display: block; visibility: hidden; content: ".";
+}
+.clearfix {
+	
+}
+.clearfix .clear {
+	_height: 0px;
+}
+.cbbfixed {
+	transition:bottom 0.3s; right: 10px; bottom: -85px; position: fixed; z-index: 3; cursor: pointer;
+}
+.cbbfixed .cbbtn {
+	width: 40px; height: 40px; display: block; background-color: rgb(66, 139, 202);
+}
+.cbbfixed .gotop {
+	transition:background-color 0.3s; margin-top: 1px;
+}
+.cbbfixed .gotop .up-icon {
+	background: url("images/side-icon02.png"); margin: 14px 0px 0px 9px; width: 23px; height: 12px; float: left;
+}
+.cbbfixed .gotop:hover {
+	background-color: rgb(44, 45, 46);
+}
+.cbbfixed .cweixin {
+	background: rgb(218, 219, 221);
+}
+.cbbfixed .cweixin div {
+	background: url("images/erwei.png"); transform-origin: 100% 70%; transition:transform 0.3s, opacity 0.3s; left: -200px; top: -115px; width: 200px; height: 200px; display: none; position: absolute; opacity: 0; transform: scale(0); -webkit-transition: all ease .3s; -webkit-transform: scale(0); -webkit-transform-origin: 100% 70%;
+}
+.cbbfixed .cweixin:hover div {
+	display: block; opacity: 1; transform: scale(1); -webkit-transform: scale(1);
+}
+.cbbfixed .cweixin .weixin-icon {
+	background: url("images/side-icon01.png"); margin: 12px 0px 0px 11px; width: 18px; height: 18px; float: left;
+}

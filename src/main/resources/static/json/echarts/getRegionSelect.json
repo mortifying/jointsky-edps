@@ -1,0 +1,142 @@
+﻿[
+  {
+    "regionCode": "110100000",
+    "regionName": "北京市"
+  },
+  {
+    "regionCode": "120100000",
+    "regionName": "天津市"
+  },
+  {
+    "regionCode": "130000000",
+    "regionName": "河北省"
+  },
+  {
+    "regionCode": "140000000",
+    "regionName": "山西省"
+  },
+  {
+    "regionCode": "150000000",
+    "regionName": "内蒙古自治区"
+  },
+  {
+    "regionCode": "210000000",
+    "regionName": "辽宁省"
+  },
+  {
+    "regionCode": "220000000",
+    "regionName": "吉林省"
+  },
+  {
+    "regionCode": "230000000",
+    "regionName": "黑龙江省"
+  },
+  {
+    "regionCode": "310000000",
+    "regionName": "上海市"
+  },
+  {
+    "regionCode": "320000000",
+    "regionName": "江苏省"
+  },
+  {
+    "regionCode": "330000000",
+    "regionName": "浙江省"
+  },
+  {
+    "regionCode": "340000000",
+    "regionName": "安徽省"
+  },
+  {
+    "regionCode": "350000000",
+    "regionName": "福建省"
+  },
+  {
+    "regionCode": "360000000",
+    "regionName": "江西省"
+  },
+  {
+    "regionCode": "370000000",
+    "regionName": "山东省"
+  },
+  {
+    "regionCode": "410000000",
+    "regionName": "河南省"
+  },
+  {
+    "regionCode": "420000000",
+    "regionName": "湖北省"
+  },
+  {
+    "regionCode": "430000000",
+    "regionName": "湖南省"
+  },
+  {
+    "regionCode": "440000000",
+    "regionName": "广东省"
+  },
+  {
+    "regionCode": "450000000",
+    "regionName": "广西壮族自治区"
+  },
+  {
+    "regionCode": "460000000",
+    "regionName": "海南省"
+  },
+  {
+    "regionCode": "500100000",
+    "regionName": "重庆市"
+  },
+  {
+    "regionCode": "510000000",
+    "regionName": "四川省"
+  },
+  {
+    "regionCode": "520000000",
+    "regionName": "贵州省"
+  },
+  {
+    "regionCode": "530000000",
+    "regionName": "云南省"
+  },
+  {
+    "regionCode": "540000000",
+    "regionName": "西藏自治区"
+  },
+  {
+    "regionCode": "610000000",
+    "regionName": "陕西省"
+  },
+  {
+    "regionCode": "620000000",
+    "regionName": "甘肃省"
+  },
+  {
+    "regionCode": "630000000",
+    "regionName": "青海省"
+  },
+  {
+    "regionCode": "640000000",
+    "regionName": "宁夏回族自治区"
+  },
+  {
+    "regionCode": "650000000",
+    "regionName": "新疆维吾尔自治区"
+  },
+  {
+    "regionCode": "660000000",
+    "regionName": "新疆生产建设兵团"
+  },
+  {
+    "regionCode": "710000000",
+    "regionName": "台湾省"
+  },
+  {
+    "regionCode": "810000000",
+    "regionName": "香港特别行政区"
+  },
+  {
+    "regionCode": "820000000",
+    "regionName": "澳门特别行政区"
+  }
+]

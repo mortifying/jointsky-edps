@@ -30,6 +30,22 @@ public class DateTransition {
         return quarter;
     }
 
+    public int quarterToNum(String str){
+
+        int quarter = 1;
+        if(str.equals("第一季度")){
+            quarter = 1;
+        }else if(str.equals("第二季度")){
+            quarter = 2;
+        }else if(str.equals("第三季度")){
+            quarter = 3;
+        }else {
+            quarter = 4;
+        }
+
+        return quarter;
+    }
+
     public int monthConvert(String str){
 
         String year = str.substring(0,4);

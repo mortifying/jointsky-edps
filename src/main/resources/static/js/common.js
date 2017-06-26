@@ -4,34 +4,22 @@
     }
 }(window));
 
-var ajaxConfig = {
-    //建议将此值修改成为POST避免缓存
-    reqMtd: "GET",
-    //成功标识字段
-    successField: "status",
-    //消息字段
-    messageField: "msg",
-    successValue: "101"
-};
 
-Public = {
+var Public = {
     post: function (url, param, callback) {
         $.ajax({
             url: url,
-            type: "POST",
+            type: "GET",
             data: param,
             dataType: "json",
             success: function (data) {
-                if ((data[ajaxConfig.successField] == ajaxConfig.successValue)) {
-                    callback(data);
-
-                }
-                else {
-                    alert(data[ajaxConfig.messageField]);
+                if ((data.status == "001" || data.status == "002")) {
+                    alert(data.msg);
                     return false;
                 }
+                else
 
-
+                    callback(data);
             },
             error: function (msg) {
                 //alert(msg);
@@ -47,15 +35,13 @@ Public = {
             data: param,
             dataType: "json",
             success: function (data) {
-                if ((data[ajaxConfig.successField] == ajaxConfig.successValue)) {
-                    callback(data);
-
-                }
-                else {
-                    alert(data[ajaxConfig.messageField]);
+                if ((data.status == "001" || data.status == "002")) {
+                    alert(data.msg);
                     return false;
                 }
+                else
 
+                    callback(data);
             },
             error: function (msg) {
                 //alert(msg);
@@ -365,7 +351,7 @@ Public = {
      * 展示一个等待提示框
      *@param["target"]: "body", //需要展示的遮罩的目标
      *@param["cssName"]: "_showloading", //class名称，可以自定义class
-     *@param["loadingImg"]: "/static/themes/bd/ui-images/loading.gif", //遮罩图片的路径
+     *@param["loadingImg"]: "/static/themes/vocs/ui-images/loading.gif", //遮罩图片的路径
      *@param["loadingText"]: "数据正在加载,请稍后...", //提示层的提示文字
      *@param["hideCall"]: null, //关闭回调函数
      *@param["timeout"]: 0 //是否自动关闭
@@ -460,11 +446,15 @@ var gridHelper = {
 
 
 if (window["context"] == undefined) {
-    window["context"] = location.origin;
+    window["context"] = location.origin+'/JMWebSite';
 }
 
 
-
+//提交表单的配置项
+var ajaxConfig = {
+    //请求方式
+    reqMtd: "GET"
+};
 //release Application 将下面的值修改为false
 var VocDebug = false;
 /*====================配置结束==================*/
@@ -909,7 +899,7 @@ function stopPropagation(e) {
  * 配置项：｛｝
  *@target: "body",//需要展示的遮罩的对象
  *@cssName: "_showloading",//class名称，可以自定义class
- *@loadingImg: "/static/themes/bd/ui-images/loading.gif",//遮罩图片的路径
+ *@loadingImg: "/static/themes/vocs/ui-images/loading.gif",//遮罩图片的路径
  *@loadingText: "数据正在加载,请稍后...",//提示层的提示文字
  *@hideCall: null,//关闭回调函数
  *@timeout: 0//是否自动关闭
@@ -1452,7 +1442,89 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     }
     return s.join(dec);
 }
+/**
+ * 字符串转换为日期格式
+ */
+var Date_StringToDate = function (strDate){
+    var date = eval('new Date(' + strDate.replace(/\d+(?=-[^-]+$)/,
+            function (a) { return parseInt(a, 10) - 1; }).match(/\d+/g) + ')');
+    return date;
+}
 
+/**
+ * 获取当前日期：yyyy-mm-dd
+ */
+var Date_CurentDay=function()
+{
+    var now = new Date();
+    var year = now.getFullYear();       //年
+    var month = now.getMonth() + 1;     //月
+    var day = now.getDate();            //日
+    var hh = now.getHours();            //时
+    var mm = now.getMinutes();          //分
+    var clock = year + "-";
+    if(month < 10)
+        clock += "0";
+    clock += month + "-";
+    if(day < 10)
+        clock += "0";
+    clock += day;
+    return(clock);
+}
+
+/**
+ *
+ * @param dateType {string}类型day日，month月,year年
+ * @param num {number}增加或减少数
+ * @param date {string}日期：yyyy-mm-dd
+ * @returns {string}
+ */
+var Date_Add=function(dateType,num,date){
+    var rtnStr=date;
+    var dates = date.split("-");
+    if(dateType=="day"){
+        rtnStr= dates[0]+"-"+dates[1]+"-"+(parseInt(dates[2])+num);
+    }else if(dateType=="month"){
+        rtnStr= dates[0]+"-"+(parseInt(dates[1])+num)+"-"+dates[2];
+    }else if(dateType=="year"){
+        rtnStr= (parseInt(dates[0])+num)+"-"+dates[1]+"-"+dates[2];
+    }
+
+    return rtnStr;
+}
+/**
+ * 获取当前日期时间：yyyy-mm-dd hh:mm
+ */
+function CurentDateTime()
+{
+    var now = new Date();
+    var year = now.getFullYear();       //年
+    var month = now.getMonth() + 1;     //月
+    var day = now.getDate();            //日
+
+    var hh = now.getHours();            //时
+    var mm = now.getMinutes();          //分
+
+    var clock = year + "-";
+
+    if(month < 10)
+        clock += "0";
+
+    clock += month + "-";
+
+    if(day < 10)
+        clock += "0";
+
+    clock += day + " ";
+
+    if(hh < 10)
+        clock += "0";
+
+    clock += hh + ":";
+    if (mm < 10) clock += '0';
+    clock += mm;
+    return(clock);
+}
 /**
  * datagrid-数字格式化-(000,000.00)
  */
@@ -1763,31 +1835,76 @@ function onComboboxHidePanel() {
 
 (function ($) {
     //用模版话引擎创建datagridlist
-    $.fn.templateList = function (opt, args) {
-
-
-        if (typeof opt == "string") {
-            var _24 = $.fn.templateList.methods[opt];
-            if (_24) {
-                return _24(this, args);
-            }
-            else {
-                return this.templateList(opt, args);
-            }
-        }
+    $.fn.templateList = function (opt) {
         var options = $.extend({}, $.fn.templateList.default, opt);
 
+        if (!options.tempId) {
+            alert("没有配置模版id");
+            return false;
+        }
+
+
+        var pageParam = {};
+        pageParam[options["pageSizeField"]] = options.pageSize;
+        pageParam[options["pageNumberField"]] = options.pageNumber;
+
+        var queryParam = $.extend({}, options.param,pageParam);
 
         return this.each(function (i, templ) {
-            $.data(this, "options", options);
-            var page = {}
-            page[options["pageSizeField"]] = options.pageSize;
-            page[options["pageNumberField"]] = options.pageNumber;
-            $(templ).templateList("load", page);
+
+
+            var initList = function (pagesize, pagenumber) {
+                queryParam.pageNo = pagenumber;
+                Public.post(options.url, queryParam, function (reponse) {
+
+                    var filter = options.loadFilter(reponse);
+                    var data = (!filter ? reponse : filter);
+                    try {
+                        var html = template(options.tempId, data);
+                        //解析数据
+                        $(templ).html(html);
+                    } catch (e) {
+                        alert(e);
+                    }
+
+                    //是否显示分页
+                    if (options.pagination) {
+                        var total = reponse.data.totalCount;
+
+                        if (!options.pagetarget && !templ.pagination) {
+                            templ.pagination = $(templ).after("<div class='tcdPageCode'></div>").next();
+                        }
+
+                        else {
+                            templ.pagination = $(options.pagetarget);
+                        }
+                        //创建分页
+                        $(templ.pagination).paginationM({
+                            totalData: total,
+                            showData: queryParam.pageSize,
+                            current: queryParam.pageNo,
+                            pageCount: Math.ceil(total / queryParam.pageSize),
+                            jump: true,
+                            coping: true,
+                            keepShowPN: true,
+                            callback: function (p) {
+                                initList(options.pageSize, p);
+                                options.onSelectPage(options.pageSize, p);
+                            }
+                        });
+                    }
+
+                    options.onLoadSuccess(reponse);
+                });
+            }
+
+            initList(queryParam.pageSize, queryParam.pageNo);
+
+
         });
 
 
-    };
+    }
 
     $.fn.templateList.default = {
         //一个URL从远程站点请求数据
@@ -1804,143 +1921,18 @@ function onComboboxHidePanel() {
 
         },
         total: 0,
-        pagetarget: null,
-        pageCls: "tcdPageCode",
         pageSize: 10,
         pageNumber: 1,
+        pagetarget: null,
         pageSizeField: "pageSize",
         pageNumberField: "pageNo",
         //返回过滤数据显示
         loadFilter: function (data) {
 
         },
-        onBeforeLoad: function () {
-
-        },
         //加载完成事件
         onLoadSuccess: function (data) {
 
-        }
-    };
-
-
-    $.fn.templateList.default[$.fn.templateList.default.pageSizeField] = $.fn.templateList.default.pageSize;
-    $.fn.templateList.default[$.fn.templateList.default.pageNumberField] = $.fn.templateList.default.pageNumber;
-
-    $.fn.templateList.methods = {
-
-        load: function (jq, page) {
-            var options = $(jq).templateList("options");
-
-            if (!options.tempId) {
-                alert("没有配置模版id");
-                return false;
-            }
-
-            options[options["pageSizeField"]] = page[options["pageSizeField"]];
-            options[options["pageNumberField"]] = page[options["pageNumberField"]];
-
-            var queryParam = $.extend({}, options.param, page);
-            if (options.url) {
-                if (options.onBeforeLoad.call(jq, null) == false) {
-                    return false;
-                }
-                Public.post(options.url, queryParam, function (response) {
-
-                    var filter = options.loadFilter(response);
-                    var data = (!filter ? response : filter);
-                    try {
-                        var html = "";
-                        if (data != "null")
-                            html = template(options.tempId, data);
-                        //解析数据
-                        $(jq).empty().html(html);
-                    } catch (e) {
-                        alert(e);
-                    }
-
-                    //是否显示分页
-                    if (options.pagination) {
-                        var total = response.data.totalCount;
-                        var pageTarget = options.pagetarget == null ? $("<div/>").appendTo(jq) : $(options.pagetarget);
-                        //创建分页
-                        $(pageTarget).addClass(options.pageCls).paginationM({
-                            totalData: total,//数据总条数
-                            pageCount: (Math.ceil(total / queryParam[options["pageSizeField"]])),//总页数
-                            showData: (queryParam[options["pageSizeField"]]),//每页显示的条数
-                            current: (queryParam[options["pageNumberField"]]),//当前第几页
-                            jump: true,
-                            coping: true,
-                            isHide: false,
-                            keepShowPN: true,
-                            callback: function (p) {
-                                options[options["pageSizeField"]] = page[options["pageSizeField"]] = options.pageSize;
-                                options[options["pageNumberField"]] = page[options["pageNumberField"]] = p;
-                                $(jq).templateList("load", page);
-                                options.onSelectPage(options[options["pageSizeField"]], p);
-                            }
-                        });
-                    }
-
-
-                    options.onLoadSuccess.call(jq, response, filter);
-                });
-            }
-            if (options.data) {
-                var filter = options.loadFilter(options.data);
-                var data = (!filter ? options.data : filter);
-                try {
-                    var html = "";
-                    if (data != "null")
-                        html = template(options.tempId, data);
-                    //解析数据
-                    $(jq).empty().html(html);
-                } catch (e) {
-                    alert(e);
-                }
-
-                //是否显示分页
-                if (options.pagination) {
-                    var total = options.data.totalCount;
-                    var pageTarget = options.pagetarget == null ? $("<div/>").appendTo(jq) : $(options.pagetarget);
-                    //创建分页
-                    $(pageTarget).addClass(options.pageCls).paginationM({
-                        totalData: total,
-                        showData: (queryParam[options["pageSizeField"]]),
-                        current: (queryParam[options["pageNumberField"]]),
-                        pageCount: (Math.ceil(total / queryParam[options["pageSizeField"]])),
-                        jump: true,
-                        coping: true,
-                        isHide: false,
-                        keepShowPN: true,
-                        callback: function (p) {
-                            options[options["pageSizeField"]] = page[options["pageSizeField"]] = options.pageSize;
-                            options[options["pageNumberField"]] = page[options["pageNumberField"]] = p;
-                            $(jq).templateList("load", page);
-                            options.onSelectPage(options[options["pageSizeField"]], p);
-                        }
-                    });
-                }
-
-
-                options.onLoadSuccess.call(jq, options.data, filter);
-            }
-
-
-            return jq;
-        },
-
-        reload: function (jq, param) {
-            var options = $(jq).templateList("options");
-            //合并参数
-            $.extend(options.param, param);
-            var page = {}
-            page[options["pageSizeField"]] = options.pageSize;
-            page[options["pageNumberField"]] = 1;
-            return $(jq).templateList("load", page);
-        },
-        options: function (jq) {
-            return $.data(jq.get(0), "options");
         }
     }
 

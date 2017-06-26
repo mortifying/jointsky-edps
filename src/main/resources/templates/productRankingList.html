@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="yui3-js-enabled">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=10,transtion= 50)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=20,transtion= 6)">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <link rel="stylesheet" href="themes/bigdata/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/goTopstyle.css">
+    <link rel="stylesheet" href="themes/bigdata/font-awesome.min.css">
+    <link rel="stylesheet" href="themes/bigdata/shieldui-all.min.css">
+    <link rel="stylesheet" href="themes/bigdata/product-ranking-list.css">
+
+    <script src="js/bigdata/jquery-1.11.1.min.js"></script>
+    <script src="js/bigdata/bootstrap.min.js"></script>
+    <script src="js/bigdata/shieldui-all.min.js"></script>
+    <script src="js/bigdata/common.js"></script>
+    <script src="js/bigdata/Base64.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
+    <script type="text/javascript" src="js/bigdata/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="background-white">
+<!-- NAVIGATION -->
+<div >
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"  href="#" title="生态大数据服务平台">
+                    <h2 style="margin-top: 10px; color: #ffffff;">生态环保大数据平台</h2>
+                    <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin:0 auto;max-width: 960px">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="active"><a href="product.html">产品</a></li>
+                    <li><a href="#">帮助</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<!-- /NAVIGATION -->
+
+<!-- /MENU -->
+<SECTION id="p-section">
+    <DIV class="container">
+        <DIV class="row"  style=" margin-right: 0px; margin-left: 0px;">
+            <UL id="menu">
+                <LI data-icon-cls="fa fa-line-chart" data-href="productApi.html">
+                    <P>环境数据API</P>
+                    <UL>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=数据宏观概况">
+                            数据宏观概况
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=能源数据入口">
+                            能源数据入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=环境质量入口">
+                            环境质量入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=国家统计入口">
+                            国家统计入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=数据异常分析入口">
+                            数据异常分析入口
+                        </LI>
+                        <LI  data-icon-cls="fa fa-file-text-o" data-href="productApi.html?code=举报投诉数据入口">
+                            举报投诉数据入口
+                        </LI>
+                    </UL>
+                </LI>
+                <LI data-icon-cls="fa fa-bar-chart-o" data-href="productDataReport.html">
+                    <P>数据报表</P>
+                    <UL>
+                        <li>
+                            <P> 国家统计</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
+                                    全国行业GDP与排放量报表
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
+                                    全国主要城市GDP与排放量
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
+                                    火力发电和原油与排放量报
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
+                                    GDP与排放量报表
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 环境质量</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
+                                    环境质量和排放量
+                                </LI>
+                            </UL>
+                        </li>
+                    </UL>
+                </LI>
+                <LI >
+                    <p><span style="color:#0072ba;"> <i class="fa fa-line-chart"></i>&nbsp;&nbsp;排行统计</span></p>
+                    <UL>
+                        <LI data-icon-cls="fa fa-file-text-o" >
+                            在线监测设备排行
+                        </LI>
+                        <LI data-icon-cls="fa fa-file-text-o" >
+                            运维企业服务质量排行
+                        </LI>
+                        <LI data-icon-cls="fa fa-file-text-o" >
+                            全国重污染域排行
+                        </LI>
+                        <LI data-icon-cls="fa fa-file-text-o" >
+                            重污染企业排行
+                        </LI>
+                    </UL>
+                </LI>
+            </UL>
+        </DIV>
+    </DIV>
+</SECTION>
+<SCRIPT type="text/javascript">
+    $(document).ready(function() {
+        $("#menu").shieldMenu({
+            cls: 'p-menu',
+            orientation: 'horizontal'
+        });
+    });
+</SCRIPT>
+<!-- /MENU -->
+<style>
+    .ranking-table>thead>tr>th,.ranking-table>tbody>tr>th,.table>tfoot>tr>th,.ranking-table>thead>tr>td,.ranking-table>tbody>tr>td,.ranking-table>tfoot>tr>td
+    {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #fff;
+        text-align: center;
+    }
+    .ranking-table>thead>tr>th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ff9292;
+    }
+    h5{
+        color:#9e9e9e;
+    }
+</style>
+<SECTION id="r-section">
+    <DIV class="container">
+        <div class="row " style="background-color: #fff;">
+            <div class="col-xs-12"  style="text-align: center; color:#428bca;">
+                <h3>在线监测设备排行</h3>
+                <h5 >在线监测设备排行</h5>
+            </div>
+        </div>
+        <table class="table table-striped table-hover ranking-table"  style="background-color: #fff;">
+            <thead>
+                <tr style="background-color: #fff6f6;">
+                    <th >排名</th>
+                    <th >生产厂家</th>
+                    <th >有效率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td >1</td>
+                    <td >聚光科技（杭州）股份有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+                <tr >
+                    <td >2</code></td>
+                    <td >河北先河环保科技股份有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+                <tr >
+                    <td >3</code></td>
+                    <td >宇星科技发展（深圳）有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+                <tr >
+                    <td >4</code></td>
+                    <td >北京雪迪龙科技股份有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+                <tr >
+                    <td >5</code></td>
+                    <td >岛津企业管理（中国）有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+                <tr >
+                    <td >6</code></td>
+                    <td >赛默飞世尔科技（中国）有限公司</code></td>
+                    <td >99.2%</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </DIV>
+</SECTION>
+
+<SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
+
+</body>
+</html>
