@@ -60,7 +60,6 @@ h2 {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
 }
-
 .p-board-3 {
     border: 2px solid #f4f4f4;
     border-radius: 6px;
@@ -185,7 +184,7 @@ h2 {
         width: 25%;
     }
     .p-board-2 {
-        padding: 30px;
+        padding: 20px;
         width: 25%;
     }
     .p-board-3 {

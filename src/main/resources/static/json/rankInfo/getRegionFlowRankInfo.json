@@ -1,0 +1,62 @@
+[
+  {
+    "regionCode": 130000000,
+    "regionName": "河北省",
+    "month": 201601,
+    "totalFlow": 41388275.52855
+  },
+  {
+    "regionCode": 410000000,
+    "regionName": "河南省",
+    "month": 201601,
+    "totalFlow": 35819158.722416
+  },
+  {
+    "regionCode": 370000000,
+    "regionName": "山东省",
+    "month": 201601,
+    "totalFlow": 27228808.150233
+  },
+  {
+    "regionCode": 150000000,
+    "regionName": "内蒙古自治区",
+    "month": 201601,
+    "totalFlow": 25085071.548674
+  },
+  {
+    "regionCode": 320000000,
+    "regionName": "江苏省",
+    "month": 201601,
+    "totalFlow": 22920277.731603
+  },
+  {
+    "regionCode": 440000000,
+    "regionName": "广东省",
+    "month": 201601,
+    "totalFlow": 18919068.562454
+  },
+  {
+    "regionCode": 340000000,
+    "regionName": "安徽省",
+    "month": 201601,
+    "totalFlow": 16008871.099833
+  },
+  {
+    "regionCode": 330000000,
+    "regionName": "浙江省",
+    "month": 201601,
+    "totalFlow": 15213581.431071
+  },
+  {
+    "regionCode": 210000000,
+    "regionName": "辽宁省",
+    "month": 201601,
+    "totalFlow": 15009201.881354
+  },
+  {
+    "regionCode": 510000000,
+    "regionName": "四川省",
+    "month": 201601,
+    "totalFlow": 13076857.129717
+  }
+]

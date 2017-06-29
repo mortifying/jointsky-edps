@@ -13,11 +13,25 @@
     <link rel="stylesheet" href="themes/bigdata/shieldui-all.min.css">
     <link rel="stylesheet" href="themes/bigdata/product-ranking-list.css">
 
+
+    <link rel="stylesheet" href="themes/bigdata/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="themes/bigdata/select2/select2.min.css">
+
+    <link rel="stylesheet" href="themes/bigdata/aOwnCss/own.css">
+
     <script src="js/bigdata/jquery-1.11.1.min.js"></script>
     <script src="js/bigdata/bootstrap.min.js"></script>
     <script src="js/bigdata/shieldui-all.min.js"></script>
     <script src="js/bigdata/common.js"></script>
     <script src="js/bigdata/Base64.js"></script>
+
+    <script src="js/template.js"></script>
+
+    <script src="js/bigdata/bootstrap-datetimepicker.js"></script>
+    <script src="js/bigdata/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="js/bigdata/zh-CN.js"></script>
+    <script src="js/bigdata/product-report.js"></script>
+    <script src="js/select2/select2.min.js"></script>
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
@@ -38,7 +52,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand"  href="#" title="生态大数据服务平台">
-                    <h2 style="margin-top: 10px; color: #ffffff;">生态环保大数据平台</h2>
+                    <h2 style="margin-top: 10px; color: #ffffff;">长天长环保大数据平台</h2>
                     <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
                 </a>
             </div>
@@ -49,7 +63,7 @@
                     <li class="active"><a href="product.html">产品</a></li>
                     <li><a href="#">帮助</a></li>
                     <li><a href="#">关于</a></li>
-                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="javascript:window.location.href='login.html'">登录</button></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -93,25 +107,115 @@
                         <li>
                             <P> 国家统计</P>
                             <UL>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    全国行业GDP与排放量报表
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国行业GDP与排放量报表
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    全国主要城市GDP与排放量
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国主要城市GDP与排放量
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    火力发电和原油与排放量报
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        火力发电和原油与排放量报
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    GDP与排放量报表
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        GDP与排放量报表
+                                    </a>
                                 </LI>
                             </UL>
                         </li>
                         <li>
                             <P> 环境质量</P>
                             <UL>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    环境质量和排放量
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#envQua">
+                                        环境质量和排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 举报投诉数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#repComp">
+                                        按省份环境举报投诉、排放总量、平均排放浓度
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 能源数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        各省各种能源资源消费量与排放量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        全国各种能源资源产量与排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 数据宏观概况</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        各污染物年排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        单位GDP污染物排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(年)
+                                    </a>
                                 </LI>
                             </UL>
                         </li>
@@ -121,16 +225,24 @@
                     <p><span style="color:#0072ba;"> <i class="fa fa-line-chart"></i>&nbsp;&nbsp;排行统计</span></p>
                     <UL>
                         <LI data-icon-cls="fa fa-file-text-o" >
-                            在线监测设备排行
+                            <a href="#c1">
+                                在线监测设备排行
+                            </a>
                         </LI>
                         <LI data-icon-cls="fa fa-file-text-o" >
-                            运维企业服务质量排行
+                            <a href="#">
+                                运维企业服务质量排行
+                            </a>
                         </LI>
                         <LI data-icon-cls="fa fa-file-text-o" >
-                            全国重污染域排行
+                            <a href="#c3">
+                                全国重污染域排行
+                            </a>
                         </LI>
                         <LI data-icon-cls="fa fa-file-text-o" >
-                            重污染企业排行
+                            <a href="#c2">
+                                重污染企业排行
+                            </a>
                         </LI>
                     </UL>
                 </LI>
@@ -147,6 +259,7 @@
     });
 </SCRIPT>
 <!-- /MENU -->
+
 <style>
     .ranking-table>thead>tr>th,.ranking-table>tbody>tr>th,.table>tfoot>tr>th,.ranking-table>thead>tr>td,.ranking-table>tbody>tr>td,.ranking-table>tfoot>tr>td
     {
@@ -165,13 +278,46 @@
     }
 </style>
 <SECTION id="r-section">
-    <DIV class="container">
+
+    <DIV id="c1" class="container">
         <div class="row " style="background-color: #fff;">
             <div class="col-xs-12"  style="text-align: center; color:#428bca;">
                 <h3>在线监测设备排行</h3>
                 <h5 >在线监测设备排行</h5>
             </div>
         </div>
+
+        <div class="row" style="padding: 0 10%;">
+            <form id="f1" class="form-inline">
+            <div class="col-md-4">
+                <div class="input-group" style="margin-bottom: 5px;">
+                    <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input name="year" type="text" class="dt_year form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="年">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group" style="margin-bottom: 5px;">
+                    <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="myCombobox">
+                        <select name="quarter" placeholder="季度" class="myQuarter"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="width:100%;text-align: right;" >
+                    <button id="sub1" type="button" class="btn btn-warning" style="width:100%">提交</button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+
+
+
         <table class="table table-striped table-hover ranking-table"  style="background-color: #fff;">
             <thead>
                 <tr style="background-color: #fff6f6;">
@@ -180,43 +326,240 @@
                     <th >有效率</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr >
-                    <td >1</td>
-                    <td >聚光科技（杭州）股份有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
-                <tr >
-                    <td >2</code></td>
-                    <td >河北先河环保科技股份有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
-                <tr >
-                    <td >3</code></td>
-                    <td >宇星科技发展（深圳）有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
-                <tr >
-                    <td >4</code></td>
-                    <td >北京雪迪龙科技股份有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
-                <tr >
-                    <td >5</code></td>
-                    <td >岛津企业管理（中国）有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
-                <tr >
-                    <td >6</code></td>
-                    <td >赛默飞世尔科技（中国）有限公司</code></td>
-                    <td >99.2%</code></td>
-                </tr>
+            <tbody id="table1">
             </tbody>
         </table>
+
+        <div style="height: 60px;"></div>
+
     </DIV>
+
+    <DIV id="c2" class="container">
+        <div class="row " style="background-color: #fff;">
+            <div class="col-xs-12"  style="text-align: center; color:#428bca;">
+                <h3>全国重污染企业排行</h3>
+                <h5 >全国重污染企业排行</h5>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding: 0 14%;">
+            <form id="f2" class="form-inline">
+                <div class="col-md-6">
+                    <div class="input-group" style="margin-bottom: 5px;">
+                        <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input name="month" type="text" class="dt_month form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="年月">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="width:100%;text-align: right;" >
+                        <button id="sub2" type="button" class="btn btn-warning" style="width:100%">提交</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+
+        <table class="table table-striped table-hover ranking-table"  style="background-color: #fff;">
+            <thead>
+            <tr style="background-color: #fff6f6;">
+                <th >排名</th>
+                <th >重污染企业</th>
+                <th >总排放量</th>
+            </tr>
+            </thead>
+            <tbody id="table2">
+            </tbody>
+        </table>
+
+        <div style="height: 60px;"></div>
+
+    </DIV>
+
+    <DIV id="c3" class="container">
+        <div class="row " style="background-color: #fff;">
+            <div class="col-xs-12"  style="text-align: center; color:#428bca;">
+                <h3>全国重污染域排行</h3>
+                <h5 >全国重污染域排行</h5>
+            </div>
+        </div>
+
+        <div class="row" style="padding: 0 14%;">
+            <form id="f3" class="form-inline">
+                <div class="col-md-6">
+                    <div class="input-group" style="margin-bottom: 5px;">
+                        <div class="input-group-addon" style="border-bottom-right-radius: 0;border-top-right-radius: 0">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input name="month" type="text" class="dt_month form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0" placeholder="年月">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="width:100%;text-align: right;" >
+                        <button id="sub3" type="button" class="btn btn-warning" style="width:100%">提交</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <table class="table table-striped table-hover ranking-table"  style="background-color: #fff;">
+            <thead>
+            <tr style="background-color: #fff6f6;">
+                <th >排名</th>
+                <th >重污染域</th>
+                <th >总排放量</th>
+            </tr>
+            </thead>
+            <tbody id="table3">
+            </tbody>
+        </table>
+
+        <div style="height: 60px;"></div>
+
+    </DIV>
+
 </SECTION>
 
 <SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
-
 </body>
+
+<script id="table1S" type="text/html">
+    {{each rows as row i}}
+    <tr >
+    <td >{{i+1}}</code></td>
+    <td >{{row.manufacture}}</code></td>
+    <td >{{row.totalScore}}%</code></td>
+    </tr>
+    {{/each}}
+</script>
+
+<script id="table2S" type="text/html">
+    {{each rows as row i}}
+    <tr >
+        <td >{{i+1}}</code></td>
+        <td >{{row.psName}}</code></td>
+        <td >{{row.sumFlow}}</code></td>
+    </tr>
+    {{/each}}
+</script>
+
+<script id="table3S" type="text/html">
+    {{each rows as row i}}
+    <tr >
+        <td >{{i+1}}</code></td>
+        <td >{{row.regionName}}</code></td>
+        <td >{{row.totalFlow}}</code></td>
+    </tr>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+
+    //初始化所有的季度下拉表
+    $('.myQuarter').select2({
+        data: [
+            '第一季度',
+            '第二季度',
+            '第三季度',
+            '第四季度'
+        ]
+    });
+    //初始化所有的季度下拉表
+
+    //在线监测设备排行
+    $.ajax({
+        url: 'json/rankInfo/getMonitorRankInfo.json',
+        //url: 'http://192.168.3.105:8080/getMonitorRankInfo?year=2017&quarter=1',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            var echartHtml = template('table1S',{rows:data});
+            $('#table1').html(echartHtml);
+        }
+    });
+
+    $('#sub1').click(function(){
+        var newP = $('form#f1').serialize();
+        //alert(newP);
+        $.ajax({
+            //url: 'json/rankInfo/getMonitorRankInfo.json',
+            url: 'http://192.168.3.105:8080/getMonitorRankInfo?'+newP,
+            dataType:'json',
+            type:'get',
+            async:false,
+            success:function(data){
+                //alert(6);
+                var echartHtml = template('table1S',{rows:data});
+                $('#table1').html(echartHtml);
+            }
+        });
+    });
+
+    //全国重污染企业排行
+    $.ajax({
+        url: 'json/rankInfo/getPSFlowRankInfo.json',
+        //url: 'http://192.168.3.105:8080/getPSFlowRankInfo?month=2016%E5%B9%B401%E6%9C%88',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            var echartHtml = template('table2S',{rows:data});
+            $('#table2').html(echartHtml);
+        }
+    });
+
+    $('#sub2').click(function(){
+        var newP = $('form#f2').serialize();
+        alert(newP);
+        $.ajax({
+            url: 'json/rankInfo/getPSFlowRankInfo.json',
+            //url: 'http://192.168.3.105:8080/getPSFlowRankInfo?'+newP,
+            dataType:'json',
+            type:'get',
+            async:false,
+            success:function(data){
+                //alert(6);
+                var echartHtml = template('table2S',{rows:data});
+                $('#table2').html(echartHtml);
+            }
+        });
+    });
+
+    //全国重污染域排行
+    $.ajax({
+        url: 'json/rankInfo/getRegionFlowRankInfo.json',
+        //url: 'http://192.168.3.105:8080/getRegionFlowRankInfo?month=2016%E5%B9%B401%E6%9C%88',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            var echartHtml = template('table3S',{rows:data});
+            $('#table3').html(echartHtml);
+        }
+    });
+
+    $('#sub3').click(function(){
+        var newP = $('form#f3').serialize();
+        //alert(newP);
+        $.ajax({
+            url: 'json/rankInfo/getRegionFlowRankInfo.json',
+            //url: 'http://192.168.3.105:8080/getRegionFlowRankInfo?month=2016%E5%B9%B401%E6%9C%88',
+            dataType:'json',
+            type:'get',
+            async:false,
+            success:function(data){
+                //alert(6);
+                var echartHtml = template('table3S',{rows:data});
+                $('#table3').html(echartHtml);
+            }
+        });
+    });
+
+</script>
 </html>

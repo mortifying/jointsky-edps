@@ -143,13 +143,32 @@ div#broadcast-buttons a {
 	-webkit-border-radius: 15px;
 	border-radius:1px;
 }
+.stat-item-data-static{
+	padding:0px;
+	padding-top: 18px;
+	width:100%; height:90px;
+	margin-top:0px;
+	border: 0px solid #000000;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 15px;
+	border-radius:1px;
+}
 .stat-bg{
 	height:200px;
 	padding-top: 50px;
 }
+.stat-bg-2{
+	height:200px;
+	padding-top: 20px;
+}
 .stat-bg-product{
-	height:300px;
-	padding-top: 0px;
+	height:360px;
+	padding-top: 120px;
+}
+
+.stat-bg-data-static{
+	height:200px;
+	padding-top: 20px;
 }
 .stat-title {
 	 font-size: 16px;
@@ -187,6 +206,37 @@ div#broadcast-buttons a {
 	border-top-color: #fff;
 	top: 60px;
 }
+
+
+.stat-title-data-static {
+	font-size: 16px;
+	font-weight: 700;
+	color: #1a1a1a;
+	border-bottom: 2px solid #94e1f7;
+	margin: 0 0%;
+	padding: 10px 0 10px 0;
+}
+.stat-title-data-static:before, .stat-title-data-static:after {
+	width:0px;
+	height:0px;
+	border:transparent solid;
+	position:absolute;
+	left:50%;
+	content:""
+}
+.stat-title-data-static:before {
+	margin-left: -15px;
+	border-width: 15px;
+	border-top-color: #94e1f7;
+	top: 74px;
+}
+.stat-title-data-static:after {
+	margin-left: -12px;
+	border-width: 12px;
+	border-top-color: #e6f9ff;
+	top: 70px;
+}
+
 .stat-title:before, .stat-title:after {  
   width:0px;  
   height:0px;  
@@ -221,6 +271,43 @@ div#broadcast-buttons a {
 .stat-footer {
 	color: #1a1a1a;
 }
+
+
+/*主页数据收录统计*/
+.p-board-static {
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 0px solid #f4f4f4;
+	border-radius: 12px;
+	background-color: #94e1f7;
+	color: #fff;
+	padding: 10px;
+	padding-bottom: 15px;
+	width: 100%;
+}
+.p-board-static-item {
+	width:20%;
+	padding: 10px;
+	float: left;
+}
+.p-board-static-title {
+	margin:0 auto;
+	height: 26px;
+	font-size: 14px;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	color: #0aa0cb;
+	background-color: #f2f7f9;
+	border-radius: 8px
+}
+.p-board-static-number {
+	padding-top: 0px;
+	color:#fff;
+	font-size:34px;
+}
+
 /* Introduction */
 #intro img {
 	margin: 10px auto;
@@ -388,13 +475,30 @@ div#broadcast-buttons a {
 		height:200px;
 		padding-top: 0px;
 	}
+	.stat-bg-2{
+		height:200px;
+		padding-top: 0px;
+	}
 	#section-stat{
 		background-color:#FFFFFF;
-		height:468px;
+		height:1700px;
 	}
 	#section-product{
 		background-color:#f8f8f8;
 		height:500px;
+	}
+	/*主页数据收录统计*/
+	.p-board-static-item {
+		width:100%;
+		padding: 10px;
+		float: left;
+	}
+	.stat-bg-product{
+		height:300px;
+		padding-top: 120px;
+	}
+	.p-row{
+		margin-top: -130px;
 	}
 }
 /* 768px */
@@ -423,9 +527,13 @@ section#team {
 	}
 	#section-stat{
 		background-color:#FFFFFF;
-		height:468px;
+		height:1700px;
 	}
 	.stat-bg{
+		height:468px;
+		padding-top: 0px;
+	}
+	.stat-bg-2{
 		height:468px;
 		padding-top: 0px;
 	}
@@ -457,21 +565,38 @@ div#broadcast-buttons {
 	width: 30%;
 	margin: 1.666666%;
 }
+	/*主页数据收录统计*/
+	.p-board-static-item {
+		width:100%;
+		padding: 10px;
+		float: left;
+	}
+	.stat-bg-product{
+		 height:360px;
+		 padding-top: 120px;
+	 }
+	.p-row{
+		margin-top: -130px;
+	}
 }
 /* 960px */
 @media (min-width: 960px) {
-section h2.section-heading {
-    margin-top: 30px;
-}
-section#broadcast {
-	height: 500px;
-}
+	section h2.section-heading {
+		margin-top: 30px;
+	}
+	section#broadcast {
+		height: 500px;
+	}
 
 	#section-stat{
 		background-color:#FFFFFF;
-		height:270px;
+		height:680px;
 	}
 	.stat-bg{
+		height:270px;
+		padding-top: 50px;
+	}
+	.stat-bg-2{
 		height:270px;
 		padding-top: 50px;
 	}
@@ -483,94 +608,123 @@ section#broadcast {
 	section#footer {
 		margin-top: 0px;
 	}
-h1#broadcast-title {
-/* 	margin-top: 160px; */
-	margin-top: 110px;
-}
-p#broadcast-subtitle {
-	height: 32px;
-	line-height: 32px;
-	font-size: 16px;
-}
-div#broadcast-buttons {
-	margin-top: 90px;
-}
-#broadcast canvas {
-	max-height: 540px;
-}
-#intro img {
-	margin-top: -20px;
-}
-.service-item {
-	width: 33.333333%;
-}
-.mission div {
-	padding: 80px 50px;
-}
-.mission div img {
-	margin: 20px auto;
-}
-.partner-list li {
-	width: 24%;
-	margin: 0.5%;
-}
+	h1#broadcast-title {
+		/* 	margin-top: 160px; */
+		margin-top: 110px;
+	}
+	p#broadcast-subtitle {
+		height: 32px;
+		line-height: 32px;
+		font-size: 16px;
+	}
+	div#broadcast-buttons {
+		margin-top: 90px;
+	}
+	#broadcast canvas {
+		max-height: 540px;
+	}
+	#intro img {
+		margin-top: -20px;
+	}
+	.service-item {
+		width: 33.333333%;
+	}
+	.mission div {
+		padding: 80px 50px;
+	}
+	.mission div img {
+		margin: 20px auto;
+	}
+	.partner-list li {
+		width: 24%;
+		margin: 0.5%;
+	}
+	/*主页数据收录统计*/
+	.p-board-static-item {
+		width:25%;
+		padding: 10px;
+		float: left;
+	}
+	.stat-bg-product{
+		height:360px;
+		padding-top: 0px;
+	}
+	.p-row{
+		margin-top: 0px;
+	}
 }
 /* 1200px */
 @media (min-width: 1200px) {
-section#broadcast {
-	height: 500px;
-}
-
+	section#broadcast {
+		height: 500px;
+	}
 	section#team {
 		margin-top: 0px;
 	}
 	#section-stat{
 		background-color:#FFFFFF;
-		height:270px;
+		height:560px;
 	}
 	.stat-bg{
 		height:270px;
 		padding-top: 50px;
 	}
-h1#broadcast-title {
-	height: 60px;
-	line-height: 60px;
-	font-size: 28px;
-/* 	margin-top: 180px; */
-	margin-top: 100px;
-}
+	.stat-bg-2{
+		height:270px;
+		padding-top: 50px;
+	}
+	h1#broadcast-title {
+		height: 60px;
+		line-height: 60px;
+		font-size: 28px;
+		/* 	margin-top: 180px; */
+		margin-top: 100px;
+	}
 	section#team {
 		margin-top: 0px;
 	}
 	section#footer {
 		margin-top: 0px;
 	}
-p#broadcast-subtitle {
-	font-size: 16px;
-}
-div#broadcast-buttons {
-/* 	margin-top: 40px; */
-	margin-top: 100px;
-}
-#broadcast canvas {
-	max-height: 600px;
-}
-#intro img {
-	margin-top: -50px;
-}
+	p#broadcast-subtitle {
+		font-size: 16px;
+	}
+	div#broadcast-buttons {
+		/* 	margin-top: 40px; */
+		margin-top: 100px;
+	}
+	#broadcast canvas {
+		max-height: 600px;
+	}
+	#intro img {
+		margin-top: -50px;
+	}
+	/*主页数据收录统计*/
+	.p-board-static-item {
+		width:20%;
+		padding: 10px;
+		float: left;
+	}
 }
 @media (min-width: 1600px) {
-section#broadcast {
-	height: 500px;
-}
-h1#broadcast-title {
-	height: 60px;
-	line-height: 60px;
-	font-size: 28px;
-/* 	margin-top: 240px; */
-	margin-top: 100px;
-}
-#broadcast canvas {
-	max-height: 750px;
-}	
+	section#broadcast {
+		height: 500px;
+	}
+	h1#broadcast-title {
+		height: 60px;
+		line-height: 60px;
+		font-size: 28px;
+		/* 	margin-top: 240px; */
+		margin-top: 100px;
+	}
+	#broadcast canvas {
+		max-height: 750px;
+	}
+
+	/*主页数据收录统计*/
+	.p-board-static-item {
+		width:20%;
+		padding: 10px;
+		float: left;
+	}
 }

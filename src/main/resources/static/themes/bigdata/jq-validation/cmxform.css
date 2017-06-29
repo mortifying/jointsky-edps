@@ -1,0 +1,79 @@
+/**********************************
+
+Name: cmxform Styles
+
+***********************************/
+form.cmxform {
+	width: 370px;
+	font-size: 1.0em;
+	color: #333;
+}
+
+form.cmxform legend {
+	padding-left: 0;
+}
+
+form.cmxform legend, form.cmxform label {
+	color: #333;
+}
+
+
+
+form.cmxform label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	background: url("images/yz-failed.png") no-repeat;
+	padding-left: 20px;
+	margin-left: 5px;
+	color: red;
+	font-size: 12px
+}
+
+
+
+label.normal {  color: #999999;}
+label.error { background: url("images/yz-failed.png") no-repeat;color: #B52726; }
+label.valid { background: url("images/yz-ok.png") no-repeat;color: #2666AF; }
+label.focus {  color: #999999; }
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	background-color: #FFFFFF;
+	background-image: none;
+	color: rgb(0, 0, 0);
+}
+
+
+
+div.error { display: none; }
+input {	border: 1px solid black; }
+input.checkbox { border: none }
+input:focus { border: 1px dotted black; }
+/*input.error { border: 1px dotted red; }*/
+form.cmxform .gray * { color: gray; }
+
+
+/*-------*/
+#commentForm { width: 500px; }
+#commentForm label { width: 250px; }
+#commentForm label.error, #commentForm input.submit { margin-left: 253px; }
+#signupForm { width: 670px; }
+#signupForm label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
+#newsletter_topics label.error {
+	display: none;
+	margin-left: 103px;
+}
+
+.login label.valid{position: absolute;top:-1000pt;left:-1000pt;}/*去掉等路页面输入正确提示*/
+/*-------*/
+
+
+
+
+
+
+
+
+
+

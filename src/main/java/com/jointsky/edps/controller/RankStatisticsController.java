@@ -37,12 +37,12 @@ public class RankStatisticsController {
     @ApiOperation(value = "在线监控设备排行",notes = "根据季度获取在线监控设备可靠性排行结果入口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "year",value = "年份",required = true,dataType = "int",paramType = "query",defaultValue = "2017"),
-            @ApiImplicitParam(name = "quarter",value = "季度",required = true,dataType = "int",paramType = "query",defaultValue = "1")
+            @ApiImplicitParam(name = "quarter",value = "季度",required = true,dataType = "String",paramType = "query",defaultValue = "第一季度")
     })
     @RequestMapping(value = "/getMonitorRankInfo",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
     public List<MonitorRank> getMonitorRankInfo(@RequestParam(value = "year") int year,
-                                                @RequestParam(value = "quarter") int quarter){
-        return rankStatisticsService.getMonitorRankList(year,quarter);
+                                                @RequestParam(value = "quarter") String quarter){
+        return rankStatisticsService.getMonitorRankList(year,dateTransition.quarterToNum(quarter));
     }
 
 

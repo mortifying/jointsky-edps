@@ -563,3 +563,25 @@ jQuery.validator.addMethod("timePattern", function(value, element, param) {
 $.validator.addMethod("equalLength", function(value, elem, param) {
 	return this.optional(elem) || (getFullLength(value) == param);        
 }, "长度不符合要求");
+
+
+//检验后台是否已注册此信息
+$.validator.addMethod("isInfoExist", function(value, elem, param) {
+	var result = false;
+	$.ajax({
+		url: param.fn(),
+		//url: 'http://192.168.3.105:8080/checkEmail?email='+email,
+		dataType:'json',
+		type:'get',
+		async:false,
+		success:function(data){
+			result=data.flag;
+		}
+	});
+	return result;
+}, "该输入已被人使用");
+//检验后台是否已注册此信息
+
+$.validator.addMethod("isSame", function(value, elem, param) {
+	return value == param.fn();
+}, "与原值不匹配");

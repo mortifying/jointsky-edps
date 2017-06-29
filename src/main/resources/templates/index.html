@@ -15,6 +15,7 @@
     <script src="js/bigdata/bootstrap.min.js"></script>
     <script src="js/bigdata/shieldui-all.min.js"></script>
     <script src="js/bigdata/common.js"></script>
+    <script src="js/template.js"></script>
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
@@ -35,7 +36,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#" title="生态大数据服务平台">
-                   <h2 style="margin-top: 10px; color: #0659a5;">生态环保大数据平台</h2>
+                   <h2 style="margin-top: 10px; color: #0659a5;">长天长环保大数据平台</h2>
                     <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
                 </a>
             </div>
@@ -46,7 +47,7 @@
                     <li><a href="product.html">产品</a></li>
                     <li><a href="#">帮助</a></li>
                     <li><a href="#">关于</a></li>
-                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="javascript:window.location.href='login.html'">登录</button></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,43 +73,113 @@
     <canvas width="1592" height="744" style="width: 100%; height: 100%;"></canvas>
 </section>
 <!-- /BROADCAST -->
+
 <!-- STAT -->
 <section id="section-stat">
-    <div class="container stat-bg" style="width:99%">
-        <div class="row">
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div class="stat-item-1" >
-                        <div class="stat-title color-1">
-                            我们已收录
-                        </div>
-                        <h4 id="dataRecordNum" class="stat-heading" style="display: block;">4,420,357</h4>
-                            <code  class="color-1" >条环境相关数据</code>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="stat-item-2" >
-                    <div class="stat-title color-2">
+    <div class="container stat-bg-data-static">
+        <div class="row text-center">
+            <div class="col-sm-6">
+                <div class="stat-item-1" >
+                    <div class="stat-title color-1">
                         我们已收录
                     </div>
-                    <h4 id="psNum" class="stat-heading" style="display: block;">16,609</h4>
-                        <code class="color-2" >家重点污染源</code>
-                    </div>
+                    <h4 id="psNum" class="stat-heading" style="display: block;"> </h4>
+                    <code class="color-1" >家重点污染源</code>
                 </div>
-                <div class="col-sm-4">
-                    <div class="stat-item-3" >
+            </div>
+            <div class="col-sm-6">
+                <div class="stat-item-3" >
                     <div class="stat-title color-3">
                         我们已收录
                     </div>
-                    <h4 id="psOutputNum" class="stat-heading" style="display: block;">26,817</h4>
+                    <h4 id="psOutputNum" class="stat-heading" style="display: block;"> </h4>
+                    <code class="color-3" >个污染排放口</code>
+                </div>
+            </div>
 
-                        <code class="color-3" >个污染排放口</code>
-
+        </div>
+    </div>
+        <div id="myNum" class="container stat-bg-product" >
+            <!--*****************************************-->
+            <!--
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <div class="stat-item-data-static" >
+                        <div class="stat-title-data-static ">
+                            我们共收录  <span style="font-size: 26px; color:#94e1f7;">4,420,357</span>  条环境数据
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <div class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废气日排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废气小时排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废气分钟排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">个废气污染排放口数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">家废气重点污染源数据</div>
+                        </DIV>
+                    </div>
+
+
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废水日排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废水小时排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">条废水分钟排放数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">个废水污染排放口数据</div>
+                        </DIV>
+                    </div>
+                    <div  class="p-board-static-item">
+                        <DIV class="p-board-static" >
+                            <h4 class="p-board-static-number">4,420,357</h4>
+                            <div class="p-board-static-title">家废水重点污染源数据</div>
+                        </DIV>
+                    </div>
+                </DIV>
+            </div>
+            -->
+            <!--*****************************************-->
         </div>
-    </div>
 </section>
 <!-- /STAT -->
 
@@ -116,14 +187,14 @@
 <section id="section-product" >
 <div class="row">
     <div class="container stat-bg-product" style="width:99%">
-    <div class="row text-center" style="width:99%">
+    <div class="row text-center p-row" style="width:99%">
         <div class="col-sm-12">
             <div class="stat-item-4" >
                 <div class="stat-title-product color-4">
                     产品介绍
                 </div>
                 <h4 id="stat-product" class="stat-heading-product" style="display: block;">
-                    大数据平台数据入口以国控重点污染源在线监控系统和排污收费系统为主要数据基础来源，结合第三方数据源（物联网感知数据和互联网公众数据等），构建大数据分析基础构架，搭建大数据分析、计算主体，建立标准数据存储和分析模型库，提供了一系统列功能丰富、便捷易用的综合环境数据REST API，为环境应用开发用户提供丰富可靠的天气质量、国家统计、能源数据以及举报投诉等数据服务，此外，大数据平台数据入口还为环境研究人员提供了自定义数据报表服务和自动监控设备、运维企业服务质量、全国重污染区域、重污染行业以及重污染企业等一系列的统计服务。
+                    大数据平台数据入口以国控重点污染源在线监控系统和排污收费系统为主要数据基础来源，结合第三方数据源（物联网感知数据和互联网公众数据等），构建大数据分析基础构架，搭建大数据分析、计算主体，建立标准数据存储和分析模型库，提供了一系列功能丰富、便捷易用的综合环境数据REST API，为环境应用开发用户提供丰富可靠的天气质量、国家统计、能源数据以及举报投诉等数据服务，此外，大数据平台数据入口还为环境研究人员提供了自定义数据报表服务和自动监控设备、运维企业服务质量、全国重污染区域、重污染行业以及重污染企业等一系列的统计服务。
                 </h4>
             </div>
         </div>
@@ -183,4 +254,148 @@
 </section>
 <!-- FOOTER -->
 </body>
+<script id="myNumS" type="text/html">
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div class="stat-item-data-static" >
+                <div class="stat-title-data-static ">
+                    我们共收录  <span style="font-size: 26px; color:#94e1f7;">{{totalCount}}</span>  条环境数据
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{gasDayDataCount}}</h4>
+                    <div class="p-board-static-title">条废气日排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{gasHourDataCount}}</h4>
+                    <div class="p-board-static-title">条废气小时排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{gasMinuteDataCount}}</h4>
+                    <div class="p-board-static-title">条废气分钟排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{gasOutputCount}}</h4>
+                    <div class="p-board-static-title">个废气污染排放口数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{gasPSCount}}</h4>
+                    <div class="p-board-static-title">家废气重点污染源数据</div>
+                </DIV>
+            </div>
+
+
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{waterDayDataCount}}</h4>
+                    <div class="p-board-static-title">条废水日排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{waterHourDataCount}}</h4>
+                    <div class="p-board-static-title">条废水小时排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{waterMinuteDataCount}}</h4>
+                    <div class="p-board-static-title">条废水分钟排放数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{waterOutputCount}}</h4>
+                    <div class="p-board-static-title">个废水污染排放口数据</div>
+                </DIV>
+            </div>
+            <div  class="p-board-static-item">
+                <DIV class="p-board-static" >
+                    <h4 class="p-board-static-number">{{waterPSCount}}</h4>
+                    <div class="p-board-static-title">家废水重点污染源数据</div>
+                </DIV>
+            </div>
+        </DIV>
+    </div>
+
+
+</script>
+<script type="text/javascript">
+
+    //给数字隔千加，的函数
+    function toThousands(num) {
+        var num = (num || 0).toString(), result = '';
+        while (num.length > 3) {
+            result = ',' + num.slice(-3) + result;
+            num = num.slice(0, num.length - 3);
+        }
+        if (num) { result = num + result; }
+        return result;
+    }
+    //给数字隔千加，的函数
+
+    $.ajax({
+        //url: 'json/index/psNum.json',
+        url: 'psNum',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            $('#psNum').text(toThousands(data));
+        }
+    });
+    $.ajax({
+        //url: 'json/index/psOutputNum.json',
+        url: 'psOutputNum',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            $('#psOutputNum').text(toThousands(data));
+        }
+    });
+
+    $.ajax({
+        //url: 'json/index/dataStatistics.json',
+        url: 'dataStatistics',
+        dataType:'json',
+        type:'get',
+        async:false,
+        success:function(data){
+            var numData = {};
+            var totalCount = data.gasDayDataCount+data.waterDayDataCount+data.gasHourDataCount+data.waterHourDataCount+data.gasMinuteDataCount+data.waterMinuteDataCount+data.gasPSCount+data.waterPSCount+data.gasOutputCount+data.waterOutputCount;
+            totalCount = toThousands(totalCount);
+            numData.totalCount = totalCount;
+
+            numData.gasDayDataCount = toThousands(data.gasDayDataCount);
+            numData.waterDayDataCount = toThousands(data.waterDayDataCount);
+            numData.gasHourDataCount = toThousands(data.gasHourDataCount);
+            numData.waterHourDataCount = toThousands(data.waterHourDataCount);
+            numData.gasMinuteDataCount = toThousands(data.gasMinuteDataCount);
+            numData.waterMinuteDataCount = toThousands(data.waterMinuteDataCount);
+            numData.gasPSCount = toThousands(data.gasPSCount);
+            numData.waterPSCount = toThousands(data.waterPSCount);
+            numData.gasOutputCount = toThousands(data.gasOutputCount);
+            numData.waterOutputCount = toThousands(data.waterOutputCount);
+
+            var echartHtml = template('myNumS',numData);
+            $('#myNum').html(echartHtml);
+        }
+    });
+
+</script>
 </html>

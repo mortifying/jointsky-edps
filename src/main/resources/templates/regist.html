@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="yui3-js-enabled">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=10,transtion= 50)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=20,transtion= 6)">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <link rel="stylesheet" href="themes/bigdata/bootstrap.min.css">
+    <link rel="stylesheet" href="themes/bigdata/project.css">
+    <link rel="stylesheet" href="themes/bigdata/goTopstyle.css">
+    <link rel="stylesheet" href="themes/bigdata/font-awesome.min.css">
+    <link rel="stylesheet" href="themes/bigdata/shieldui-all.min.css">
+    <link rel="stylesheet" href="themes/bigdata/login.css">
+
+    <link rel="stylesheet" href="themes/bigdata/jq-validation/cmxform.css">
+
+    <script src="js/bigdata/jquery-1.11.1.min.js"></script>
+    <script src="js/bigdata/bootstrap.min.js"></script>
+    <script src="js/bigdata/common.js"></script>
+
+    <script src="js/validation/jquery.validate.js"></script>
+    <script src="js/validation/messages_zh.js"></script>
+    <script src="js/validation/additional-methods.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/bigdata/html5shiv.js"></script>
+    <script type="text/javascript" src="js/bigdata/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        #myCheckCode{
+            padding: 2px;
+            color:slateblue;
+            border: solid 1px #aaa;
+            width: 80px;
+            text-align: center;
+            display: inline-block;
+        }
+        #createCode{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="background-grey">
+<!-- NAVIGATION -->
+<div >
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"  href="#" title="长天长生态环保大数据平台">
+                    <h2 class="page-title">长天长生态环保大数据平台</h2>
+                    <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin:0 auto;max-width: 960px">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html">产品</a></li>
+                    <li><a href="#">帮助</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="javascript:window.location.href='login.html'">登录</button></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<!-- /NAVIGATION -->
+
+<!-- LOGIN -->
+<!-- /MENU -->
+<SECTION id="p-login" style="padding-top: 10px; padding-bottom: 10px;">
+    <DIV class="container login-container">
+        <DIV CLASS="row" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div id="login">
+                    <form id="formLogin" action="login.html" >
+                        <div class="form-group color-6" style="text-align: center;">
+                            <h3>用户注册</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginName">用户名：</label>
+                            <input type="text" class="form-control" name="userAccount" id="userAccount" placeholder="请输入系统登录用户名">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">姓名:</label>
+                            <input type="text" class="form-control" name="userName" id="userName" placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">手机号码：</label>
+                            <input type="text" class="form-control" name="telphone" id="telphone" placeholder="请输入您的手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮箱：</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="请输入您的电子邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">所在城市：</label>
+                            <input type="text" class="form-control" name="region" id="region" placeholder="请输入您所在的城市">
+                        </div>
+                        <div class="form-group">
+                            <label for="unitName">单位名称：</label>
+                            <input type="text" class="form-control" name="factName" id="factName" placeholder="请输入您的单位名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">设定密码：</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="请输入您的访问密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordStrength1">密码强度：</label>
+                            <div  class="row" style="padding-left: 15px; padding-right: 15px;">
+                                <div id="passwordStrength1" class="col-sm-12 passwordStrength passwordStrength-low" >弱</div>
+                                <div id="passwordStrength2" class="col-sm-12 passwordStrength passwordStrength-middle" style="display: none;">中</div>
+                                <div id="passwordStrength3" class="col-sm-12 passwordStrength passwordStrength-high" style="display: none;">高</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rePassword">确认密码：</label>
+                            <input type="password" class="form-control" name="rePassword" id="rePassword" placeholder="请输入访问密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkCode">验证码：</label>
+                            <div  class="row">
+                                <div class="col-sm-6" >
+                                    <input type="password" class="form-control" name="checkCode" id="checkCode" placeholder="请输入验证码">
+                                </div>
+                                <div class="col-sm-6" >
+                                    <div>
+                                        <span id="myCheckCode"></span>
+                                        <span id="createCode">
+                                            看不清?换一张
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--<div id="passwordStrength" class="col-sm-12 passwordStrength-middle" >中</div>-->
+                                <!--<div id="passwordStrength" class="col-sm-12 passwordStrength-high" >高</div>-->
+                            </div>
+
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label>忘记密码？<a href="#">点击找回</a></label>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <DIV CLASS="row" >
+                                <div class="col-sm-12">
+                                    <button id="btn_regist" type="submit" class="btn btn-warning">注册用户信息</button>
+                                </div>
+                            </DIV>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </DIV>
+    </DIV>
+</SECTION>
+<!-- LOGIN -->
+<SCRIPT src="js/bigdata/backtop.js" type="text/javascript"></SCRIPT>
+
+
+<script type="text/javascript">
+
+    //验证密码的保密强度
+    $('#password').keyup(function(){
+
+        var val = $(this).val();
+        var aLvTxt = ['低','低','中','高'];
+        var lv = 0;
+        if(val.match(/[a-z]/g))
+        {lv++;}
+        if(val.match(/[0-9]/g))
+        {lv++;}
+        if(val.match(/(.[^a-z0-9])/g))
+        {lv++;}
+        if(val.length < 6)
+        {lv=0;}
+        if(lv > 3)
+        {lv=3;}
+
+        $('.passwordStrength').hide();
+        if(lv==0||lv==1){
+            $('.passwordStrength-low').show();
+        }else if(lv==2){
+            $('.passwordStrength-middle').show();
+        }else if(lv==3){
+            $('.passwordStrength-high').show();
+        }
+
+    });
+    //验证密码的保密强度
+
+    $('#password').blur(function(){
+        password = $(this).val();
+    });
+
+
+
+    //检验后台数据是否与当前注册的重复
+
+
+    var email='';
+    var telphone='';
+    var userAccount='';
+    $('#email').blur(function(){
+        email = $(this).val();
+    });
+    $('#telphone').blur(function(){
+        telphone = $(this).val();
+    });
+    $('#userAccount').blur(function(){
+        userAccount = $(this).val();
+    });
+
+    //检验后台数据是否与当前注册的重复
+
+
+    var code = "";
+    function createCode()
+    {
+        code = "";
+        var codeLength = 6; //验证码的长度
+        var checkCode = document.getElementById("myCheckCode");
+        var codeChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; //所有候选组成验证码的字符，当然也可以用中文的
+        for(var i = 0; i < codeLength; i++)
+        {
+            var charNum = Math.floor(Math.random() * 52);
+            code += codeChars[charNum];
+        }
+        if(checkCode)
+        {
+            checkCode.className = "code";
+            checkCode.innerHTML = code;
+
+        }
+
+        alert(code);
+
+    }
+
+    createCode();
+
+    $('#createCode').click(function(){
+        createCode();
+
+    });
+
+
+    //jq验证
+   var validForm = $('#formLogin').validate({
+        rules:{
+            userAccount:{
+                required:true,
+                minlength:2,
+                maxlength:64,
+                //isInfoExist:'json/regist/loginName.json',
+                isInfoExist:{
+                    fn:function(){
+                        return 'http://192.168.3.105:8080/checkUserAccount?userAccount='+userAccount;
+                    }
+                }
+            },
+            userName:{
+                required:true,
+                minlength:2,
+                maxlength:64
+            },
+            telphone:{
+                required:true,
+                mobile: 11,
+                isInfoExist:{
+                    fn:function(){
+                        return 'http://192.168.3.105:8080/checkTelphone?telphone='+telphone;
+                    }
+                }
+            },
+            email:{
+                required:true,
+                email:'',
+                //isInfoExist:'json/regist/email.json',
+                isInfoExist:{
+                    fn:function(){
+                        return 'http://192.168.3.105:8080/checkEmail?email='+email;
+                    }
+                }
+            },
+            region:{
+                required:true,
+                minlength:2,
+                maxlength:20
+            },
+            factName:{
+                required:true,
+                minlength:2,
+                maxlength:64
+            },
+            password:{
+                required:true,
+                minlength:8,
+                maxlength:16,
+                number:''
+            },
+            rePassword:{
+                required:true,
+                equalTo:password
+            },
+            checkCode:{
+                required:true,
+                isSame:{
+                    fn:function(){
+                        return code;
+                    }
+                }
+            }
+        },
+        messages:{
+            userAccount:{
+                required:"请输入用户名"
+            },
+            userName:{
+                required:"请输入姓名"
+            },
+            telphone:{
+                required:"请输入手机号"
+            },
+            email:{
+                required:"请输入电子邮箱"
+            },
+            region:{
+                required:"请输入所在城市"
+            },
+            factName:{
+                required:"请输入单位名称"
+            },
+            password:{
+                required:"请输入密码"
+            }
+        },
+        submitHandler: function (form) {
+            //alert(5);
+            var form_data =$(form).serialize();
+            $.ajax({
+                url: 'http://192.168.3.105:8080/checkEmail?email='+form_data,
+                dataType:'json',
+                type:'get',
+                async:false,
+                success:function(data){
+                    window.open('login.html','_self');
+                }
+            });
+
+        },
+        onfocusin: function(element) { $(element).valid(); },
+        onfocusout: function(element) { $(element).valid(); },
+        success: function (label) {
+            label.text("").addClass("valid"); //正确的时候输出的样式为checked
+        },
+        errorPlacement: function (error, element) {
+            element.parent().append(error);
+        },
+        highlight: function (element, errorClass) {
+            $(element).parent().next().find("." + errorClass).removeClass("valid");//表单用户(获取到焦点)操作时如果正确就移除错误的css属性添加正确的css属性
+        }
+    });
+
+</script>
+
+</body>
+</html>

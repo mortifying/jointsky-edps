@@ -159,8 +159,12 @@ function echart2yLine(){
                         }
                     ]
                 };
+                echartRoot.resize();
 
-                echartRoot.setOption(option);
+                setTimeout(function(){
+                    echartRoot.setOption(option);
+                },30);
+
 
                 $(window).resize(function(){
                     echartRoot.resize();
@@ -168,7 +172,7 @@ function echart2yLine(){
 
             }
         });
-    },30);
+    },200);
 
 }
 //双y轴线图函数
@@ -363,7 +367,10 @@ function echart2yBar(){
                     ]
                 };
 
-                echartRoot.setOption(option);
+                echartRoot.resize();
+                setTimeout(function(){
+                    echartRoot.setOption(option);
+                },30);
 
                 $(window).resize(function(){
                     echartRoot.resize();
@@ -371,7 +378,7 @@ function echart2yBar(){
 
             }
         });
-    },0);
+    },200);
 
 }
 //双y轴条形图函数

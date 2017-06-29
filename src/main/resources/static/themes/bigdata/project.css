@@ -19,6 +19,9 @@ body {
 .background-white {
     background-color: #fff;
 }
+.background-grey {
+    background-color: #f5f5f5;
+}
 
 .icon-logo {
     background-image: url(../images/logo.png);

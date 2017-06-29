@@ -40,6 +40,18 @@ public class WebController {
         return "productRankingList";
     }
 
+    @RequestMapping("/login.html")
+    public String login(ModelMap modelMap){
+
+        return "login";
+    }
+
+    @RequestMapping("/regist.html")
+    public String regist(ModelMap modelMap){
+
+        return "regist";
+    }
+
 
 
 

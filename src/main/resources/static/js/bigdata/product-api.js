@@ -7,7 +7,7 @@
             cls: 'p-menu',
             orientation: 'horizontal'
         });
-        Public.get("static/json/product.json", null, function (response) {
+        Public.get("v2/api-docs", null, function (response) {
             apiObj = response;
             var menu_api = $("#menu_api");
             var menu_apiStr="<UL>";
@@ -56,7 +56,7 @@
                             }).appendTo(e6);
 
                             var e6_1_1 = $('<DIV />', {
-                                class:"col-xs-6"
+                                class:"col-xs-12"
                             }).appendTo(e6_1);
                             if(key2=="get"){
                                 var e6_1_1_1 = $('<span id="apiMethod"'+j+' style="font-size: 18px;"><code style="color: #1b809e;background-color: #f4f9fe;">&nbsp;'+key2+'&nbsp;&nbsp;</code>&nbsp;&nbsp;</span>').appendTo(e6_1_1);
@@ -64,12 +64,12 @@
                                 var e6_1_1_11 = $('<span id="apiMethod"'+j+' style="font-size: 18px;"><code style="color: #2da64d;background-color: #ebffea;">&nbsp;'+key2+'&nbsp;</code>&nbsp;&nbsp;</span>').appendTo(e6_1_1);
                             }
 
-                            var e6_1_1_2 = $('<span id="apiPath"'+j+' style="font-size: 18px;"><code>'+key+'</code></span>').appendTo(e6_1_1);
+                            //var e6_1_1_2 = $('<span id="apiPath"'+j+' style="font-size: 18px;"><code>'+key+'</code></span>').appendTo(e6_1_1);
 
-                            var e6_1_2 = $('<DIV />', {
-                                class:"col-xs-6 alingnR"
-                            }).appendTo(e6_1);
-                            var e6_1_2_1 =$('<a data-toggle="collapse" href="#'+key.substr(1,key.length)+'" onclick="javascript:showHideApiItem(this)"><span id="tags-name" >'+response.paths[key][key2].summary+'&nbsp;&nbsp;</span><i class="fa fa-angle-double-down"></i></a>').appendTo(e6_1_2);
+                            // var e6_1_2 = $('<DIV />', {
+                            //     class:"col-xs-6 alingnL"
+                            // }).appendTo(e6_1);
+                            var e6_1_2_1 =$('<a data-toggle="collapse" href="#'+key.substr(1,key.length)+'" onclick="javascript:showHideApiItem(this)"><span id="tags-name" >'+response.paths[key][key2].summary+'&nbsp;&nbsp;</span><i class="fa fa-angle-double-down"></i></a>').appendTo(e6_1_1);
 
                             //接口详细内容收缩框
                             var e6_2 = $('<DIV />', {

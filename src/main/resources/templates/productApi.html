@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand"  href="#" title="生态大数据服务平台">
-                    <h2 style="margin-top: 10px; color: #ffffff;">生态环保大数据平台</h2>
+                    <h2 style="margin-top: 10px; color: #ffffff;">长天长环保大数据平台</h2>
                     <!--<img src="themes/default/images/titleBarWord.png"  class="logo" />-->
                 </a>
             </div>
@@ -52,7 +52,7 @@
                     <li class="active"><a href="product.html">产品</a></li>
                     <li><a href="#">帮助</a></li>
                     <li><a href="#">关于</a></li>
-                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="window.location.href=#">登录</button></li>
+                    <li><button class="btn btn-warning btn-sm" id="login-btn" onclick="javascript:window.location.href='login.html'">登录</button></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -96,25 +96,115 @@
                         <li>
                             <P> 国家统计</P>
                             <UL>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    全国行业GDP与排放量报表
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国行业GDP与排放量报表
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    全国主要城市GDP与排放量
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        全国主要城市GDP与排放量
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    火力发电和原油与排放量报
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        火力发电和原油与排放量报
+                                    </a>
                                 </LI>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    GDP与排放量报表
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#natSta">
+                                        GDP与排放量报表
+                                    </a>
                                 </LI>
                             </UL>
                         </li>
                         <li>
                             <P> 环境质量</P>
                             <UL>
-                                <LI data-icon-cls="fa fa-file-text-o" data-href="#">
-                                    环境质量和排放量
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#envQua">
+                                        环境质量和排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 举报投诉数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#repComp">
+                                        按省份环境举报投诉、排放总量、平均排放浓度
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 能源数据</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        各省各种能源资源消费量与排放量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#enerData">
+                                        全国各种能源资源产量与排放量
+                                    </a>
+                                </LI>
+                            </UL>
+                        </li>
+                        <li>
+                            <P> 数据宏观概况</P>
+                            <UL>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        各污染物年排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区总排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区各污染物排污费(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        市级行政区排放量情况(年)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        单位GDP污染物排放总量
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(月)
+                                    </a>
+                                </LI>
+                                <LI data-icon-cls="fa fa-file-text-o">
+                                    <a href="#dataSurv">
+                                        省级行政区排放量情况(年)
+                                    </a>
                                 </LI>
                             </UL>
                         </li>
