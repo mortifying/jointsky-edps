@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="jointsky-edps:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="jointsky-edps-1.0.war">
-      <element id="artifact" artifact-name="jointsky-edps:war exploded" />
-    </root>
-  </artifact>
-</component>
