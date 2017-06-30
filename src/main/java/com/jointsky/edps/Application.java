@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 @ComponentScan
 @EnableSwagger2
 @MapperScan("com.jointsky.edps.mapper")
-public class Application extends SpringBootServletInitializer {
+public class Application {
     private static Logger logger = Logger.getLogger(Application.class);
 
     @Bean
@@ -53,10 +53,6 @@ public class Application extends SpringBootServletInitializer {
     }
 
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(Application.class);
-    }
 
     /**
      * Start
