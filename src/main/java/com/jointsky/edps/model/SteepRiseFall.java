@@ -9,6 +9,11 @@ import java.sql.Timestamp;
  */
 public class SteepRiseFall {
 
+
+    @ApiModelProperty(value = "地区名称",required = true)
+    private String regionName;
+    @ApiModelProperty(value = "行业名称",required = true)
+    private String industryName;
     @ApiModelProperty(value = "企业编码",required = true)
     private Long psCode;
     @ApiModelProperty(value = "企业名称",required = true)
@@ -21,13 +26,31 @@ public class SteepRiseFall {
     private String pollutantCode;
     @ApiModelProperty(value = "污染物名称",required = true)
     private String pollutantName;
-    @ApiModelProperty(value = "异常时间",required = true)
-    private String exceptionTime;
+    @ApiModelProperty(value = "开始时间",required = true)
+    private String startTime;
+    @ApiModelProperty(value = "结束时间",required = true)
+    private String endTime;
     @ApiModelProperty(value = "陡变前值",required = true)
     private Double beforeValue;
     @ApiModelProperty(value = "陡变后值",required = true)
     private Double afterValue;
 
+
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    public String getIndustryName() {
+        return industryName;
+    }
+
+    public void setIndustryName(String industryName) {
+        this.industryName = industryName;
+    }
 
     public Long getPsCode() {
         return psCode;
@@ -77,12 +100,20 @@ public class SteepRiseFall {
         this.pollutantName = pollutantName;
     }
 
-    public String getExceptionTime() {
-        return exceptionTime;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setExceptionTime(String exceptionTime) {
-        this.exceptionTime = exceptionTime;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public Double getBeforeValue() {

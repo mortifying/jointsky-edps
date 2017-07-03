@@ -8,7 +8,8 @@
         <result column="outputname" property="outputName" />
         <result column="pollutantcode" property="pollutantCode" />
         <result column="pollutantname" property="pollutantName" />
-        <result column="exceptiontime" property="exceptionTime" />
+        <result column="starttime" property="startTime" />
+        <result column="endtime" property="endTime" />
         <result column="beforevalue" property="beforeValue" />
         <result column="aftervalue" property="afterValue" />
     </resultMap>
@@ -19,7 +20,11 @@
     </select>
 
     <select id="getSteepRiseFallByPSInfo" resultMap="SteepRiseFallResultMap">
-        select * from steeprisefallexception where pscode=#{0} AND outputcode =#{1} AND pollutantcode=#{2};
+        select * from steeprisefallexception where psname=#{0} AND outputname =#{1}
+        <if test="exceptionTime != null">
+            and starttime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
     <resultMap type="com.jointsky.edps.model.IndustryStrengthException" id="IndustryStrengthExceptionResultMap">
@@ -40,6 +45,14 @@
 
     <select id="getIndustryStrengthExceptionByIndustry" resultMap="IndustryStrengthExceptionResultMap">
         select * from industrystrengthexception where industryname=#{industryName};
+    </select>
+
+    <select id="getIndustryStrengthExceptionByPSInfo" resultMap="IndustryStrengthExceptionResultMap">
+        select * from industrystrengthexception where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and exceptiontime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
 
@@ -64,7 +77,11 @@
     </select>
 
     <select id="getStrengthConstantValueByPSInfo" resultMap="StrengthConstantValueResultMap">
-        select * from strengthconstantvalue where psname=#{0} and outputname=#{1} and pollutantname=#{2};
+        select * from strengthconstantvalue where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and starttime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
 
@@ -88,7 +105,11 @@
     </select>
 
     <select id="getFlowConstantValueByPSInfo" resultMap="FlowConstantValueResultMap">
-        select * from flowconstantvalue where psname=#{0} and outputname=#{1};
+        select * from flowconstantvalue where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and starttime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
 
@@ -112,7 +133,11 @@
     </select>
 
     <select id="getFlowExceptionByPSInfo" resultMap="FlowExceptionResultMap">
-        select * from flowexception where psname=#{0} and outputname=#{1};
+        select * from flowexception where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and exceptiontime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
 
@@ -138,7 +163,11 @@
     </select>
 
     <select id="getLogicExceptionByPSInfo" resultMap="LogicExceptionResultMap">
-        select * from logicexception where psname=#{0} and outputname=#{1} and pollutantname=#{2};
+        select * from logicexception where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and exceptiontime=#{exceptionTime}
+        </if>
+        ;
     </select>
 
 
@@ -151,6 +180,8 @@
         <result column="standardo2" property="standardO2" />
         <result column="facstandardo2avg" property="facStandardO2Avg" />
         <result column="comment" property="comment" />
+        <result column="starttime" property="startTime" />
+        <result column="endtime" property="endTime" />
     </resultMap>
 
     <select id="getExcessAirCoefficientByRegion" resultMap="ExcessAirCoefficientResultMap">
@@ -162,7 +193,37 @@
     </select>
 
     <select id="getExcessAirCoefficientByPSInfo" resultMap="ExcessAirCoefficientResultMap">
-        select * from excessaircoefficient where psname=#{0} and outputname=#{1};
+        select * from excessaircoefficient where psname=#{0} and outputname=#{1}
+        <if test="exceptionTime != null">
+            and starttime=#{exceptionTime}
+        </if>
+        ;
+    </select>
+
+
+    <resultMap type="com.jointsky.edps.model.ExceptionOutline" id="ExceptionOutlineResultMap">
+        <result column="regionname" property="regionName" />
+        <result column="industryname" property="industryName" />
+        <result column="psname" property="psName" />
+        <result column="outputname" property="outputName" />
+        <result column="exceptiontype" property="exceptionType" />
+        <result column="exceptiontime" property="exceptionTime" />
+    </resultMap>
+
+    <select id="getExceptionOutlineByRegionIndustry" resultMap="ExceptionOutlineResultMap">
+        SELECT a.regionname,a.industryname,a.psname,a.outputname,'过量空气系数异常' exceptiontype,a.starttime exceptiontime from excessaircoefficient a WHERE a.regionname=#{0} and a.industryname=#{1} and a.starttime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'流量恒值异常' exceptiontype,a.starttime exceptiontime from flowconstantvalue a WHERE a.regionname=#{0} and a.industryname=#{1} and a.starttime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'流量异常' exceptiontype,a.exceptiontime exceptiontime from flowexception a WHERE a.regionname=#{0} and a.industryname=#{1} and a.exceptiontime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'行业浓度异常' exceptiontype,a.exceptiontime exceptiontime from industrystrengthexception a WHERE a.regionname=#{0} and a.industryname=#{1} and a.exceptiontime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'逻辑异常异常' exceptiontype,a.exceptiontime exceptiontime from logicexception a WHERE a.regionname=#{0} and a.industryname=#{1} and a.exceptiontime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'陡升陡降异常' exceptiontype,a.starttime exceptiontime from steeprisefallexception a WHERE a.regionname=#{0} and a.industryname=#{1} and a.starttime BETWEEN #{2} and #{3}
+UNION ALL
+SELECT a.regionname,a.industryname,a.psname,a.outputname,'浓度恒值异常' exceptiontype,a.starttime exceptiontime from strengthconstantvalue a WHERE a.regionname=#{0} and a.industryname=#{1} and a.starttime BETWEEN #{2} and #{3}
     </select>
 
 </mapper>

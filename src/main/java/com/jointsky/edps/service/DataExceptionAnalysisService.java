@@ -2,6 +2,7 @@ package com.jointsky.edps.service;
 
 import com.jointsky.edps.mapper.DataExceptionAnalysisMapper;
 import com.jointsky.edps.model.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,8 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getSteepRiseFallAll();
     }
 
-    public List<SteepRiseFall> getSteepRiseFall(Long psCode,Long outputCode,String pollutantCode){
-        return dataExceptionAnalysisMapper.getSteepRiseFallByPSInfo(psCode,outputCode,pollutantCode);
+    public List<SteepRiseFall> getSteepRiseFall(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getSteepRiseFallByPSInfo(psName, outputName, exceptionTime);
     }
 
     public List<IndustryStrengthException> getIndustryStrengthExceptionByRegionSet(String regionName){
@@ -32,6 +33,10 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getIndustryStrengthExceptionByIndustry(industryName);
     }
 
+    public List<IndustryStrengthException> getIndustryStrengthExceptionByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getIndustryStrengthExceptionByPSInfo(psName, outputName, exceptionTime);
+    }
+
     public List<StrengthConstantValue> getStrengthConstantValueByRegionSet(String regionName){
         return dataExceptionAnalysisMapper.getStrengthConstantValueByRegion(regionName);
     }
@@ -40,8 +45,8 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getStrengthConstantValueByIndustry(industryName);
     }
 
-    public List<StrengthConstantValue> getStrengthConstantValueByPSInfoSet(String psName,String outputName,String pollutantName){
-        return dataExceptionAnalysisMapper.getStrengthConstantValueByPSInfo(psName,outputName,pollutantName);
+    public List<StrengthConstantValue> getStrengthConstantValueByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getStrengthConstantValueByPSInfo(psName,outputName,exceptionTime);
     }
 
     public List<FlowConstantValue> getFlowConstantValueByRegionSet(String regionName){
@@ -52,8 +57,8 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getFlowConstantValueByIndustry(industryName);
     }
 
-    public List<FlowConstantValue> getFlowConstantValueByPSInfoSet(String psName,String outputName){
-        return dataExceptionAnalysisMapper.getFlowConstantValueByPSInfo(psName,outputName);
+    public List<FlowConstantValue> getFlowConstantValueByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getFlowConstantValueByPSInfo(psName,outputName,exceptionTime);
     }
 
     public List<FlowException> getFlowExceptionByRegionSet(String regionName){
@@ -64,8 +69,8 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getFlowExceptionByIndustry(industryName);
     }
 
-    public List<FlowException> getFlowExceptionByPSInfoSet(String psName,String outputName){
-        return dataExceptionAnalysisMapper.getFlowExceptionByPSInfo(psName,outputName);
+    public List<FlowException> getFlowExceptionByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getFlowExceptionByPSInfo(psName,outputName,exceptionTime);
     }
 
     public List<LogicException> getLogicExceptionByRegionSet(String regionName){
@@ -76,8 +81,8 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getLogicExceptionByIndustry(industryName);
     }
 
-    public List<LogicException> getLogicExceptionByPSInfoSet(String psName,String outputName,String pollutantName){
-        return dataExceptionAnalysisMapper.getLogicExceptionByPSInfo(psName,outputName,pollutantName);
+    public List<LogicException> getLogicExceptionByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getLogicExceptionByPSInfo(psName,outputName,exceptionTime);
     }
 
     public List<ExcessAirCoefficient> getExcessAirCoefficientByRegionSet(String regionName){
@@ -88,7 +93,12 @@ public class DataExceptionAnalysisService {
         return dataExceptionAnalysisMapper.getExcessAirCoefficientByIndustry(industryName);
     }
 
-    public List<ExcessAirCoefficient> getExcessAirCoefficientByPSInfoSet(String psName,String outputName){
-        return dataExceptionAnalysisMapper.getExcessAirCoefficientByPSInfo(psName,outputName);
+    public List<ExcessAirCoefficient> getExcessAirCoefficientByPSInfoSet(String psName,String outputName,String exceptionTime){
+        return dataExceptionAnalysisMapper.getExcessAirCoefficientByPSInfo(psName,outputName,exceptionTime);
+    }
+
+
+    public List<ExceptionOutline> getExceptionOutline(String regionName,String industryName,String startTime,String endTime){
+        return dataExceptionAnalysisMapper.getExceptionOutlineByRegionIndustry(regionName,industryName,startTime,endTime);
     }
 }

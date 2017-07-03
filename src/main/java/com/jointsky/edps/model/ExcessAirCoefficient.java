@@ -23,6 +23,11 @@ public class ExcessAirCoefficient {
     private Double facStandardO2Avg;
     @ApiModelProperty(value = "异常说明",required = true)
     private String comment;
+    @ApiModelProperty(value = "开始时间",required = true)
+    private String startTime;
+    @ApiModelProperty(value = "结束时间",required = true)
+    private String endTime;
+
 
 
     public String getRegionName() {
@@ -87,5 +92,21 @@ public class ExcessAirCoefficient {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }
